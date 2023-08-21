@@ -48,12 +48,22 @@ body {
   overflow-x: hidden;
   font-weight: 300;
 }
-strong {
+body strong {
   font-weight: 700;
+}
+body h1 {
+  font-size: var(--font-lrg);
+}
+body h2 {
+  font-size: var(--font-med);
+}
+body p {
+  font-size: var(--font-sm);
 }
 /* header styles */
 header {
   position: relative;
+  z-index: 20;
 }
 header nav.navBar {
   background-color: var(--colour-main);
@@ -168,22 +178,175 @@ main.navLinksisOpen {
   left: 80%;
 }
 main div.mainBlurMask {
+  display: none;
   position: absolute;
   inset: 0;
   transition: opacity 0.25s;
   opacity: 0;
+  z-index: 10;
   backdrop-filter: blur(4px);
 }
 main div.mainBlurMask.on {
   opacity: 1;
+  display: block;
 }
 main div.headerLocationInfo {
   background-color: var(--colour-primary);
   width: 100%;
   height: fit-content;
   padding: 0.2rem;
+  position: relative;
+  z-index: 9;
 }
 main section.heroSection {
-  min-height: 100vh;
+  height: fit-content;
+  padding: 2rem 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 5;
+}
+main section.heroSection div.heroDecorations {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+}
+main section.heroSection div.heroDecorations {
+}
+
+main section.heroSection h1,
+h2,
+p {
+  font-weight: lighter;
+}
+main section.heroSection h1 {
+  font-weight: 400;
+  text-align: center;
+}
+main section.heroSection h1 strong {
+  font-weight: 700;
+  color: var(--colour-indigo-dye-blue);
+}
+main section.heroSection h2 {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+main section.heroSection button.heroCTAButton {
+  position: relative;
+  width: max(50%, fit-content);
+  height: max(4rem, calc(4vw + 1rem));
+  padding: 4vw 0.5rem;
+  margin-top: 1rem;
+  font-size: max(var(--font-lrg), calc(4vw + 1rem));
+  font-family: var(--font-family-default);
+  font-weight: 300;
+  border: none;
+  background: var(--colour-secondary);
+  color: var(--color-text-secondary);
+  border-radius: 4px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+main section.heroSection button.heroCTAButton::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  transform: translate(6px, 8px);
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
+  filter: blur(10px);
+}
+main section.heroSection button.heroCTAButton:hover {
+  background-color: #405661;
+  scale: 1.1;
+}
+main section.heroSection div.heroReviews {
+  margin-top: 1rem;
+  font-size: var(--font-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+main section.heroSection div.heroReviews span.numberOfStars {
+  color: orange;
+}
+main
+  section.heroSection
+  div.heroReviews
+  div.heroReviewsSiteNumber
+  a.websiteLink,
+main section.heroSection div.heroReviews span strong {
+  color: var(--colour-secondary);
+}
+main
+  section.heroSection
+  div.heroReviews
+  div.heroReviewsSiteNumber
+  a.websiteLink {
+  text-decoration: none;
+}
+main section.heroSection div.heroImage {
+  margin-top: 2rem;
+  position: relative;
+  aspect-ratio: 1.5/1;
+  width: 100vw;
+  overflow: hidden-x;
+  z-index: -2;
+}
+main section.heroSection div.heroImage img {
+  position: absolute;
+  aspect-ratio: 2000/350;
+  width: 2500px;
+  right: -220%;
+  bottom: 0%;
+  z-index: -1;
+  visibility: hidden;
+}
+main section.heroSection div.heroImage img:first-child {
+  position: absolute;
+  width: 130%;
+  right: -35%;
+  height: 130%;
+  bottom: -15%;
+  z-index: 1;
+  visibility: visible;
+}
+
+main section.heroSection div.heroImage svg.circleOne {
+  width: 100vw;
+  position: absolute;
+  right: -30%;
+  bottom: 10%;
+  z-index: -1;
+}
+main section.aboutUsSection {
+  background-color: lightblue;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 0.5rem solid var(--colour-secondary);
+}
+main section.aboutUsSection h1,
+main section.aboutUsSection h2,
+main section.aboutUsSection p {
+  color: var(--colour-riverbed-blue);
+  text-align: center;
+  font-weight: 300;
+}
+main section.aboutUsSection h1 strong {
+  color: var(--colour-secondary);
+  font-size: calc(var(--font-lrg) + 0.25rem);
+}
+main section.aboutUsSection h2 {
+  font-size: calc(var(--font-med) + 0.25rem);
+}
+main section.aboutUsSection p {
+  font-size: calc(var(--font-sm) + 0.25rem);
 }
 /* end of main styles */
