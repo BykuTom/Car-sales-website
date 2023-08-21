@@ -97,8 +97,8 @@ ul.navLinks {
   text-decoration: none;
   list-style: none;
   display: grid;
-  grid-template-rows: 1fr 8fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 12fr;
+  grid-auto-columns: 1fr;
   gap: 1rem;
   padding: 2rem 1rem;
   height: 100vh;
@@ -118,11 +118,15 @@ ul.navLinks li {
   position: relative;
   display: flex;
 }
+/* ul.navLinks li:first-child a,
+ul.navLinks li:nth-child(3) a {
+  align-items: ;
+} */
 ul.navLinks li:last-child {
   width: 100%;
   height: max(4rem, calc(4vw + 1rem));
   padding: 0.5rem;
-  grid-column: 1/4;
+  grid-column: span 3;
 }
 ul.navLinks li::before {
   content: "";
@@ -209,20 +213,23 @@ main section.heroSection {
   z-index: 5;
 }
 main section.heroSection div.heroDecorations {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: -10;
 }
-main section.heroSection div.heroDecorations {
+main section.heroSection div.heroDecorations svg.circleOne {
+  position: absolute;
+  z-index: -5;
+  width: 40vw;
+  left: -45vw;
+  top: -7vw;
 }
 
-main section.heroSection h1,
-h2,
+main section.heroSection h2,
 p {
   font-weight: lighter;
 }
 main section.heroSection h1 {
-  font-weight: 400;
+  font-weight: 5f00;
   text-align: center;
 }
 main section.heroSection h1 strong {
@@ -250,6 +257,7 @@ main section.heroSection button.heroCTAButton {
   gap: 1rem;
   align-items: center;
   transition: all 0.3s linear;
+  cursor: pointer;
 }
 main section.heroSection button.heroCTAButton::before {
   content: "";
@@ -321,10 +329,20 @@ main section.heroSection div.heroImage svg.circleOne {
   width: 100vw;
   position: absolute;
   right: -30%;
-  bottom: 10%;
+  bottom: 0%;
   z-index: -1;
 }
+main section.heroSection div.heroImage svg.rectangleOne {
+  width: 115vw;
+  position: absolute;
+  bottom: -85vw;
+  z-index: -1;
+  right: -10%;
+  transform: rotate(70deg);
+}
 main section.aboutUsSection {
+  position: relative;
+  z-index: 5;
   background-color: lightblue;
   padding: 2rem 1rem;
   display: flex;
@@ -339,13 +357,17 @@ main section.aboutUsSection p {
   text-align: center;
   font-weight: 300;
 }
-main section.aboutUsSection h1 strong {
+main section.aboutUsSection h1 strong,
+main section.aboutUsSection h2 strong {
   color: var(--colour-secondary);
+}
+main section.aboutUsSection h1 strong {
   font-size: calc(var(--font-lrg) + 0.25rem);
 }
 main section.aboutUsSection h2 {
   font-size: calc(var(--font-med) + 0.25rem);
 }
+
 main section.aboutUsSection p {
   font-size: calc(var(--font-sm) + 0.25rem);
 }
