@@ -1,6 +1,6 @@
-export default class CarCards {
-  constructor(carName, carPrice, parentElementClass, link, imageLink) {
-    this.carName = carName;
+export default class CarCard {
+  constructor(carMake, carPrice, parentElementClass, link, imageLink) {
+    this.carMake = carMake;
     this.carPrice = carPrice;
     this.parentElement = document.querySelector(parentElementClass);
     this.link = link;
@@ -18,10 +18,10 @@ export default class CarCards {
 
     linkElement.setAttribute("href", this.link);
     imageElement.setAttribute("src", this.imageLink);
-    imageElement.setAttribute("alt", `${this.carName} image`);
+    imageElement.setAttribute("alt", `${this.carMake} image`);
 
     listItem.setAttribute("key", this.carID);
-    listItem.setAttribute("carTitle", this.carName);
+    listItem.setAttribute("carTitle", this.carMake);
     listItem.setAttribute("carPrice", this.carPrice);
     listItem.classList.add("carCard");
 
@@ -29,7 +29,7 @@ export default class CarCards {
     listItem.appendChild(imageElement);
 
     if (optionalData !== null) {
-      listItem.dataset.active = true;
+      listItem.dataset.active = "";
     }
     this.parentElement.appendChild(listItem);
   }

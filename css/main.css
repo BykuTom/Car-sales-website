@@ -428,7 +428,7 @@ main section.contactSection div p {
   font-weight: 300;
 }
 main section.carCarouselSection {
-  min-height: 50vh;
+  aspect-ratio: 4/3;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -443,13 +443,12 @@ main section.carCarouselSection div.carCarousel {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 5;
 }
 main section.carCarouselSection div.carCarousel button.carousel-button {
   position: absolute;
-  z-index: 2;
-  font-size: 50px;
+  z-index: 5;
+  font-size: 4rem;
   line-height: 25px;
   width: 100%;
   max-width: 4rem;
@@ -470,25 +469,74 @@ main section.carCarouselSection div.carCarousel button.carousel-button-right {
 }
 main section.carCarouselSection div.carCarousel ul.carousel {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4/3;
+
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 main section.carCarouselSection div.carCarousel li.carCard {
   position: absolute;
+  width: 100%;
   left: -100%;
   opacity: 0;
-  transition: opacity 1ms, left 1s;
+  z-index: -3;
+  transition: opacity 1ms, left 650ms;
+}
+main section.carCarouselSection div.carCarousel li.carCard::before {
+  position: absolute;
+  color: aliceblue;
+  inset: 0 0 100% 0;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
+  font-size: var(--font-lrg);
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.35rem;
+  justify-content: start;
+  transition: inset 0.5s linear;
+}
+main section.carCarouselSection div.carCarousel li.carCard:hover::before {
+  position: absolute;
+  inset: 0;
+  content: attr(cartitle);
+  color: aliceblue;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
+  font-size: var(--font-lrg);
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.35rem;
+  justify-content: start;
 }
 main section.carCarouselSection div.carCarousel li.carCard[data-active] {
   left: 0;
   opacity: 1;
+  z-index: 1;
 }
-main section.carCarouselSection div.carCarousel li.carCard[data-transition] {
+
+main
+  section.carCarouselSection
+  div.carCarousel
+  li.carCard[data-direction="right"] {
+  left: -100%;
+  opacity: 1;
+  z-index: -1;
+}
+main
+  section.carCarouselSection
+  div.carCarousel
+  li.carCard[data-direction="left"] {
   left: 100%;
   opacity: 1;
+  z-index: -1;
+}
+main section.carCarouselSection div.carCarousel li.carCard[data-transition] {
+  z-index: 2;
 }
 main section.carCarouselSection div.carCarousel li.carCard a {
   position: absolute;
