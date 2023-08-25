@@ -165,6 +165,14 @@ window.onload = function () {
       models: ["Fiesta", "Focus", "Mustang"],
     },
   ];
-  const carSearchForm = new CarSearch(".carSearchForm", makemodelobjectarray);
+  const carSearchForm = new CarSearch(
+    ".carSearchForm",
+    makemodelobjectarray,
+    ".carSearchMoreOptionsButton"
+  );
   carSearchForm.createCarSearchForm();
 };
+
+// TODO:create an universal intersection observer class which will take in arguments such as element
+// or elements and give them an animation that is determinded on treshold of visibility. This is going
+// to be its own file
