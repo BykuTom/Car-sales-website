@@ -213,6 +213,7 @@ main section.heroSection {
   align-items: center;
   gap: 0.5rem;
   z-index: 5;
+  overflow: hidden;
 }
 main section.heroSection div.heroDecorations {
   position: relative;
@@ -244,8 +245,9 @@ main section.heroSection h2 {
 }
 main section.heroSection button.heroCTAButton {
   position: relative;
-  width: max(50%, fit-content);
+  max-width: 25rem;
   height: max(4rem, calc(4vw + 1rem));
+  max-height: 5.25rem;
   padding: 4vw 0.5rem;
   margin-top: 1rem;
   font-size: max(var(--font-lrg), calc(4vw + 1rem));
@@ -260,6 +262,12 @@ main section.heroSection button.heroCTAButton {
   align-items: center;
   transition: all 0.3s linear;
   cursor: pointer;
+}
+@media screen and (min-width: 64rem) {
+  main section.heroSection button.heroCTAButton {
+    font-size: 3.5rem;
+    padding: 2.5rem 0.5rem;
+  }
 }
 main section.heroSection button.heroCTAButton::before {
   content: "";
@@ -304,10 +312,12 @@ main section.heroSection div.heroImage {
   margin-top: 2rem;
   position: relative;
   aspect-ratio: 1.5/1;
-  width: 100vw;
+  width: 100%;
+  max-height: 42rem;
   overflow: hidden-x;
   z-index: -2;
 }
+/* TODO: Remove this > */
 main section.heroSection div.heroImage img {
   position: absolute;
   aspect-ratio: 2000/350;
@@ -320,8 +330,10 @@ main section.heroSection div.heroImage img {
 main section.heroSection div.heroImage img:first-child {
   position: absolute;
   width: 130%;
-  right: -35%;
+  max-width: 79rem;
+  right: max(-35%, -20.5rem);
   height: 130%;
+  max-height: 53rem;
   bottom: -15%;
   z-index: 1;
   visibility: visible;
@@ -329,17 +341,19 @@ main section.heroSection div.heroImage img:first-child {
 
 main section.heroSection div.heroImage svg.circleOne {
   width: 100vw;
+  max-width: 64rem;
   position: absolute;
-  right: 30%;
+  left: min(0%, 19.2rem);
   bottom: -10%;
   z-index: -1;
 }
 main section.heroSection div.heroImage svg.rectangleOne {
   width: 115vw;
+  max-width: 98rem;
   position: absolute;
-  bottom: -85vw;
+  bottom: max(-85vw, -86rem);
   z-index: -1;
-  right: -10%;
+  right: max(-10%, -11rem);
   transform: rotate(75deg);
 }
 main section.aboutUsSection {
@@ -406,6 +420,9 @@ main section.carSearchSection form.carSearchForm {
   grid-template-columns: 1fr 1fr;
   row-gap: 0.5rem;
   column-gap: 0.25rem;
+  max-width: 70rem;
+  position: relative;
+  z-index: 5;
 }
 main section.carSearchSection button.carSearchMoreOptionsButton {
   outline: none;
@@ -476,6 +493,9 @@ main section.carSearchSection form.carSearchForm select:focus {
 }
 main section.carSearchSection form.carSearchForm select[lastElement] {
   grid-column: span 2;
+  max-width: 35rem;
+  width: 100%;
+  margin: auto;
 }
 main section.carSearchSection form.carSearchForm select option {
   font-weight: normal;
@@ -501,6 +521,18 @@ main section.carSearchSection form.carSearchForm button {
   cursor: pointer;
   padding: 0.5rem;
   font-size: var(--font-lrg);
+  max-width: 35rem;
+  margin: auto;
+  position: relative;
+}
+main section.carSearchSection form.carSearchForm button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  transform: translate(6px, 8px);
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
+  filter: blur(10px);
 }
 main section.contactSection {
   background: var(--colour-secondary);
@@ -542,7 +574,6 @@ main section.contactSection div p {
   font-weight: 300;
 }
 main section.carCarouselSection {
-  aspect-ratio: 4/3;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.2rem;
@@ -555,7 +586,8 @@ main section.carCArouselSection h1 {
 main section.carCarouselSection div.carCarousel {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 50rem;
+  aspect-ratio: 4/3;
   z-index: 5;
 }
 main section.carCarouselSection div.carCarousel button.carousel-button {

@@ -1,68 +1,7 @@
 import CarCard from "./carCards.js";
 import CarSearch from "./carSearch.js";
-
-class NavigationButton {
-  constructor(ulElementClass, buttonClass, mainElement, blurMask) {
-    this.ulElement = document.querySelector(ulElementClass);
-    this.ExpandButton = document.querySelector(buttonClass);
-    this.mainElement = document.querySelector(mainElement);
-    this.mainBlurMask = document.querySelector(blurMask);
-    this.ExpandButton.addEventListener("click", this.handleClick.bind(this));
-  }
-
-  handleClick() {
-    this.ulElement.classList.toggle("open");
-    this.mainElement.classList.toggle("navLinksisOpen");
-    this.mainBlurMask.classList.toggle("on");
-    const expandedState = this.ulElement.getAttribute("aria-expanded");
-    this.ulElement.setAttribute("aria-expanded", !eval(expandedState));
-  }
-}
-function carousel() {
-  const buttons = document.querySelectorAll("[data-carousel-button]");
-  let isAnimating = false; // Flag to track animation status
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (isAnimating) {
-        return;
-      }
-
-      isAnimating = true;
-
-      const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-
-      const slidesContainer = button.closest("[data-carousel]");
-      const slides = slidesContainer.querySelector("[data-slides]");
-      const activeSlide = slides.querySelector("[data-active]");
-      const slideCount = slides.children.length;
-
-      const newIndex =
-        (offset + slideCount + [...slides.children].indexOf(activeSlide)) %
-        slideCount;
-      const leftIndex = (newIndex - 1 + slideCount) % slideCount;
-      const rightIndex = (newIndex + 1) % slideCount;
-
-      for (const child of slides.children) {
-        delete child.dataset.direction;
-        delete child.dataset.transition;
-      }
-
-      slides.children[leftIndex].dataset.direction = "left";
-      slides.children[rightIndex].dataset.direction = "right";
-      slides.children[
-        offset === 1 ? leftIndex : rightIndex
-      ].dataset.transition = true;
-
-      slides.children[newIndex].dataset.active = true;
-      delete activeSlide.dataset.active;
-
-      setTimeout(() => {
-        isAnimating = false; // Reset animation flag after delay
-      }, 550); // Adjust the delay duration (in milliseconds) as needed
-    });
-  });
-}
+import carousel from "./carousel.js";
+import NavigationButton from "./navBar.js";
 
 /* function carousel() {
   const buttons = document.querySelectorAll("[data-carousel-button]");
@@ -154,7 +93,7 @@ window.onload = function () {
   firstCard.createListItem("data-active");
   secondCard.createListItem();
   thirdCard.createListItem();
-  carousel();
+  carousel("[data-carousel-button]");
   let makemodelobjectarray = [
     {
       make: "Toyota",
@@ -165,10 +104,49 @@ window.onload = function () {
       models: ["Fiesta", "Focus", "Mustang"],
     },
   ];
+  let additionalOptionsObject = {
+    bodyStyle: [
+      "Convertible",
+      "Coupe",
+      "Crossover",
+      "Estate",
+      "Four Wheel Drive",
+      "Hatchback",
+      "MPV",
+      "Pick up",
+      "Saloon",
+      "Van",
+    ],
+    fuelType: ["Hybrid", "Diesel", "Petrol", "Electric", "Other"],
+    transmissionTypes: ["Manual", "Automatic", "Semi Automatic", "DSG", "CVT"],
+    doorNumber: ["3", "5"],
+    colours: [
+      "Red",
+      "Orange",
+      "Yellow",
+      "Green",
+      "Blue",
+      "Purple",
+      "Pink",
+      "White",
+      "Silver",
+      "Grey",
+      "Black",
+    ],
+    engineSizes: [
+      "up to 1 litre",
+      "1 litre to 1.3 litre",
+      "1.3 litre to 1.6 litre",
+      "1.6 litre to 1.9 litre",
+      "2 litre +",
+    ],
+    taxBands: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"],
+  };
   const carSearchForm = new CarSearch(
     ".carSearchForm",
     makemodelobjectarray,
-    ".carSearchMoreOptionsButton"
+    ".carSearchMoreOptionsButton",
+    additionalOptionsObject
   );
   carSearchForm.createCarSearchForm();
 };
