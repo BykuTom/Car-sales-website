@@ -3,64 +3,6 @@ import CarSearch from "./carSearch.js";
 import carousel from "./carousel.js";
 import NavigationButton from "./navBar.js";
 
-/* function carousel() {
-  const buttons = document.querySelectorAll("[data-carousel-button]");
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-      let direction;
-
-      const slidesContainer = button.closest("[data-carousel]");
-      const slides = slidesContainer.querySelector("[data-slides]");
-
-      const activeSlide = slides.querySelector("[data-active]");
-
-      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-
-      if (newIndex < 0) {
-        newIndex = slides.children.length - 1;
-      }
-      if (newIndex >= slides.children.length) {
-        newIndex = 0;
-      }
-
-      let leftIndex = newIndex - 1;
-      let rightInex = newIndex + 1;
-      for (const child of slides.children) {
-        delete child.dataset.direction; // Clear any previous transition direction
-      }
-
-      if (leftIndex < 0) {
-        leftIndex = slides.children.length - 1;
-      }
-      if (leftIndex >= slides.children.length) {
-        leftIndex = 0;
-      }
-      if (rightInex < 0) {
-        rightInex = slides.children.length - 1;
-      }
-      if (rightInex >= slides.children.length) {
-        rightInex = 0;
-      }
-
-      slides.children[rightInex].dataset.direction = "right";
-
-      slides.children[leftIndex].dataset.direction = "left";
-
-      for (const child of slides.children) {
-        delete child.dataset.transition; // Clear any previous transition direction
-      }
-      if (offset === 1) {
-        slides.children[leftIndex].dataset.transition = true;
-      } else {
-        slides.children[rightInex].dataset.transition = true;
-      }
-      slides.children[newIndex].dataset.active = true;
-      delete activeSlide.dataset.active;
-    });
-  });
-} */
-
 const navigation = new NavigationButton(
   ".navLinks",
   ".navBarExpandButton",
@@ -74,21 +16,21 @@ window.onload = function () {
     20000,
     ".carousel",
     "#",
-    "/img/ExampleCards/ImageOne.png"
+    "./img/ExampleCards/ImageOne.png"
   );
   const secondCard = new CarCard(
     "Toyota",
     20000,
     ".carousel",
     "#",
-    "/img/ExampleCards/ImageTwo.png"
+    "./img/ExampleCards/ImageTwo.png"
   );
   const thirdCard = new CarCard(
     "Toyota",
     20000,
     ".carousel",
     "#",
-    "/img/ExampleCards/ImageThree.png"
+    "./img/ExampleCards/ImageThree.png"
   );
   firstCard.createListItem("data-active");
   secondCard.createListItem();

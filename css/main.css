@@ -66,6 +66,7 @@ body p {
 header {
   position: relative;
   z-index: 20;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
 }
 header nav.navBar {
   background-color: var(--colour-main);
@@ -350,7 +351,7 @@ main section.aboutUsSection {
   position: relative;
   z-index: 5;
   background-color: lightblue;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -363,10 +364,13 @@ main section.aboutUsSection div.aboutDecorations {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  max-width: 64rem;
+  margin: auto;
 }
 main section.aboutUsSection div.aboutDecorations img {
   aspect-ratio: 1/1;
   width: min(70vw, 70vh);
+  max-width: 32rem;
   z-index: -1;
   opacity: 0.1;
 }
@@ -376,20 +380,24 @@ main section.aboutUsSection p {
   color: var(--colour-riverbed-blue);
   text-align: center;
   font-weight: 300;
+  width: 100%;
+  max-width: 82rem;
+  padding: 0 0.5rem;
+  margin: auto;
 }
 main section.aboutUsSection h1 strong,
 main section.aboutUsSection h2 strong {
   color: var(--colour-secondary);
 }
 main section.aboutUsSection h1 strong {
-  font-size: calc(var(--font-lrg) + 0.25rem);
+  font-size: calc(var(--font-xl) + 0.25rem);
 }
 main section.aboutUsSection h2 {
-  font-size: calc(var(--font-med) + 0.25rem);
+  font-size: calc(var(--font-lrg) + 0.25rem);
 }
 
 main section.aboutUsSection p {
-  font-size: calc(var(--font-sm) + 0.25rem);
+  font-size: calc(var(--font-med) + 0.25rem);
 }
 
 main section.carSearchSection {
@@ -534,6 +542,9 @@ main section.contactSection {
   z-index: 5;
 }
 main section.contactSection div {
+  width: 100%;
+  max-width: 64rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -549,18 +560,24 @@ main section.contactSection div {
   );
   margin-bottom: 1rem;
 }
-main section.contactSection div p:last-child,
+
 main section.contactSection div h2,
 main section.contactSection div h3 {
   margin-bottom: 0.5rem;
 }
+main section.contactSection div p:last-child {
+  margin-bottom: 1rem;
+}
 main section.contactSection div h2 {
+  font-size: var(--font-lrg);
   font-weight: 700;
 }
 main section.contactSection div h3 {
+  font-size: var(--font-med);
   font-weight: 400;
 }
 main section.contactSection div p {
+  font-size: calc(var(--font-sm) + 0.25rem);
   font-weight: 300;
 }
 main section.carCarouselSection {
@@ -612,6 +629,12 @@ main section.carCarouselSection div.carCarousel ul.carousel {
   justify-content: center;
   overflow: hidden;
 }
+/* @media screen and (min-width: 64rem) {
+  main section.carCarouselSection div.carCarousel ul.carousel {
+    overflow: visible;
+  }
+} */
+
 main section.carCarouselSection div.carCarousel li.carCard {
   position: absolute;
   width: 100%;
@@ -661,6 +684,8 @@ main
   left: -100%;
   opacity: 1;
   z-index: -1;
+  /*   scale: 0.96;
+  opacity: 0.6; */
 }
 main
   section.carCarouselSection
@@ -669,6 +694,8 @@ main
   left: 100%;
   opacity: 1;
   z-index: -1;
+  /* scale: 0.96;
+  opacity: 0.6; */
 }
 main section.carCarouselSection div.carCarousel li.carCard[data-transition] {
   z-index: 2;

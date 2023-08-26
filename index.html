@@ -46,17 +46,9 @@
         </ul>
         <button class="navBarExpandButton"></button>
       </nav>
-      <!-- TODO:Location like in amazon -->
-      <section class="headerLocation">
-        <div class="headerlocationIcon"></div>
-      </section>
     </header>
     <main>
       <div class="mainBlurMask"></div>
-      <div class="headerLocationInfo">
-        <span class="currentLocation">Current Location</span
-        ><button class="headerLocationButton"></button>
-      </div>
       <section class="heroSection">
         <div class="heroDecorations">
           <svg
@@ -76,7 +68,7 @@
         <div class="heroSubline">
           <h2>Exceptional Used Cars, Exceptional Savings.</h2>
         </div>
-        <button class="heroCTAButton">
+        <button class="heroCTAButton" href="#carSearchForm">
           <span>Get Started</span><i class="fa-solid fa-arrow-right-long"></i>
         </button>
         <div class="heroReviews">
@@ -106,7 +98,21 @@
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="50" cy="50" r="50" fill="lightblue" />
+            <defs>
+              <radialGradient
+                id="myGradient"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop offset="0%" style="stop-color: #044a7b" />
+                <stop offset="0%" style="stop-color: #3f83b3" />
+                <stop offset="100%" style="stop-color: #add8e6" />
+              </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="40" fill="url(#myGradient)" />
           </svg>
           <svg
             class="rectangleOne"
@@ -163,7 +169,7 @@
       </section>
       <section class="carSearchSection">
         <h2 class="carSearchHeader">Discover your new car</h2>
-        <form action="" class="carSearchForm"></form>
+        <form action="" id="carSearchForm" class="carSearchForm"></form>
         <button class="carSearchMoreOptionsButton" optionsShown="false">
           More Options
         </button>

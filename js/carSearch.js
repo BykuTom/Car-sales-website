@@ -128,7 +128,7 @@ export default class CarSearch {
     searchButton.appendChild(searchSpan);
 
     searchButton.addEventListener("click", (event) => {
-      event.preventDefault;
+      event.preventDefault();
     });
     // end of Search button
 
