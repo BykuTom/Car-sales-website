@@ -317,16 +317,6 @@ main section.heroSection div.heroImage {
   overflow: hidden-x;
   z-index: -2;
 }
-/* TODO: Remove this > */
-main section.heroSection div.heroImage img {
-  position: absolute;
-  aspect-ratio: 2000/350;
-  width: 2500px;
-  right: -220%;
-  bottom: 0%;
-  z-index: -1;
-  visibility: hidden;
-}
 main section.heroSection div.heroImage img:first-child {
   position: absolute;
   width: 130%;
