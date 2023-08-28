@@ -1,0 +1,19 @@
+[
+  { "make": "Audi", "models": ["A3", "A4", "TT"] },
+  {
+    "make": "BMW",
+    "models": [
+      "1 Series",
+      "2 Series",
+      "3 Series",
+      "4 Series",
+      "5 Series",
+      "6 Series",
+      "X1"
+    ]
+  },
+  { "make": "Citroen", "models": ["C3", "C4 Cactus", "C4 Picasso"] },
+  { "make": "Fiat", "models": ["500", "500X", "Panda"] },
+  { "make": "Ford", "models": ["C-Max", "Fiesta", "Focus", "Kuga", "Transit"] },
+  { "make": "Honda", "models": ["CR-V", "CR-Z"] }
+]

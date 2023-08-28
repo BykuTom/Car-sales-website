@@ -44,7 +44,6 @@ export default function carousel(buttonsDataAttribute) {
   setInterval(() => {
     if (lastPressed > 10000) {
       changeSlide(1);
-      console.log(lastPressed);
     }
   }, 5000);
 

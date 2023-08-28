@@ -15,6 +15,7 @@ export default class CarSearch {
     16000, 18000, 20000, 22500, 25000, 27500, 30000, 35000, 40000, 45000, 50000,
     55000, 60000, 65000,
   ];
+  expandedSelectors = [];
 
   createCarSearchForm() {
     const selectMake = document.createElement("select");
@@ -26,6 +27,17 @@ export default class CarSearch {
     defaultOptionCarModel.setAttribute("value", "");
     defaultOptionCarModel.textContent = "Select Model";
 
+    console.log(this.additionalOptionsObject);
+    console.log(this.carMakeModelsObjectArray);
+
+    function allKeysEmpty(object) {
+      for (const key in object) {
+        if (object[key] !== "") {
+          return false; // If any value is not empty, return false
+        }
+      }
+      return true; // All values are empty
+    }
     this.carMakeModelsObjectArray.forEach((object) => {
       const optionCarMake = document.createElement("option");
       optionCarMake.setAttribute("value", object.make);
@@ -127,8 +139,41 @@ export default class CarSearch {
     searchButton.appendChild(searchIcon);
     searchButton.appendChild(searchSpan);
 
-    searchButton.addEventListener("click", (event) => {
+    /* searchButton.addEventListener("click", (event) => {
       event.preventDefault();
+      let dataForm = {};
+      // TODO: Data needs to be packed into an object
+    }); */
+
+    this.FormElement.addEventListener("submit", (event) => {
+      event.preventDefault();
+      let formData = {};
+
+      formData.make = selectMake.value;
+      formData.model = selectModel.value;
+      formData.minPrice = selectMinPrice.value;
+      formData.maxPrice = selectMaxPrice.value;
+
+      console.log(eval(searchButton.dataset.expanded));
+      if (eval(searchButton.dataset.expanded)) {
+        formData.bodyStyle = selectBodyStyle.value;
+        formData.fuelType = selectFuel.value;
+        formData.transmission = selectTransmission.value;
+        formData.numberOfDoors = selectNumberofDoors.value;
+        formData.colour = selectColour.value;
+        formData.engineSize = selectEngineSize.value;
+        formData.taxBand = selectTaxBand.value;
+      }
+      try {
+        if (allKeysEmpty(formData)) {
+          throw "At least one of the selectors needs to hold a value";
+        } else {
+          console.log(formData);
+          //TODO: This is where the magic happens for query paramenters
+        }
+      } catch (error) {
+        console.error(error);
+      }
     });
     // end of Search button
 
@@ -240,6 +285,22 @@ export default class CarSearch {
       selectTaxBand.appendChild(optionTaxBand);
     });
 
+    this.FormElement.insertBefore(selectBodyStyle, searchButton);
+    this.FormElement.insertBefore(selectFuel, searchButton);
+    this.FormElement.insertBefore(selectTransmission, searchButton);
+    this.FormElement.insertBefore(selectNumberofDoors, searchButton);
+    this.FormElement.insertBefore(selectColour, searchButton);
+    this.FormElement.insertBefore(selectEngineSize, searchButton);
+    this.FormElement.insertBefore(selectTaxBand, searchButton);
+
+    selectBodyStyle.style.display = "none";
+    selectFuel.style.display = "none";
+    selectTransmission.style.display = "none";
+    selectNumberofDoors.style.display = "none";
+    selectColour.style.display = "none";
+    selectEngineSize.style.display = "none";
+    selectTaxBand.style.display = "none";
+
     this.showMoreButton.addEventListener("click", () => {
       const optionsShownState =
         this.showMoreButton.getAttribute("optionsShown");
@@ -249,31 +310,43 @@ export default class CarSearch {
           "optionsShown",
           !eval(optionsShownState)
         );
-        this.FormElement.insertBefore(selectBodyStyle, searchButton);
-        this.FormElement.insertBefore(selectFuel, searchButton);
-        this.FormElement.insertBefore(selectTransmission, searchButton);
-        this.FormElement.insertBefore(selectNumberofDoors, searchButton);
-        this.FormElement.insertBefore(selectColour, searchButton);
-        this.FormElement.insertBefore(selectEngineSize, searchButton);
-        this.FormElement.insertBefore(selectTaxBand, searchButton);
+        selectBodyStyle.style.display = "block";
+        selectFuel.style.display = "block";
+        selectTransmission.style.display = "block";
+        selectNumberofDoors.style.display = "block";
+        selectColour.style.display = "block";
+        selectEngineSize.style.display = "block";
+        selectTaxBand.style.display = "block";
         searchButton.dataset.expanded = "true";
+        document.querySelector(".carSearchSection").style.height = "505px";
+        this.FormElement.style.height = "354px";
       } else {
         this.showMoreButton.setAttribute(
           "optionsShown",
           !eval(optionsShownState)
         );
-        this.FormElement.removeChild(selectBodyStyle);
+        selectBodyStyle.style.display = "none";
+        selectFuel.style.display = "none";
+        selectTransmission.style.display = "none";
+        selectNumberofDoors.style.display = "none";
+        selectColour.style.display = "none";
+        selectEngineSize.style.display = "none";
+        selectTaxBand.style.display = "none";
+
+        searchButton.dataset.expanded = "false";
+        document.querySelector(".carSearchSection").style.height = "305px";
+        this.FormElement.style.height = "154px";
+      }
+    });
+  }
+}
+/* this.FormElement.removeChild(selectBodyStyle);
         this.FormElement.removeChild(selectFuel);
         this.FormElement.removeChild(selectTransmission);
         this.FormElement.removeChild(selectColour);
         this.FormElement.removeChild(selectNumberofDoors);
         this.FormElement.removeChild(selectEngineSize);
-        this.FormElement.removeChild(selectTaxBand);
-        searchButton.dataset.expanded = "false";
-      }
-    });
-  }
-}
+        this.FormElement.removeChild(selectTaxBand); */
 /* 
     
     

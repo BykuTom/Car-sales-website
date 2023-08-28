@@ -1,4 +1,4 @@
-export default class CarCard {
+export default class CarSlide {
   constructor(carMake, carPrice, parentElementClass, link, imageLink) {
     this.carMake = carMake;
     this.carPrice = carPrice;

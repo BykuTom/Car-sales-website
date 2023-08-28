@@ -1,7 +1,8 @@
-import CarCard from "./carCards.js";
+import CarSlide from "./carSlides.js";
 import CarSearch from "./carSearch.js";
 import carousel from "./carousel.js";
 import NavigationButton from "./navBar.js";
+import fetchJSON from "./utilities.js";
 
 const navigation = new NavigationButton(
   ".navLinks",
@@ -11,86 +12,50 @@ const navigation = new NavigationButton(
 );
 
 window.onload = function () {
-  const firstCard = new CarCard(
+  const firstSlide = new CarSlide(
     "Toyota",
     20000,
     ".carousel",
     "#",
     "./img/ExampleCards/ImageOne.png"
   );
-  const secondCard = new CarCard(
+  const secondSlide = new CarSlide(
     "Toyota",
     20000,
     ".carousel",
     "#",
     "./img/ExampleCards/ImageTwo.png"
   );
-  const thirdCard = new CarCard(
+  const thirdSlide = new CarSlide(
     "Toyota",
     20000,
     ".carousel",
     "#",
     "./img/ExampleCards/ImageThree.png"
   );
-  firstCard.createListItem("data-active");
-  secondCard.createListItem();
-  thirdCard.createListItem();
+  firstSlide.createListItem("data-active");
+  secondSlide.createListItem();
+  thirdSlide.createListItem();
   carousel("[data-carousel-button]");
-  let makemodelobjectarray = [
-    {
-      make: "Toyota",
-      models: ["Corolla", "Camry", "RAV4"],
-    },
-    {
-      make: "Ford",
-      models: ["Fiesta", "Focus", "Mustang"],
-    },
-  ];
-  let additionalOptionsObject = {
-    bodyStyle: [
-      "Convertible",
-      "Coupe",
-      "Crossover",
-      "Estate",
-      "Four Wheel Drive",
-      "Hatchback",
-      "MPV",
-      "Pick up",
-      "Saloon",
-      "Van",
-    ],
-    fuelType: ["Hybrid", "Diesel", "Petrol", "Electric", "Other"],
-    transmissionTypes: ["Manual", "Automatic", "Semi Automatic", "DSG", "CVT"],
-    doorNumber: ["3", "5"],
-    colours: [
-      "Red",
-      "Orange",
-      "Yellow",
-      "Green",
-      "Blue",
-      "Purple",
-      "Pink",
-      "White",
-      "Silver",
-      "Grey",
-      "Black",
-    ],
-    engineSizes: [
-      "up to 1 litre",
-      "1 litre to 1.3 litre",
-      "1.3 litre to 1.6 litre",
-      "1.6 litre to 1.9 litre",
-      "2 litre +",
-    ],
-    taxBands: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"],
-  };
-  const carSearchForm = new CarSearch(
-    ".carSearchForm",
-    makemodelobjectarray,
-    ".carSearchMoreOptionsButton",
-    additionalOptionsObject
-  );
-  carSearchForm.createCarSearchForm();
+
+  async function initialiseForm() {
+    try {
+      const additionalOptionsObject = await fetchJSON(
+        "./src/extendedCarSearchOptions.json"
+      );
+      const optionsArray = await fetchJSON("./src/carSearchOption.json");
+      const carSearchForm = new CarSearch(
+        ".carSearchForm",
+        optionsArray,
+        ".carSearchMoreOptionsButton",
+        additionalOptionsObject
+      );
+      carSearchForm.createCarSearchForm();
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
+  initialiseForm();
 };
 
 // TODO:create an universal intersection observer class which will take in arguments such as element
