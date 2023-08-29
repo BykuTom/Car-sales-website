@@ -2,7 +2,7 @@ import CarSlide from "./carSlides.js";
 import CarSearch from "./carSearch.js";
 import carousel from "./carousel.js";
 import NavigationButton from "./navBar.js";
-import fetchJSON from "./utilities.js";
+import /* { fetchJSON, toLocalStorage } */ * as utilities from "./utilities.js";
 
 const navigation = new NavigationButton(
   ".navLinks",
@@ -40,10 +40,12 @@ window.onload = function () {
 
   async function initialiseForm() {
     try {
-      const additionalOptionsObject = await fetchJSON(
+      const additionalOptionsObject = await utilities.fetchJSON(
         "./src/extendedCarSearchOptions.json"
       );
-      const optionsArray = await fetchJSON("./src/carSearchOption.json");
+      const optionsArray = await utilities.fetchJSON(
+        "./src/carSearchOption.json"
+      );
       const carSearchForm = new CarSearch(
         ".carSearchForm",
         optionsArray,
