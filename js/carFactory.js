@@ -11,7 +11,7 @@ export default class CarFactory {
   createCards() {
     this.JSONData.array.forEach((carData) => {
       const card = utilities.createElement("div", card);
-
+      card.setAttribute("key" = carData.id);
       const cardLink = utilities.createElement("a");
       cardLink.setAttribute("href", carData.link);
       card.appendChild(cardLink);

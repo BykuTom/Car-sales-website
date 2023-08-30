@@ -38,8 +38,20 @@ export function splitArray(array, startIndex, endIndex) {
   const remainingItems = array.slice(endIndex + 1);
   return { requestedItems, remainingItems };
 }
-export function toLocalStorage() {}
+export function toLocalStorage(data, key) {
+  const jsonData = JSON.stringify(data);
+  localStorage.setItem(key, jsonData);
+}
+export function getLocalStorageData(key) {
+  const storedData = localStorage.getItem(key);
+  if (storedData) {
+    const retrievedData = JSON.parse(storedData);
+    return retrievedData;
+  }
+  return undefined;
+}
 
+export function jsonToLocalStorage(jsonData) {}
 export function createElement(tagName, className, id) {
   const element = document.createElement(tagName);
   if (className) element.classList.add(className);
@@ -77,9 +89,15 @@ export function divideArray(inputArray, indexNumber) {
       break;
     }
   }
-
   return newArrayofArrays;
 }
+
+export function returnRandomKey() {
+  const randomValues = new Uint8Array(20);
+  crypto.getRandomValues(randomValues);
+  return Array.from(randomValues, (byte) => byte.toString(16)).join("");
+}
+
 /* export function toJSON(Item) {
   const jsonData = JSON.stringify((Item, null, 2));
 

@@ -1,65 +1,24 @@
-import CarSlide from "./carSlides.js";
-import CarSearch from "./carSearch.js";
-import carousel from "./carousel.js";
 import NavigationButton from "./navBar.js";
-import /* { fetchJSON, toLocalStorage } */ * as utilities from "./utilities.js";
+import { headerTemplate } from "./templates.js";
+import * as utilities from "./utilities.js";
 
-const navigation = new NavigationButton(
-  ".navLinks",
-  ".navBarExpandButton",
-  "main",
-  ".mainBlurMask"
-);
-
-window.onload = function () {
-  const firstSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageOne.png"
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.querySelector("body");
+  document.body.innerHTML += headerTemplate;
+  const template = document.querySelector(`#template`);
+  const clonedContent = template.content.cloneNode(true);
+  body.insertBefore(clonedContent, document.querySelector("main"));
+  const blurMask = utilities.createElement("div", "mainBlurMask");
+  document
+    .querySelector("main")
+    .insertBefore(blurMask, document.querySelector("main").firstChild);
+  const navigation = new NavigationButton(
+    ".navLinks",
+    ".navBarExpandButton",
+    "main",
+    ".mainBlurMask"
   );
-  const secondSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageTwo.png"
-  );
-  const thirdSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageThree.png"
-  );
-  firstSlide.createListItem("data-active");
-  secondSlide.createListItem();
-  thirdSlide.createListItem();
-  carousel("[data-carousel-button]");
-
-  async function initialiseForm() {
-    try {
-      const additionalOptionsObject = await utilities.fetchJSON(
-        "./src/extendedCarSearchOptions.json"
-      );
-      const optionsArray = await utilities.fetchJSON(
-        "./src/carSearchOption.json"
-      );
-      const carSearchForm = new CarSearch(
-        ".carSearchForm",
-        optionsArray,
-        ".carSearchMoreOptionsButton",
-        additionalOptionsObject
-      );
-      carSearchForm.createCarSearchForm();
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  }
-  initialiseForm();
-};
-
+});
 // TODO:create an universal intersection observer class which will take in arguments such as element
 // or elements and give them an animation that is determinded on treshold of visibility. This is going
 // to be its own file

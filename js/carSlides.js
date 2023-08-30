@@ -1,3 +1,5 @@
+import { returnRandomKey } from "./utilities.js";
+
 export default class CarSlide {
   constructor(carMake, carPrice, parentElementClass, link, imageLink) {
     this.carMake = carMake;
@@ -6,9 +8,7 @@ export default class CarSlide {
     this.link = link;
     this.imageLink = imageLink;
 
-    const randomValues = new Uint8Array(20);
-    crypto.getRandomValues(randomValues);
-    this.carID = Array.from(randomValues, (byte) => byte.toString(16)).join("");
+    this.carID = returnRandomKey();
   }
 
   createListItem(optionalData = null) {
