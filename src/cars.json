@@ -1,0 +1,458 @@
+[
+  {
+    "keyID": "d4276234-2c10-4ef7-b04b-2e9a38fca42d",
+    "recommended": true,
+    "data": {
+      "make": "BMW",
+      "model": "745i",
+      "price": "68000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "4.4L V8",
+      "numberOfDoors": "4",
+      "colour": "Black",
+      "taxband": "D",
+      "decription": "Luxury car with a powerful engine and a sleek design.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "f8fb8603-9baf-45e5-8c51-4afe8fcb22a7",
+    "recommended": true,
+    "data": {
+      "make": "Toyota",
+      "model": "Camry",
+      "price": "24000",
+      "body": "Sedan",
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Blue",
+      "taxband": "C",
+      "decription": "Fuel-efficient car with a spacious interior and modern features.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "93f73a0c-2446-4a4d-a88f-8a69abb5c06c",
+    "recommended": true,
+    "data": {
+      "make": "Ford",
+      "model": "Mustang",
+      "price": "39000",
+      "body": "Coupe",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "5.0L V8",
+      "numberOfDoors": "2",
+      "colour": "Red",
+      "taxband": "G",
+      "decription": "Classic American muscle car with a bold design and a powerful engine.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "446f1e04-b564-4922-b27b-6a4981b6bd32",
+    "recommended": true,
+    "data": {
+      "make": "Honda",
+      "model": "Civic",
+      "price": "20000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Silver",
+      "taxband": "B",
+      "decription": "Reliable car with excellent fuel efficiency and a comfortable ride.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "ef135f5c-8168-4d25-86a5-1852e1f2cacd",
+    "recommended": true,
+    "data": {
+      "make": "Mazda",
+      "model": "CX-5",
+      "price": "32000",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "C",
+      "decription": "Spacious SUV with a sleek design and advanced safety features.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "d95a2ed6-0ffe-4ec6-9761-a3e81c7ecf1b",
+    "recommended": false,
+    "data": {
+      "make": "Audi",
+      "model": "A4",
+      "price": "45000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Gray",
+      "taxband": "F",
+      "decription": "Luxury sedan with a stylish exterior and a comfortable interior.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "ce3d2744-1e1e-4911-bcd1-57f2045645ec",
+    "recommended": false,
+    "data": {
+      "make": "Jeep",
+      "model": "Wrangler",
+      "price": "36000",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.6L V6",
+      "numberOfDoors": "2",
+      "colour": "Green",
+      "taxband": "G",
+      "decription": "Off-road vehicle with exceptional performance and a rugged design.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "8f95d72c-1a37-4b72-9db5-e39df8a4ffd8",
+    "recommended": false,
+    "data": {
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "price": "52000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "White",
+      "taxband": "G",
+      "decription": "Luxury car with advanced features and a refined interior.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "78087075-67c5-44fd-ac72-eb95b9eb2a7f",
+    "recommended": false,
+    "data": {
+      "make": "Nissan",
+      "model": "Altima",
+      "price": "28000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Black",
+      "taxband": "E",
+      "decription": "Modern sedan with advanced safety technology and efficient performance.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "0e83f6de-363c-4a9c-a6c6-235f7efab8a9",
+    "recommended": false,
+    "data": {
+      "make": "Subaru",
+      "model": "Outback",
+      "price": "34000",
+      "body": "Wagon",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Silver",
+      "taxband": "E",
+      "decription": "Versatile and spacious wagon with excellent handling and all-wheel drive.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "3f78c2fc-1198-4938-9b4f-bf7e4b5a9af1",
+    "recommended": false,
+    "data": {
+      "make": "Lexus",
+      "model": "RX",
+      "price": "53000",
+      "body": "SUV",
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "engine": "3.5L V6",
+      "numberOfDoors": "5",
+      "colour": "Gray",
+      "taxband": "G",
+      "decription": "Luxury SUV with a hybrid engine and a spacious and comfortable interior.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "c6127110-b276-4790-8d23-5ea211f09ae3",
+    "recommended": false,
+    "data": {
+      "make": "Chevrolet",
+      "model": "Tahoe",
+      "price": "49000",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "5.3L V8",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "G",
+      "decription": "Full-size SUV with a powerful engine and a comfortable ride.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "5cef29c2-4c93-4d1c-9e8d-a6baeb36eaea",
+    "recommended": false,
+    "data": {
+      "make": "Tesla",
+      "model": "Model S",
+      "price": "85000",
+      "body": "Sedan",
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "engine": "Electric",
+      "numberOfDoors": "4",
+      "colour": "Red",
+      "taxband": "A",
+      "decription": "Luxury electric car with a long range and advanced technology features.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "e455f4d0-80e4-466a-bb2b-7b8c0a3efdef",
+    "recommended": false,
+    "data": {
+      "make": "Volvo",
+      "model": "XC90",
+      "price": "62000",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Gray",
+      "taxband": "G",
+      "decription": "Premium SUV with a sleek design and plenty of space for passengers and cargo.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "d19c1142-839a-43cd-b112-61d5a3c57057",
+    "recommended": false,
+    "data": {
+      "make": "Volkswagen",
+      "model": "Passat",
+      "price": "28000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Blue",
+      "taxband": "C",
+      "decription": "Comfortable and spacious sedan with a modern and stylish design.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "ed8375f5-53cc-4ae5-a232-679c7afde5e9",
+    "recommended": false,
+    "data": {
+      "make": "Porsche",
+      "model": "911",
+      "price": "10,000",
+      "body": "Coupe",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.0L 6-cylinder",
+      "numberOfDoors": "2",
+      "colour": "Silver",
+      "taxband": "G",
+      "decription": "Iconic sports car with a timeless design and uncompromising performance.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "b721d7a0-6079-44b8-82f5-bd5bd0880428",
+    "recommended": false,
+    "data": {
+      "make": "BMW",
+      "model": "X5",
+      "price": "63000",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.0L 6-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "G",
+      "decription": "Premium SUV with a powerful engine and advanced technology features.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "2a8c8a7e-7449-41b5-a6de-9b41a746d1a8",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "F-150",
+      "price": "42000",
+      "body": "Pickup",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "5.0L V8",
+      "numberOfDoors": "4",
+      "colour": "White",
+      "taxband": "G",
+      "decription": "Powerful and versatile pickup truck with a spacious and comfortable cabin.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "d105530a-b924-48e9-a9dc-2f487a427d29",
+    "recommended": false,
+    "data": {
+      "make": "Infiniti",
+      "model": "Q50",
+      "price": "40000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.0L V6",
+      "numberOfDoors": "4",
+      "colour": "Red",
+      "taxband": "G",
+      "decription": "Luxury sedan with a powerful engine and a refined and comfortable interior.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "a78e73d1-ef1c-4f5f-891d-7a2b84e9431c",
+    "recommended": false,
+    "data": {
+      "make": "Acura",
+      "model": "TLX",
+      "price": "36000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.4L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Gray",
+      "taxband": "B",
+      "decription": "Sophisticated and sporty sedan with impressive handling and performance.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "2fd1acfa-89d1-4ef6-987b-76f6ec71e5b0",
+    "recommended": false,
+    "data": {
+      "make": "Dodge",
+      "model": "Charger",
+      "price": "35000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.6L V6",
+      "numberOfDoors": "4",
+      "colour": "Black",
+      "taxband": "G",
+      "decription": "A classic American muscle car with a sleek and modern design.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "0a5e66d0-b89b-4d22-9a0d-e8faf4404436",
+    "recommended": false,
+    "data": {
+      "make": "GMC",
+      "model": "Sierra",
+      "price": "49000",
+      "body": "Pickup",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "5.3L V8",
+      "numberOfDoors": "4",
+      "colour": "Blue",
+      "taxband": "G",
+      "decription": "Rugged and reliable pickup truck with impressive performance capabilities.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "f2cbfd5f-5292-4260-bfd6-fd6a04430ad8",
+    "recommended": false,
+    "data": {
+      "make": "Volvo",
+      "model": "S60",
+      "price": "40000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "White",
+      "taxband": "F",
+      "decription": "Luxury sedan with advanced safety features and elegant Scandinavian design.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  },
+  {
+    "keyID": "51d6262e-58cc-41a2-be6a-a27df90fd760",
+    "recommended": false,
+    "data": {
+      "make": "Kia",
+      "model": "Optima",
+      "price": "25000",
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "2.4L 4-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Silver",
+      "taxband": "C",
+      "decription": "Stylish and practical sedan with a spacious and comfortable interior.",
+      "imageURLs": [],
+      "mainImageURL": []
+    }
+  }
+]

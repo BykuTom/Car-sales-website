@@ -1,13 +1,18 @@
 import NavigationButton from "./navBar.js";
-import { headerTemplate } from "./templates.js";
+import { headerTemplate, footerTemplate } from "./templates.js";
 import * as utilities from "./utilities.js";
+import dataLoad from "./dataLoader.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.querySelector("body");
   document.body.innerHTML += headerTemplate;
+  document.body.innerHTML += footerTemplate;
   const template = document.querySelector(`#template`);
-  const clonedContent = template.content.cloneNode(true);
-  body.insertBefore(clonedContent, document.querySelector("main"));
+  const footertemplate = document.querySelector(`#footerTemplate`);
+  const clonedHeader = template.content.cloneNode(true);
+  const clonedFooter = footertemplate.content.cloneNode(true);
+  body.insertBefore(clonedHeader, document.querySelector("main"));
+  body.appendChild(clonedFooter);
   const blurMask = utilities.createElement("div", "mainBlurMask");
   document
     .querySelector("main")
@@ -18,6 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "main",
     ".mainBlurMask"
   );
+
+  /*   const allDataArray = async function () {
+    return await dataLoad("./src/cars.json");
+  }; */
+
+  (async () => {
+    const allDataArray = await dataLoad("./src/cars.json");
+    console.log(allDataArray);
+  })();
 });
 // TODO:create an universal intersection observer class which will take in arguments such as element
 // or elements and give them an animation that is determinded on treshold of visibility. This is going
