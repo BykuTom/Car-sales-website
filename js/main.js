@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector("main")
     .insertBefore(blurMask, document.querySelector("main").firstChild);
+  const elementArray = utilities.queryElements(
+    "body",
+    "header",
+    "footer",
+    "main"
+  );
+  console.log(elementArray);
   const navigation = new NavigationButton(
     ".navLinks",
     ".navBarExpandButton",

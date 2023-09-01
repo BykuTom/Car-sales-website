@@ -24,7 +24,24 @@ function jsonToArray(JSON) {
 
   return array;
 } */
+//TODO: Try rewriting this to objects:
+export function queryElements(...elements) {
+  const queriedElements = {};
 
+  elements.forEach((element) => {
+    queriedElements[element] = document.querySelector(element);
+  });
+
+  if (Object.keys(queriedElements).length === 0) return null;
+  return queriedElements;
+}
+
+export function listenForQueries(queryString) {
+  const queryParams = new URLSearchParams(queryString);
+  if (queryParams.size === 0) {
+    return null;
+  } else return queryParams;
+}
 export async function fetchJSON(jsonURL) {
   return fetch(jsonURL)
     .then((response) => response.json())
