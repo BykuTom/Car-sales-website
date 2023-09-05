@@ -1,1 +1,133 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+div.container {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+div.card {
+  position: relative;
+  background-color: var(--colour-main);
+  border-radius: 1% 1% 2% 2% / 1% 1% 2% 2%;
+  /* border-bottom: 2px solid var(--colour-secondary); */
+}
+div.card::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  transform: translate(4px, 6px);
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
+  filter: blur(10px);
+}
+div.card a {
+  position: absolute;
+  inset: 0;
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.card-top-car-names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.card-top-car-names h1 {
+  color: var(--colour-secondary);
+  font-size: var(--font-lrg);
+}
+.card-top-car-names h2 {
+  font-weight: 400;
+}
+.card-top-price {
+  text-align: center;
+}
+.card-top-price h2 {
+  font-size: var(--font-med);
+  font-weight: 500;
+}
+.card-top-price h3 {
+  font-size: var(--font-sm);
+  font-weight: 300;
+}
+div.card-content {
+  width: 100%;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+div.card-content img {
+  width: 100%;
+}
+div.card-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 1rem 0;
+}
+.pageSettings {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 2px solid var(--colour-primary);
+}
+
+select {
+  padding: 0.5rem;
+  width: min-content;
+  padding-right: 3rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--colour-primary);
+  background: var(--colour-main);
+  color: var(--colour-secondary);
+  font-weight: 300;
+  font-family: var(--font-family-default);
+  cursor: pointer;
+  position: relative;
+}
+select {
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--colour-secondary) 50%
+    ),
+    linear-gradient(135deg, var(--colour-secondary) 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  color: var(--colour-secondary);
+}
+select:focus {
+  background-image: linear-gradient(
+      45deg,
+      var(--colour-secondary) 50%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, transparent 50%, var(--colour-secondary) 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: var(--colour-secondary);
+  outline: 0;
+}
+select option {
+  font-weight: normal;
+  display: block;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  padding: 0.25rem;
+}
+button {
+  font-size: var(--font-med);
+  width: min-content;
+  padding: 0.5rem;
+}

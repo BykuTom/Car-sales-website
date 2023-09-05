@@ -15,7 +15,9 @@
       "taxband": "D",
       "decription": "Luxury car with a powerful engine and a sleek design.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -34,7 +36,9 @@
       "taxband": "C",
       "decription": "Fuel-efficient car with a spacious interior and modern features.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -53,7 +57,9 @@
       "taxband": "G",
       "decription": "Classic American muscle car with a bold design and a powerful engine.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -72,7 +78,9 @@
       "taxband": "B",
       "decription": "Reliable car with excellent fuel efficiency and a comfortable ride.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -91,7 +99,9 @@
       "taxband": "C",
       "decription": "Spacious SUV with a sleek design and advanced safety features.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -110,7 +120,9 @@
       "taxband": "F",
       "decription": "Luxury sedan with a stylish exterior and a comfortable interior.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -129,7 +141,9 @@
       "taxband": "G",
       "decription": "Off-road vehicle with exceptional performance and a rugged design.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -148,7 +162,9 @@
       "taxband": "G",
       "decription": "Luxury car with advanced features and a refined interior.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -167,7 +183,9 @@
       "taxband": "E",
       "decription": "Modern sedan with advanced safety technology and efficient performance.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -186,7 +204,9 @@
       "taxband": "E",
       "decription": "Versatile and spacious wagon with excellent handling and all-wheel drive.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -205,7 +225,9 @@
       "taxband": "G",
       "decription": "Luxury SUV with a hybrid engine and a spacious and comfortable interior.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -224,7 +246,9 @@
       "taxband": "G",
       "decription": "Full-size SUV with a powerful engine and a comfortable ride.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -243,7 +267,9 @@
       "taxband": "A",
       "decription": "Luxury electric car with a long range and advanced technology features.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -262,7 +288,9 @@
       "taxband": "G",
       "decription": "Premium SUV with a sleek design and plenty of space for passengers and cargo.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -281,7 +309,9 @@
       "taxband": "C",
       "decription": "Comfortable and spacious sedan with a modern and stylish design.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -300,7 +330,9 @@
       "taxband": "G",
       "decription": "Iconic sports car with a timeless design and uncompromising performance.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -319,7 +351,9 @@
       "taxband": "G",
       "decription": "Premium SUV with a powerful engine and advanced technology features.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -338,7 +372,9 @@
       "taxband": "G",
       "decription": "Powerful and versatile pickup truck with a spacious and comfortable cabin.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -357,7 +393,9 @@
       "taxband": "G",
       "decription": "Luxury sedan with a powerful engine and a refined and comfortable interior.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -376,7 +414,9 @@
       "taxband": "B",
       "decription": "Sophisticated and sporty sedan with impressive handling and performance.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -395,7 +435,9 @@
       "taxband": "G",
       "decription": "A classic American muscle car with a sleek and modern design.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -414,7 +456,9 @@
       "taxband": "G",
       "decription": "Rugged and reliable pickup truck with impressive performance capabilities.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -433,7 +477,9 @@
       "taxband": "F",
       "decription": "Luxury sedan with advanced safety features and elegant Scandinavian design.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   },
   {
@@ -452,7 +498,9 @@
       "taxband": "C",
       "decription": "Stylish and practical sedan with a spacious and comfortable interior.",
       "imageURLs": [],
-      "mainImageURL": []
+      "mainImageURL": "./img/ExampleCards/FortTransit.jpg",
+      "mileage": "10000",
+      "year": "2017"
     }
   }
 ]

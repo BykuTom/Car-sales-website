@@ -1,0 +1,22 @@
+main div.infobox {
+  display: flex;
+  flex-direction: column;
+}
+
+main div.infobox div.makeModelBox {
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  gap: 3rem;
+}
+
+main div.yearMilageFuelBodyBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.25rem;
+
+  padding: 0 1rem;
+  text-align: center;
+}
+main div.priceFinanceBox {
+  padding: 1rem;
+}

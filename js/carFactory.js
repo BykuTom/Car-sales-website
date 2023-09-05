@@ -1,19 +1,19 @@
 import * as utilities from "./utilities.js";
 
 export default class CarFactory {
-  constructor(JSONData, itemsToBeLoaded, cardContainer) {
-    this.JSONData = JSONData;
+  constructor(data, itemsToBeLoaded, cardContainer) {
+    this.data = data;
     this.itemsToBeLoaded = itemsToBeLoaded;
     this.cardContainer = document.querySelector(cardContainer);
   }
   cards = [];
 
   createCards() {
-    this.JSONData.array.forEach((carData) => {
-      const card = utilities.createElement("div", card);
-      card.setAttribute("key" = carData.id);
+    this.data.forEach((car) => {
+      const card = utilities.createElement("div", "card");
+      card.setAttribute("keyID", car.keyID);
       const cardLink = utilities.createElement("a");
-      cardLink.setAttribute("href", carData.link);
+      cardLink.setAttribute("href", `car.html?id=${car.keyID}`);
       card.appendChild(cardLink);
 
       const cardTop = utilities.createElement("div", "card-top");
@@ -23,40 +23,51 @@ export default class CarFactory {
         "card-top-car-names"
       );
       cardTopCarNames.appendChild(
-        utilities.createTextElement("h1", carData.make)
+        utilities.createTextElement("h1", car.data.make)
       );
       cardTopCarNames.appendChild(
-        utilities.createTextElement("h2", carData.model)
+        utilities.createTextElement("h2", car.data.model)
       );
       cardTop.appendChild(cardTopCarNames);
 
       const cardTopPrice = utilities.createElement("div", "card-top-price");
       cardTopPrice.appendChild(
-        utilities.createTextElement("h2", carData.price)
+        utilities.createTextElement("h2", `£${car.data.price}`)
       );
       cardTopPrice.appendChild(
-        utilities.createTextElement("h3", carData.financePrice)
+        utilities.createTextElement(
+          "h3",
+          `From £${Math.ceil(car.data.price / 48)} a month!`
+        )
       );
 
       cardTop.appendChild(cardTopPrice);
       card.appendChild(cardTop);
 
-      const cardContent = utilities.createTextElement("div", "card-content");
+      const cardContent = utilities.createElement("div", "card-content");
       cardContent.appendChild(
-        utilities.createImageElement(carData.imageURL, `${carData.make} image`)
+        utilities.createImageElement(
+          car.data.mainImageURL,
+          `${car.data.make} image`
+        )
       );
       card.appendChild(cardContent);
 
       const cardBottom = utilities.createElement("div", "card-bottom");
+      // TODO: Causes error message of 404 not found because its empty, go fill it up!
       cardBottom.appendChild(utilities.createImageElement(/* gear icon */));
       cardBottom.appendChild(utilities.createImageElement(/* body icon */));
       cardBottom.appendChild(utilities.createImageElement(/* fuel icon */));
       cardBottom.appendChild(utilities.createImageElement(/* engine icon */));
 
-      cardBottom.appendChild(utilities.createTextElement("h4", carData.gear));
-      cardBottom.appendChild(utilities.createTextElement("h4", carData.body));
-      cardBottom.appendChild(utilities.createTextElement("h4", carData.fuel));
-      cardBottom.appendChild(utilities.createTextElement("h4", carData.engine));
+      cardBottom.appendChild(
+        utilities.createTextElement("h4", car.data.transmission)
+      );
+      cardBottom.appendChild(utilities.createTextElement("h4", car.data.body));
+      cardBottom.appendChild(utilities.createTextElement("h4", car.data.fuel));
+      cardBottom.appendChild(
+        utilities.createTextElement("h4", car.data.engine)
+      );
 
       card.appendChild(cardBottom);
       this.cards.push(card);
@@ -64,9 +75,9 @@ export default class CarFactory {
   }
 
   loadCards(pageSize, pageNumber) {
-    const data = utilities.divideArray(cards, pageSize);
-
-    data[pageNumber - 1].forEach((card) => {
+    const dataCards = utilities.divideArray(this.cards, pageSize);
+    console.log("here");
+    dataCards[pageNumber - 1].forEach((card) => {
       this.cardContainer.appendChild(card);
     });
   }

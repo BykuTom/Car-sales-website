@@ -104,3 +104,35 @@ export const carouselTemplate = `<template id="carouselTemplate"><section class=
   <ul data-slides class="carousel"></ul>
 </div>
 </section></template>`;
+export const carCardTemplate = `<template id="carouselTemplate"><section class="carCard" keyID="">
+<a href=""></a>
+<div class="infobox">
+  <div class="makeModel">
+    <h1 class="make"></h1>
+    <h2 class="model"></h2>
+  </div>
+  <div class="PriceFinance">
+    <h2 class="price"></h2>
+    <h3 class="finance"></h3>
+  </div>
+</div>
+<div class="carImageBox"><img src="" alt="An Image" /></div>
+<div class="moreInfoBox">
+  <div class="gearbox">
+    <h3>Gear Box</h3>
+    <h4 class="gear">Placeholder</h4>
+  </div>
+  <div class="body">
+    <h3>Body</h3>
+    <h4 class="gear">Placeholder</h4>
+  </div>
+  <div class="fuel">
+    <h3>Fuel Type</h3>
+    <h4 class="gear">Placeholder</h4>
+  </div>
+  <div class="engine">
+    <h3>Engine Size</h3>
+    <h4 class="gear">Placeholder</h4>
+  </div>
+</div>
+</section></template>`;

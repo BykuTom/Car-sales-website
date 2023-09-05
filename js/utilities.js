@@ -24,15 +24,21 @@ function jsonToArray(JSON) {
 
   return array;
 } */
-//TODO: Try rewriting this to objects:
-export function queryElements(...elements) {
+
+export function queryElements(isClass, isId, ...elements) {
   const queriedElements = {};
 
   elements.forEach((element) => {
-    queriedElements[element] = document.querySelector(element);
+    if (isClass) {
+      queriedElements[element] = document.querySelector(`.${element}`);
+      console.log(document.querySelector(`.${element}`));
+    } else if (isId) {
+      queriedElements[element] = document.querySelector(`#${element}`);
+    } else {
+      queriedElements[element] = document.querySelector(element);
+    }
   });
 
-  if (Object.keys(queriedElements).length === 0) return null;
   return queriedElements;
 }
 

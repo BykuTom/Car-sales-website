@@ -18,11 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector("main")
     .insertBefore(blurMask, document.querySelector("main").firstChild);
   const elementArray = utilities.queryElements(
+    false,
+    false,
     "body",
     "header",
     "footer",
     "main"
   );
+  template.remove();
+  footertemplate.remove();
   console.log(elementArray);
   const navigation = new NavigationButton(
     ".navLinks",

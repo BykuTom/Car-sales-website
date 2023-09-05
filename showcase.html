@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Showcase</title>
     <link rel="stylesheet" href="./css/showcase.css" />
-    <script type="module" src="./js/main.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,9 +13,33 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/showcase.js" defer></script>
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <main></main>
+    <main>
+      <section class="options-menu">
+        <form action="" id="carSearchForm" class="carSearchForm"></form>
+        <div class="pageSettings">
+          <select name="page-size-selector" id="pageSize">
+            <option value="16">16</option>
+            <option value="24">24</option>
+            <option value="32">32</option>
+            <option value="48">48</option>
+            <option value="64">64</option>
+          </select>
+          <select name="sort-by-selector" id="SortBy">
+            <option value="default">Sort By</option>
+            <option value="priceHighest">price from highest</option>
+            <option value="priceLowest">price from lowest</option>
+          </select>
+        </div>
+      </section>
+      <div class="container"></div>
+      <nav class="pageButtons">
+        <button page-prior><i class="fa-solid fa-arrow-left-long"></i></button>
+        <button page-next><i class="fa-solid fa-arrow-right-long"></i></button>
+      </nav>
+    </main>
   </body>
 </html>
