@@ -126,8 +126,30 @@ select option {
   text-wrap: nowrap;
   padding: 0.25rem;
 }
+.pageButtons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.buttonContainer {
+  display: inherit;
+  gap: inherit;
+  justify-content: inherit;
+}
 button {
   font-size: var(--font-med);
   width: min-content;
-  padding: 0.5rem;
+  padding: 0.6rem;
+  outline: none;
+  border: 2px solid var(--colour-primary);
+  border-radius: 0.2rem;
+  background-color: var(--colour-primary);
+  color: black;
+}
+button:hover {
+  background-color: dimgray;
+}
+button.active {
+  background-color: gray;
 }

@@ -7,6 +7,7 @@ export default class CarFactory {
     this.cardContainer = document.querySelector(cardContainer);
   }
   cards = [];
+  dataCards = [];
 
   createCards() {
     this.data.forEach((car) => {
@@ -73,11 +74,15 @@ export default class CarFactory {
       this.cards.push(card);
     });
   }
-
-  loadCards(pageSize, pageNumber) {
-    const dataCards = utilities.divideArray(this.cards, pageSize);
-    console.log("here");
-    dataCards[pageNumber - 1].forEach((card) => {
+  setItemsPerPage(itemsPerPage) {
+    this.dataCards = utilities.divideArray(this.cards, itemsPerPage);
+  }
+  getNumberOfPages() {
+    return this.dataCards.length;
+  }
+  loadCards(pageNumber) {
+    console.log(this.dataCards[pageNumber - 1]);
+    this.dataCards[pageNumber - 1].forEach((card) => {
       this.cardContainer.appendChild(card);
     });
   }

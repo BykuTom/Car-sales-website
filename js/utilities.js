@@ -25,6 +25,24 @@ function jsonToArray(JSON) {
   return array;
 } */
 
+export function updateQueryParameters(currentURL, ...paramValuePairs) {
+  try {
+    const url = new URL(currentURL);
+    paramValuePairs.forEach((paramValuePair) => {
+      for (const key in paramValuePair) {
+        if (paramValuePair.hasOwnProperty(key)) {
+          const value = paramValuePair[key];
+          url.searchParams.set(key, value); // Use key and value here
+        }
+      }
+    });
+    /* window.location.href = url.toString(); */
+    history.pushState("null", "null", url.toString());
+  } catch (error) {
+    console.error("Error updating query parameters:", error);
+  }
+}
+
 export function queryElements(isClass, isId, ...elements) {
   const queriedElements = {};
 
