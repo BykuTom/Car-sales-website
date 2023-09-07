@@ -14,7 +14,7 @@ export const headerTemplate = `
     </li>
     <li>
       <i class="icon fa-regular fa-comment-dots"></i
-      ><a href="#">Contact Us</a>
+      ><a href="./showroom.html">Contact Us</a>
     </li>
     <li>
       <span>Showroom</span>
