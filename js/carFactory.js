@@ -81,10 +81,14 @@ export default class CarFactory {
     return this.dataCards.length;
   }
   loadCards(pageNumber) {
-    console.log(this.dataCards[pageNumber - 1]);
     this.dataCards[pageNumber - 1].forEach((card) => {
       this.cardContainer.appendChild(card);
     });
+  }
+  getCardElements(pageNumber) {
+    /* console.log(pageNumber);
+    console.log(this.dataCards[pageNumber - 1]); */
+    return this.dataCards[pageNumber - 1];
   }
 }
 

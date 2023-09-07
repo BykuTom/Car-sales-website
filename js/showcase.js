@@ -9,10 +9,13 @@ window.onload = function () {
     let itemsToLoad = 16;
     let currentPage = 1;
     let numberOfPages = 1;
+    let sort = null;
+    const container = document.querySelector(".container");
     const pageSizeSelect = document.querySelector("#pageSize");
     const carFactory = new CarFactory(data, itemsToLoad, ".container");
     carFactory.createCards();
-
+    let cardElements = [];
+    let sortedElements = [];
     function updatePageButtons() {
       document.querySelector(".buttonContainer").innerHTML = "";
 
@@ -28,9 +31,52 @@ window.onload = function () {
           });
           checkForQueries();
         });
-
         document.querySelector(".buttonContainer").appendChild(pageButton);
-        //insertBefore(pageButton, document.querySelector(".next"));
+      }
+    }
+    function parsePrice(textContent) {
+      const cleanedTextContent = textContent.trim().substring(1);
+      return parseInt(cleanedTextContent, 10);
+    }
+
+    function sortCardElements(sort) {
+      if (sort === "highest") {
+        sortedElements = cardElements.sort((a, b) => {
+          const priceA = parsePrice(
+            a.querySelector(".card-top-price h2").textContent,
+            10
+          );
+          const priceB = parsePrice(
+            b.querySelector(".card-top-price h2").textContent,
+            10
+          );
+
+          return priceB - priceA;
+        });
+        sortedElements.forEach((card) => {
+          container.appendChild(card);
+        });
+      } else if (sort === "lowest") {
+        sortedElements = cardElements.sort((a, b) => {
+          const priceA = parsePrice(
+            a.querySelector(".card-top-price h2").textContent,
+            10
+          );
+          const priceB = parsePrice(
+            b.querySelector(".card-top-price h2").textContent,
+            10
+          );
+
+          return priceA - priceB;
+        });
+        sortedElements.forEach((card) => {
+          container.appendChild(card);
+        });
+      } else {
+        console.log("else");
+        cardElements.forEach((card) => {
+          container.appendChild(card);
+        });
       }
     }
     function checkForQueries() {
@@ -68,10 +114,13 @@ window.onload = function () {
           page: currentPage,
         });
       }
-      document.querySelector(".container").innerHTML = "";
-      carFactory.loadCards(currentPage);
+      container.innerHTML = "";
+      cardElements = carFactory.getCardElements(currentPage);
       updatePageButtons();
+      /* cardElements = container.querySelectorAll(".card"); */
+      sortCardElements(sort);
     }
+
     checkForQueries();
 
     pageSizeSelect.addEventListener("change", () => {
@@ -87,12 +136,20 @@ window.onload = function () {
       checkForQueries();
     });
 
-    /* window.onpopstate = function (event) {
+    const sortSelector = document.querySelector("#SortBy");
+
+    sortSelector.addEventListener("change", () => {
+      sort =
+        sortSelector.options[sortSelector.selectedIndex].getAttribute("value");
+      checkForQueries();
+    });
+  })();
+};
+
+/* window.onpopstate = function (event) {
       checkForQueries();
       console.log("wokrs?");
     }; */
-  })();
-};
 
 /* function lookForQuery() {
   const queryString = window.location.search;
