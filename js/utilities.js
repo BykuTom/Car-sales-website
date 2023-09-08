@@ -24,8 +24,16 @@ function jsonToArray(JSON) {
 
   return array;
 } */
+export function parsePrice(textContent) {
+  const cleanedTextContent = textContent.trim().substring(1);
+  return parseInt(cleanedTextContent, 10);
+}
 
-export function updateQueryParameters(currentURL, ...paramValuePairs) {
+export function updateQueryParameters(
+  currentURL,
+  loadPage,
+  ...paramValuePairs
+) {
   try {
     const url = new URL(currentURL);
     paramValuePairs.forEach((paramValuePair) => {
@@ -36,7 +44,9 @@ export function updateQueryParameters(currentURL, ...paramValuePairs) {
         }
       }
     });
-    /* window.location.href = url.toString(); */
+    if (loadPage) {
+      window.location.href = url.toString();
+    }
     history.pushState("null", "null", url.toString());
   } catch (error) {
     console.error("Error updating query parameters:", error);

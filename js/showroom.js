@@ -15,7 +15,8 @@ window.onload = function () {
     const carFactory = new CarFactory(data, itemsToLoad, ".container");
     carFactory.createCards();
     let cardElements = [];
-    let sortedElements = [];
+    let filterParams = {};
+
     function updatePageButtons() {
       document.querySelector(".buttonContainer").innerHTML = "";
 
@@ -26,7 +27,7 @@ window.onload = function () {
 
         pageButton.addEventListener("click", () => {
           currentPage = parseInt(pageButton.getAttribute("value"));
-          utilities.updateQueryParameters(window.location.href, {
+          utilities.updateQueryParameters(window.location.href, undefined, {
             page: currentPage,
           });
           checkForQueries();
@@ -34,12 +35,8 @@ window.onload = function () {
         document.querySelector(".buttonContainer").appendChild(pageButton);
       }
     }
-    function parsePrice(textContent) {
-      const cleanedTextContent = textContent.trim().substring(1);
-      return parseInt(cleanedTextContent, 10);
-    }
 
-    function sortCardElements(sort) {
+    /* function sortCardElements(sort) {
       if (sort === "highest") {
         sortedElements = cardElements.sort((a, b) => {
           const priceA = parsePrice(
@@ -78,26 +75,47 @@ window.onload = function () {
           container.appendChild(card);
         });
       }
+    } */
+    function loadCards() {
+      carFactory.sortCards(sort);
+      carFactory.setItemsPerPage(itemsToLoad);
+
+      numberOfPages = carFactory.getNumberOfPages();
+
+      if (currentPage > numberOfPages) {
+        currentPage = numberOfPages;
+        utilities.updateQueryParameters(window.location.href, undefined, {
+          page: currentPage,
+        });
+      }
+      container.innerHTML = "";
+
+      cardElements = carFactory.getCardElements(currentPage);
+
+      updatePageButtons();
+      cardElements.forEach((card) => {
+        container.appendChild(card);
+      });
     }
     function checkForQueries() {
       let queryString = window.location.search;
       let queryParams = utilities.listenForQueries(queryString);
 
       if (!queryParams) {
-        utilities.updateQueryParameters(window.location.href, {
+        utilities.updateQueryParameters(window.location.href, undefined, {
           page: currentPage,
         });
-        utilities.updateQueryParameters(window.location.href, {
+        utilities.updateQueryParameters(window.location.href, undefined, {
           items: 16,
         });
       } else {
-        if (!queryParams.get("page")) {
-          utilities.updateQueryParameters(window.location.href, {
+        if (!queryParams.get("page") || parseInt(queryParams.get("page")) < 1) {
+          utilities.updateQueryParameters(window.location.href, undefined, {
             page: currentPage,
           });
         }
         if (!queryParams.get("items")) {
-          utilities.updateQueryParameters(window.location.href, {
+          utilities.updateQueryParameters(window.location.href, undefined, {
             items: 16,
           });
         }
@@ -105,20 +123,21 @@ window.onload = function () {
         queryParams = utilities.listenForQueries(queryString);
         currentPage = parseInt(queryParams.get("page"));
         itemsToLoad = parseInt(queryParams.get("items"));
+        if (queryParams.get("make")) {
+          filterParams.make = queryParams.get("make");
+        }
+        if (queryParams.get("model")) {
+          filterParams.model = queryParams.get("model");
+        }
+        if (queryParams.get("minPrice")) {
+          filterParams.minPrice = parseInt(queryParams.get("minPrice"));
+        }
+        if (queryParams.get("maxPrice")) {
+          filterParams.maxPrice = parseInt(queryParams.get("maxPrice"));
+        }
+        carFactory.filterCards(filterParams);
       }
-      carFactory.setItemsPerPage(itemsToLoad);
-      numberOfPages = carFactory.getNumberOfPages();
-      if (currentPage > numberOfPages) {
-        currentPage = numberOfPages;
-        utilities.updateQueryParameters(window.location.href, {
-          page: currentPage,
-        });
-      }
-      container.innerHTML = "";
-      cardElements = carFactory.getCardElements(currentPage);
-      updatePageButtons();
-      /* cardElements = container.querySelectorAll(".card"); */
-      sortCardElements(sort);
+      loadCards();
     }
 
     checkForQueries();
@@ -129,7 +148,7 @@ window.onload = function () {
           "value"
         )
       );
-      utilities.updateQueryParameters(window.location.href, {
+      utilities.updateQueryParameters(window.location.href, undefined, {
         items: itemsToLoad,
       });
 
@@ -158,7 +177,7 @@ window.onload = function () {
     const currentPage = parseInt(queryParams.get("page")[0]);
     carFactory.loadCards(itemsToLoad, currentPage);
   } else {
-    utilities.updateQueryParameters(window.location.href, {
+    utilities.updateQueryParameters(window.location.href, undefined, {
       page: currentPage,
     });
     carFactory.loadCards(itemsToLoad, currentPage);
@@ -189,7 +208,7 @@ updatePages();
 
 if (currentPage >= numberOfPages) {
   currentPage = numberOfPages;
-  utilities.updateQueryParameters(window.location.href, {
+  utilities.updateQueryParameters(window.location.href, undefined, {
     page: currentPage,
   });
 }
@@ -201,7 +220,7 @@ pageSizeSelect.addEventListener("change", () => {
       "value"
     )
   );
-  utilities.updateQueryParameters(window.location.href, {
+  utilities.updateQueryParameters(window.location.href, undefined, {
     page: currentPage,
   });
   updatePages();

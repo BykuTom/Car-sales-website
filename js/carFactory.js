@@ -7,6 +7,8 @@ export default class CarFactory {
     this.cardContainer = document.querySelector(cardContainer);
   }
   cards = [];
+  filteredCards = [];
+  sortedCards = [];
   dataCards = [];
 
   createCards() {
@@ -28,6 +30,9 @@ export default class CarFactory {
       );
       cardTopCarNames.appendChild(
         utilities.createTextElement("h2", car.data.model)
+      );
+      cardTopCarNames.appendChild(
+        utilities.createTextElement("h3", car.data.year)
       );
       cardTop.appendChild(cardTopCarNames);
 
@@ -57,12 +62,16 @@ export default class CarFactory {
       const cardBottom = utilities.createElement("div", "card-bottom");
       // TODO: Causes error message of 404 not found because its empty, go fill it up!
       cardBottom.appendChild(utilities.createImageElement(/* gear icon */));
+      cardBottom.appendChild(utilities.createImageElement(/* mileage icon */));
       cardBottom.appendChild(utilities.createImageElement(/* body icon */));
       cardBottom.appendChild(utilities.createImageElement(/* fuel icon */));
       cardBottom.appendChild(utilities.createImageElement(/* engine icon */));
 
       cardBottom.appendChild(
         utilities.createTextElement("h4", car.data.transmission)
+      );
+      cardBottom.appendChild(
+        utilities.createTextElement("h4", car.data.mileage)
       );
       cardBottom.appendChild(utilities.createTextElement("h4", car.data.body));
       cardBottom.appendChild(utilities.createTextElement("h4", car.data.fuel));
@@ -73,22 +82,103 @@ export default class CarFactory {
       card.appendChild(cardBottom);
       this.cards.push(card);
     });
+    //this.copiedCards = this.cards.slice();
+  }
+  filterCards(filter) {
+    let cardsToFilter = this.cards.slice();
+
+    if (Object.keys(filter).length === 0) {
+      // No filter criteria, return all cards
+      this.filteredCards = cardsToFilter;
+      return;
+    }
+
+    if (filter.make) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card.querySelector(".card-top-car-names h1").textContent ===
+          filter.make
+        );
+      });
+    }
+
+    if (filter.model) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card.querySelector(".card-top-car-names h2").textContent ===
+          filter.model
+        );
+      });
+    }
+
+    if (filter.minPrice) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        const cardPrice = utilities.parsePrice(
+          card.querySelector(".card-top-price h2").textContent,
+          10
+        );
+        return filter.minPrice <= cardPrice;
+      });
+    }
+
+    if (filter.maxPrice) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        const cardPrice = utilities.parsePrice(
+          card.querySelector(".card-top-price h2").textContent,
+          10
+        );
+        return filter.maxPrice >= cardPrice;
+      });
+    }
+
+    this.filteredCards = cardsToFilter;
+  }
+  sortCards(sort) {
+    let copiedCards = this.filteredCards.slice();
+    if (sort === "highest") {
+      this.sortedCards = copiedCards.sort((a, b) => {
+        const priceA = utilities.parsePrice(
+          a.querySelector(".card-top-price h2").textContent,
+          10
+        );
+        const priceB = utilities.parsePrice(
+          b.querySelector(".card-top-price h2").textContent,
+          10
+        );
+
+        return priceB - priceA;
+      });
+    } else if (sort === "lowest") {
+      this.sortedCards = copiedCards.sort((a, b) => {
+        const priceA = utilities.parsePrice(
+          a.querySelector(".card-top-price h2").textContent,
+          10
+        );
+        const priceB = utilities.parsePrice(
+          b.querySelector(".card-top-price h2").textContent,
+          10
+        );
+
+        return priceA - priceB;
+      });
+    } else {
+      this.sortedCards = this.filteredCards.slice();
+    }
   }
   setItemsPerPage(itemsPerPage) {
-    this.dataCards = utilities.divideArray(this.cards, itemsPerPage);
+    this.dataCards = utilities.divideArray(this.sortedCards, itemsPerPage);
   }
   getNumberOfPages() {
     return this.dataCards.length;
+  }
+
+  getCardElements(pageNumber) {
+    return this.dataCards[pageNumber - 1];
   }
   loadCards(pageNumber) {
     this.dataCards[pageNumber - 1].forEach((card) => {
       this.cardContainer.appendChild(card);
     });
-  }
-  getCardElements(pageNumber) {
-    /* console.log(pageNumber);
-    console.log(this.dataCards[pageNumber - 1]); */
-    return this.dataCards[pageNumber - 1];
   }
 }
 

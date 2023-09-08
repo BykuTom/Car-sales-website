@@ -63,7 +63,7 @@ div.card-content img {
 }
 div.card-bottom {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
   padding: 1rem 0;
 }

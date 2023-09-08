@@ -1,3 +1,5 @@
+import * as utilities from "./utilities.js";
+
 export default class CarSearch {
   constructor(
     FormElementClass,
@@ -170,6 +172,18 @@ export default class CarSearch {
         } else {
           console.log(formData);
           //TODO: This is where the magic happens for query paramenters
+          let parameters = { page: 1, items: 16 };
+
+          for (const key in formData) {
+            if (formData.hasOwnProperty(key) && formData[key] !== "") {
+              parameters[key] = formData[key];
+            }
+          }
+          utilities.updateQueryParameters(
+            `${window.location.origin}/showroom.html`,
+            true,
+            { ...parameters }
+          );
         }
       } catch (error) {
         console.error(error);
