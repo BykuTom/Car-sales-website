@@ -87,8 +87,7 @@ export const footerTemplate = `<template id="footerTemplate">
       </section>
     </footer>
 </template>`;
-export const carouselTemplate = `<template id="carouselTemplate"><section class="carCarouselSection">
-<h2>Our Recommendations</h2>
+export const carouselTemplate = `<template id="carouselTemplate">
 <div class="carCarousel" data-carousel>
   <button
     class="carousel-button carousel-button-left"
@@ -104,7 +103,7 @@ export const carouselTemplate = `<template id="carouselTemplate"><section class=
   </button>
   <ul data-slides class="carousel"></ul>
 </div>
-</section></template>`;
+</template>`;
 export const carCardTemplate = `<template id="carouselTemplate"><section class="carCard" keyID="">
 <a href=""></a>
 <div class="infobox">

@@ -3,6 +3,7 @@ import carousel from "../components/carousel.js";
 import CarSearch from "../components/carSearch.js";
 import * as utilities from "../utilities.js";
 import dataLoad from "../components/dataLoader.js";
+
 window.onload = function () {
   (async () => {
     const allDataArray = await dataLoad("./assets/json/cars.json");
@@ -37,6 +38,7 @@ window.onload = function () {
         newSlide.createListItem();
       } else {
         newSlide.createListItem("data-active");
+        firstObject = false;
       }
     });
     carousel("[data-carousel-button]");
@@ -44,7 +46,6 @@ window.onload = function () {
 
   async function initialiseForm(optionsArray) {
     try {
-      console.log(optionsArray);
       const additionalOptionsObject = await utilities.fetchJSON(
         "./assets/json/extendedCarSearchOptions.json"
       );

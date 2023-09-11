@@ -594,6 +594,7 @@ main section.contactSection div p {
   font-size: calc(var(--font-sm) + 0.25rem);
   font-weight: 300;
 }
+section.slide-carousel,
 main section.carCarouselSection {
   display: grid;
   grid-template-columns: 1fr;
@@ -601,9 +602,11 @@ main section.carCarouselSection {
   align-items: center;
   place-items: center;
 }
+
 main section.carCArouselSection h1 {
   text-align: center;
 }
+section.slide-carousel .carCarousel,
 main section.carCarouselSection div.carCarousel {
   position: relative;
   width: 100%;
@@ -611,6 +614,7 @@ main section.carCarouselSection div.carCarousel {
   aspect-ratio: 4/3;
   z-index: 5;
 }
+section.slide-carousel .carCarousel .carousel-button,
 main section.carCarouselSection div.carCarousel button.carousel-button {
   position: absolute;
   z-index: 5;
@@ -625,14 +629,17 @@ main section.carCarouselSection div.carCarousel button.carousel-button {
   color: transparent;
   transition: backdrop-filter 0.64s, border 0.64s, color 0.96s;
 }
+section.slide-carousel .carCarousel .carousel-button:hover,
 main section.carCarouselSection div.carCarousel button.carousel-button:hover {
   border: 2px solid var(--colour-marble-blue);
   backdrop-filter: blur(3px);
   color: azure;
 }
+section.slide-carousel .carCarousel .carousel-button-right,
 main section.carCarouselSection div.carCarousel button.carousel-button-right {
   right: 0%;
 }
+section.slide-carousel .carCarousel ul.carousel,
 main section.carCarouselSection div.carCarousel ul.carousel {
   width: 100%;
   aspect-ratio: 4/3;
@@ -648,7 +655,7 @@ main section.carCarouselSection div.carCarousel ul.carousel {
     overflow: visible;
   }
 } */
-
+section.slide-carousel .carCarousel .carCard,
 main section.carCarouselSection div.carCarousel li.carCard {
   position: absolute;
   width: 100%;
@@ -657,6 +664,8 @@ main section.carCarouselSection div.carCarousel li.carCard {
   z-index: -3;
   transition: opacity 1ms, left 650ms;
 }
+
+section.slide-carousel .carCarousel .carCard::before,
 main section.carCarouselSection div.carCarousel li.carCard::before {
   position: absolute;
   color: aliceblue;
@@ -671,6 +680,7 @@ main section.carCarouselSection div.carCarousel li.carCard::before {
   justify-content: start;
   transition: inset 0.5s linear;
 }
+section.slide-carousel .carCarousel .carCard:hover::before,
 main section.carCarouselSection div.carCarousel li.carCard:hover::before {
   position: absolute;
   inset: 0;
@@ -685,12 +695,14 @@ main section.carCarouselSection div.carCarousel li.carCard:hover::before {
   padding-top: 0.35rem;
   justify-content: start;
 }
+section.slide-carousel .carCarousel .carCard[data-active],
 main section.carCarouselSection div.carCarousel li.carCard[data-active] {
   left: 0;
   opacity: 1;
   z-index: 1;
 }
 
+section.slide-carousel .carCarousel .carCard[data-direction="right"],
 main
   section.carCarouselSection
   div.carCarousel
@@ -701,6 +713,7 @@ main
   /*   scale: 0.96;
   opacity: 0.6; */
 }
+section.slide-carousel .carCarousel .carCard[data-direction="left"],
 main
   section.carCarouselSection
   div.carCarousel
@@ -711,15 +724,18 @@ main
   /* scale: 0.96;
   opacity: 0.6; */
 }
+section.slide-carousel .carCarousel .carCard[data-transition],
 main section.carCarouselSection div.carCarousel li.carCard[data-transition] {
   z-index: 2;
 }
+section.slide-carousel .carCarousel .carCard a,
 main section.carCarouselSection div.carCarousel li.carCard a {
   position: absolute;
   display: block;
   inset: 0;
   z-index: 0;
 }
+section.slide-carousel .carCarousel .carCard img,
 main section.carCarouselSection div.carCarousel li.carCard img {
   width: 100%;
 }

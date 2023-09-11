@@ -33,7 +33,6 @@ export function queryElements(isClass, isId, ...elements) {
   elements.forEach((element) => {
     if (isClass) {
       queriedElements[element] = document.querySelector(`.${element}`);
-      console.log(document.querySelector(`.${element}`));
     } else if (isId) {
       queriedElements[element] = document.querySelector(`#${element}`);
     } else {

@@ -5,14 +5,19 @@ import dataLoad from "./components/dataLoader.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.querySelector("body");
+
   document.body.innerHTML += headerTemplate;
   document.body.innerHTML += footerTemplate;
+
   const template = document.querySelector(`#template`);
   const footertemplate = document.querySelector(`#footerTemplate`);
+
   const clonedHeader = template.content.cloneNode(true);
   const clonedFooter = footertemplate.content.cloneNode(true);
+
   body.insertBefore(clonedHeader, document.querySelector("main"));
   body.appendChild(clonedFooter);
+
   const blurMask = utilities.createElement("div", "mainBlurMask");
   document
     .querySelector("main")
