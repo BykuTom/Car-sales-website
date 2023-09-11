@@ -8,6 +8,23 @@ window.onload = function () {
     const allDataArray = await dataLoad("./assets/json/cars.json");
     const recommended = allDataArray[1];
     const firstObject = true;
+
+    let basicOptionsArray = [];
+
+    await allDataArray[0].forEach((object) => {
+      const make = object.data.make;
+      const model = object.data.model;
+
+      if (!basicOptionsArray.find((item) => item.make === make)) {
+        basicOptionsArray.push({ make: make, models: [model] });
+      } else {
+        const foundItem = basicOptionsArray.find((item) => item.make === make);
+        foundItem.models.push(model);
+      }
+    });
+
+    initialiseForm(basicOptionsArray);
+
     recommended.forEach((object) => {
       const newSlide = new CarSlide(
         object.data.make,
@@ -24,14 +41,14 @@ window.onload = function () {
     });
     carousel("[data-carousel-button]");
   })();
-  async function initialiseForm() {
+
+  async function initialiseForm(optionsArray) {
     try {
+      console.log(optionsArray);
       const additionalOptionsObject = await utilities.fetchJSON(
         "./assets/json/extendedCarSearchOptions.json"
       );
-      const optionsArray = await utilities.fetchJSON(
-        "./assets/json/carSearchOption.json"
-      );
+
       const carSearchForm = new CarSearch(
         ".carSearchForm",
         optionsArray,
@@ -43,5 +60,4 @@ window.onload = function () {
       console.error("An error occurred:", error);
     }
   }
-  initialiseForm();
 };

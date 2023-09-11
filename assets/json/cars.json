@@ -1,554 +1,1154 @@
 [
   {
-    "keyID": "d4276234-2c10-4ef7-b04b-2e9a38fca42d",
-    "recommended": true,
-    "data": {
-      "make": "BMW",
-      "model": "745i",
-      "price": "68000",
-      "body": "Sedan",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "4.4L V8",
-      "numberOfDoors": "4",
-      "colour": "Black",
-      "taxband": "D",
-      "decription": "Luxury car with a powerful engine and a sleek design.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "20000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "f8fb8603-9baf-45e5-8c51-4afe8fcb22a7",
-    "recommended": true,
-    "data": {
-      "make": "Toyota",
-      "model": "Camry",
-      "price": "24000",
-      "body": "Sedan",
-      "fuel": "Hybrid",
-      "transmission": "Automatic",
-      "engine": "2.5L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "Blue",
-      "taxband": "C",
-      "decription": "Fuel-efficient car with a spacious interior and modern features.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "20000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "93f73a0c-2446-4a4d-a88f-8a69abb5c06c",
-    "recommended": true,
-    "data": {
-      "make": "Ford",
-      "model": "Mustang",
-      "price": "39000",
-      "body": "Coupe",
-      "fuel": "Petrol",
-      "transmission": "Manual",
-      "engine": "5.0L V8",
-      "numberOfDoors": "2",
-      "colour": "Red",
-      "taxband": "G",
-      "decription": "Classic American muscle car with a bold design and a powerful engine.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "20000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "446f1e04-b564-4922-b27b-6a4981b6bd32",
-    "recommended": true,
-    "data": {
-      "make": "Honda",
-      "model": "Civic",
-      "price": "20000",
-      "body": "Sedan",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "Silver",
-      "taxband": "B",
-      "decription": "Reliable car with excellent fuel efficiency and a comfortable ride.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "30000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "ef135f5c-8168-4d25-86a5-1852e1f2cacd",
-    "recommended": true,
-    "data": {
-      "make": "Mazda",
-      "model": "CX-5",
-      "price": "32000",
-      "body": "SUV",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.5L 4-cylinder",
-      "numberOfDoors": "5",
-      "colour": "White",
-      "taxband": "C",
-      "decription": "Spacious SUV with a sleek design and advanced safety features.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "30000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "d95a2ed6-0ffe-4ec6-9761-a3e81c7ecf1b",
+    "keyID": "ba2aa880-0916-4e1e-9d06-9029709c18ec",
     "recommended": false,
     "data": {
       "make": "Audi",
-      "model": "A4",
-      "price": "45000",
-      "body": "Sedan",
+      "model": "TT",
+      "price": "2500",
+      "body": "Coupe",
       "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "Gray",
-      "taxband": "F",
-      "decription": "Luxury sedan with a stylish exterior and a comfortable interior.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "30000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "ce3d2744-1e1e-4911-bcd1-57f2045645ec",
-    "recommended": false,
-    "data": {
-      "make": "Jeep",
-      "model": "Wrangler",
-      "price": "36000",
-      "body": "SUV",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "3.6L V6",
+      "transmission": "Manual",
+      "engine": "1.8L Four-cylinder",
       "numberOfDoors": "2",
-      "colour": "Green",
-      "taxband": "G",
-      "decription": "Off-road vehicle with exceptional performance and a rugged design.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "50000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "8f95d72c-1a37-4b72-9db5-e39df8a4ffd8",
-    "recommended": false,
-    "data": {
-      "make": "Mercedes-Benz",
-      "model": "C-Class",
-      "price": "52000",
-      "body": "Sedan",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "White",
-      "taxband": "G",
-      "decription": "Luxury car with advanced features and a refined interior.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "50000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "78087075-67c5-44fd-ac72-eb95b9eb2a7f",
-    "recommended": false,
-    "data": {
-      "make": "Nissan",
-      "model": "Altima",
-      "price": "28000",
-      "body": "Sedan",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.5L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "Black",
-      "taxband": "E",
-      "decription": "Modern sedan with advanced safety technology and efficient performance.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "50000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "0e83f6de-363c-4a9c-a6c6-235f7efab8a9",
-    "recommended": false,
-    "data": {
-      "make": "Subaru",
-      "model": "Outback",
-      "price": "34000",
-      "body": "Wagon",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.5L 4-cylinder",
-      "numberOfDoors": "5",
       "colour": "Silver",
-      "taxband": "E",
-      "decription": "Versatile and spacious wagon with excellent handling and all-wheel drive.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "70000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "3f78c2fc-1198-4938-9b4f-bf7e4b5a9af1",
-    "recommended": false,
-    "data": {
-      "make": "Lexus",
-      "model": "RX",
-      "price": "53000",
-      "body": "SUV",
-      "fuel": "Hybrid",
-      "transmission": "Automatic",
-      "engine": "3.5L V6",
-      "numberOfDoors": "5",
-      "colour": "Gray",
       "taxband": "G",
-      "decription": "Luxury SUV with a hybrid engine and a spacious and comfortable interior.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "70000",
-      "year": "2014"
+      "description": "2003 Audi TT, high mileage but still in excellent condition. Well-kept interior and exterior.",
+      "imageURLs": [
+        "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/1.jpg",
+        "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/2.jpg",
+        "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/3.jpg",
+        "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/4.jpg",
+        "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/5.jpg"
+      ],
+      "history": "No major accidents, minor scratch on passenger side.",
+      "owners": "3",
+      "mainImageURL": "./assets/images/cars/ba2aa880-0916-4e1e-9d06-9029709c18ec/1.jpg",
+      "mileage": "198000",
+      "year": "2003"
     }
   },
   {
-    "keyID": "c6127110-b276-4790-8d23-5ea211f09ae3",
-    "recommended": false,
-    "data": {
-      "make": "Chevrolet",
-      "model": "Tahoe",
-      "price": "49000",
-      "body": "SUV",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "5.3L V8",
-      "numberOfDoors": "5",
-      "colour": "Black",
-      "taxband": "G",
-      "decription": "Full-size SUV with a powerful engine and a comfortable ride.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "70000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "5cef29c2-4c93-4d1c-9e8d-a6baeb36eaea",
-    "recommended": false,
-    "data": {
-      "make": "Tesla",
-      "model": "Model S",
-      "price": "85000",
-      "body": "Sedan",
-      "fuel": "Electric",
-      "transmission": "Automatic",
-      "engine": "Electric",
-      "numberOfDoors": "4",
-      "colour": "Red",
-      "taxband": "A",
-      "decription": "Luxury electric car with a long range and advanced technology features.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "5000",
-      "year": "2014"
-    }
-  },
-  {
-    "keyID": "e455f4d0-80e4-466a-bb2b-7b8c0a3efdef",
-    "recommended": false,
-    "data": {
-      "make": "Volvo",
-      "model": "XC90",
-      "price": "62000",
-      "body": "SUV",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "5",
-      "colour": "Gray",
-      "taxband": "G",
-      "decription": "Premium SUV with a sleek design and plenty of space for passengers and cargo.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "5000",
-      "year": "2021"
-    }
-  },
-  {
-    "keyID": "d19c1142-839a-43cd-b112-61d5a3c57057",
+    "keyID": "d3defa11-e901-4067-a0fc-ee62cb2989ae",
     "recommended": false,
     "data": {
       "make": "Volkswagen",
-      "model": "Passat",
-      "price": "28000",
-      "body": "Sedan",
+      "model": "Golf",
+      "price": "980",
+      "body": "Hatchback",
       "fuel": "Petrol",
       "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "4",
+      "engine": "2L Four-cylinder",
+      "numberOfDoors": "5",
       "colour": "Blue",
-      "taxband": "C",
-      "decription": "Comfortable and spacious sedan with a modern and stylish design.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "5000",
-      "year": "2021"
+      "taxband": "G",
+      "description": "2005 Volkswagen Golf, good condition overall. Spacious interior and great fuel efficiency.",
+      "imageURLs": [
+        "./assets/images/cars/d3defa11-e901-4067-a0fc-ee62cb2989ae/1.jpg",
+        "./assets/images/cars/d3defa11-e901-4067-a0fc-ee62cb2989ae/2.jpg",
+        "./assets/images/cars/d3defa11-e901-4067-a0fc-ee62cb2989ae/3.jpg",
+        "./assets/images/cars/d3defa11-e901-4067-a0fc-ee62cb2989ae/4.jpg"
+      ],
+      "history": "Small ding on the rear bumper.",
+      "owners": "4",
+      "mainImageURL": "./assets/images/cars/d3defa11-e901-4067-a0fc-ee62cb2989ae/1.jpg",
+      "mileage": "127000",
+      "year": "2005"
     }
   },
   {
-    "keyID": "ed8375f5-53cc-4ae5-a232-679c7afde5e9",
+    "keyID": "01612a07-7b73-424f-bd57-444fa8953ebe",
     "recommended": false,
     "data": {
-      "make": "Porsche",
-      "model": "911",
-      "price": "10000",
-      "body": "Coupe",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "3.0L 6-cylinder",
-      "numberOfDoors": "2",
-      "colour": "Silver",
-      "taxband": "G",
-      "decription": "Iconic sports car with a timeless design and uncompromising performance.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2016"
+      "make": "Ford",
+      "model": "Fiesta",
+      "price": "6000",
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.5L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "B",
+      "description": "2017 Ford Fiesta, excellent condition. Low mileage, great fuel economy, and packed with features.",
+      "imageURLs": [
+        "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/1.jpg",
+        "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/2.jpg",
+        "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/3.jpg",
+        "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/4.jpg",
+        "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/5.jpg"
+      ],
+      "history": "No accidents, one minor scratch on the driver's side door.",
+      "owners": "1",
+      "mainImageURL": "./assets/images/cars/01612a07-7b73-424f-bd57-444fa8953ebe/1.jpg",
+      "mileage": "20000",
+      "year": "2017"
     }
   },
   {
-    "keyID": "b721d7a0-6079-44b8-82f5-bd5bd0880428",
+    "keyID": "75411679-7476-4d9d-adcb-46aaf5dc25a8",
+    "recommended": false,
+    "data": {
+      "make": "Renault",
+      "model": "Clio",
+      "price": "3300",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.2L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "C",
+      "description": "2012 Renault Clio, good overall condition with a few minor dings. Great first car.",
+      "imageURLs": [
+        "http://example.com/car4-front.jpg",
+        "http://example.com/car4-back.jpg"
+      ],
+      "history": "No accidents, one small dent on the driver's side.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car4-main.jpg",
+      "mileage": "64000",
+      "year": "2012"
+    }
+  },
+  {
+    "keyID": "70bdfeb0-837c-4f41-adfd-f51a4c829775",
     "recommended": false,
     "data": {
       "make": "BMW",
       "model": "X5",
-      "price": "63000",
+      "price": "15500",
       "body": "SUV",
-      "fuel": "Petrol",
+      "fuel": "Diesel",
       "transmission": "Automatic",
-      "engine": "3.0L 6-cylinder",
+      "engine": "3.0L Six-cylinder",
       "numberOfDoors": "5",
-      "colour": "Black",
-      "taxband": "G",
-      "decription": "Premium SUV with a powerful engine and advanced technology features.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2016"
-    }
-  },
-  {
-    "keyID": "2a8c8a7e-7449-41b5-a6de-9b41a746d1a8",
-    "recommended": false,
-    "data": {
-      "make": "Ford",
-      "model": "F-150",
-      "price": "42000",
-      "body": "Pickup",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "5.0L V8",
-      "numberOfDoors": "4",
       "colour": "White",
-      "taxband": "G",
-      "decription": "Powerful and versatile pickup truck with a spacious and comfortable cabin.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2016"
+      "taxband": "J",
+      "description": "2011 BMW X5, fantastic condition with beautiful tan leather interior. Loaded with features.",
+      "imageURLs": [
+        "http://example.com/car5-front.jpg",
+        "http://example.com/car5-back.jpg"
+      ],
+      "history": "No accidents, meticulously maintained.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car5-main.jpg",
+      "mileage": "61000",
+      "year": "2011"
     }
   },
   {
-    "keyID": "d105530a-b924-48e9-a9dc-2f487a427d29",
+    "keyID": "a4139de7-b572-40c4-8d60-2bc50f2b36c3",
     "recommended": false,
     "data": {
-      "make": "Infiniti",
-      "model": "Q50",
-      "price": "40000",
-      "body": "Sedan",
+      "make": "Mini",
+      "model": "Cooper S",
+      "price": "8400",
+      "body": "Hatchback",
       "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "3.0L V6",
-      "numberOfDoors": "4",
+      "transmission": "Manual",
+      "engine": "1.6L Four-cylinder",
+      "numberOfDoors": "3",
       "colour": "Red",
-      "taxband": "G",
-      "decription": "Luxury sedan with a powerful engine and a refined and comfortable interior.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2018"
+      "taxband": "D",
+      "description": "2010 Mini Cooper S, great condition and a blast to drive. Rare chili red color.",
+      "imageURLs": [
+        "http://example.com/car6-front.jpg",
+        "http://example.com/car6-back.jpg"
+      ],
+      "history": "No accidents, some minor wear on driver's seat.",
+      "owners": "3",
+      "mainImageURL": "http://example.com/car6-main.jpg",
+      "mileage": "58000",
+      "year": "2010"
     }
   },
   {
-    "keyID": "a78e73d1-ef1c-4f5f-891d-7a2b84e9431c",
+    "keyID": "7f7876b9-d794-4f2e-a1f9-0d45d31b265e",
     "recommended": false,
     "data": {
-      "make": "Acura",
-      "model": "TLX",
-      "price": "36000",
-      "body": "Sedan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "price": "4200",
+      "body": "Hatchback",
       "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "2.4L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "Gray",
-      "taxband": "B",
-      "decription": "Sophisticated and sporty sedan with impressive handling and performance.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2018"
-    }
-  },
-  {
-    "keyID": "2fd1acfa-89d1-4ef6-987b-76f6ec71e5b0",
-    "recommended": false,
-    "data": {
-      "make": "Dodge",
-      "model": "Charger",
-      "price": "35000",
-      "body": "Sedan",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "3.6L V6",
-      "numberOfDoors": "4",
-      "colour": "Black",
-      "taxband": "G",
-      "decription": "A classic American muscle car with a sleek and modern design.",
-      "imageURLs": [],
-      "history": "History place holder",
-      "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2018"
-    }
-  },
-  {
-    "keyID": "0a5e66d0-b89b-4d22-9a0d-e8faf4404436",
-    "recommended": false,
-    "data": {
-      "make": "GMC",
-      "model": "Sierra",
-      "price": "49000",
-      "body": "Pickup",
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "engine": "5.3L V8",
-      "numberOfDoors": "4",
+      "transmission": "Manual",
+      "engine": "1.0L Three-cylinder",
+      "numberOfDoors": "5",
       "colour": "Blue",
-      "taxband": "G",
-      "decription": "Rugged and reliable pickup truck with impressive performance capabilities.",
-      "imageURLs": [],
-      "history": "History place holder",
+      "taxband": "B",
+      "description": "2013 Toyota Yaris, good condition and great fuel economy. Perfect car for city driving.",
+      "imageURLs": [
+        "http://example.com/car7-front.jpg",
+        "http://example.com/car7-back.jpg"
+      ],
+      "history": "No accidents, a few faint scratch marks on the rear bumper.",
       "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2017"
+      "mainImageURL": "http://example.com/car7-main.jpg",
+      "mileage": "74000",
+      "year": "2013"
     }
   },
   {
-    "keyID": "f2cbfd5f-5292-4260-bfd6-fd6a04430ad8",
+    "keyID": "51272cf1-3068-4ed7-bd52-3dd6767b27cf",
+    "recommended": false,
+    "data": {
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "price": "10600",
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.2L Four-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Silver",
+      "taxband": "H",
+      "description": "2011 Mercedes-Benz C-Class, good condition with low mileage. Spacious and comfortable interior.",
+      "imageURLs": [
+        "http://example.com/car8-front.jpg",
+        "http://example.com/car8-back.jpg"
+      ],
+      "history": "No accidents, a few small dings on the passenger side door.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car8-main.jpg",
+      "mileage": "43000",
+      "year": "2011"
+    }
+  },
+  {
+    "keyID": "b900b755-6a52-4017-aa8e-0d9e3b9cbe0b",
+    "recommended": false,
+    "data": {
+      "make": "Honda",
+      "model": "Civic",
+      "price": "4800",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Grey",
+      "taxband": "B",
+      "description": "2009 Honda Civic, good condition with a few minor scratches. Reliable car with great gas mileage.",
+      "imageURLs": [
+        "http://example.com/car9-front.jpg",
+        "http://example.com/car9-back.jpg"
+      ],
+      "history": "No accidents, small dent on the rear bumper.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car9-main.jpg",
+      "mileage": "105000",
+      "year": "2009"
+    }
+  },
+  {
+    "keyID": "30ac2333-c991-4b92-80c3-cf4364bd8a32",
     "recommended": false,
     "data": {
       "make": "Volvo",
-      "model": "S60",
-      "price": "40000",
+      "model": "XC90",
+      "price": "11900",
+      "body": "SUV",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.4L Five-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "K",
+      "description": "2008 Volvo XC90, great overall condition with a roomy and well-designed interior. Perfect for family trips.",
+      "imageURLs": [
+        "http://example.com/car10-front.jpg",
+        "http://example.com/car10-back.jpg"
+      ],
+      "history": "No accidents, minor scratch on the rear bumper.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car10-main.jpg",
+      "mileage": "96000",
+      "year": "2008"
+    }
+  },
+  {
+    "keyID": "0f6da7ab-ccfe-49b2-8a02-5792f703db19",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "Focus",
+      "price": "6999",
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "1.5L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Blue",
+      "taxband": "C",
+      "description": "This 2016 Ford Focus is in great condition and extremely ecnonomical. With its 1.5L 4-cylinder diesel engine, this car is great for long drives. Comfortable and spacious interior with a sleek exterior. Some of the features include electric windows and mirrors, air conditioning, steering wheel mounted controls, and much more.",
+      "imageURLs": [
+        "http://example.com/car11-front.jpg",
+        "http://example.com/car11-back.jpg"
+      ],
+      "history": "Minor accident involving the front and rear bumpers and both doors but was repaired, a minor scratch on the bonnet.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car11-main.jpg",
+      "mileage": "75000",
+      "year": "2016"
+    }
+  },
+  {
+    "keyID": "d1d157cd-a4a2-4d3f-bc89-a8a5b11620f3",
+    "recommended": false,
+    "data": {
+      "make": "Volkswagen",
+      "model": "Polo",
+      "price": "4500",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.2L Three-cylinder",
+      "numberOfDoors": "3",
+      "colour": "Silver",
+      "taxband": "D",
+      "description": "Presenting the 2014 Volkswagen Polo in an attractive silver color. A well-maintained car with a mileage of just 44000 miles. It has a manual transmission and features that include air conditioning, Bluetooth, touchscreen audio system, and many more. This beautiful car is perfect for first-time buyers as it is both comfortable and economical.",
+      "imageURLs": [
+        "http://example.com/car12-front.jpg",
+        "http://example.com/car12-back.jpg"
+      ],
+      "history": "No reported history of accidents.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car12-main.jpg",
+      "mileage": "44000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "60a1bea9-ef43-4aeb-ba6d-808fa4ecc0ca",
+    "recommended": false,
+    "data": {
+      "make": "Audi",
+      "model": "A3",
+      "price": "6500",
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.6L Four-cylinder",
+      "numberOfDoors": "3",
+      "colour": "Red",
+      "taxband": "C",
+      "description": "Here we have a 2012 Audi A3 in a striking red color. The car comes with an impressive service history and a low mileage of just 63000 miles. It features an excellent Bose sound system, air conditioning, electric mirrors, full leather seats, and lots more. This car has been well-maintained and is highly fuel-efficient, making it an ideal choice for budget-conscious drivers.",
+      "imageURLs": [
+        "http://example.com/car13-front.jpg",
+        "http://example.com/car13-back.jpg"
+      ],
+      "history": "No accidents to report.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car13-main.jpg",
+      "mileage": "63000",
+      "year": "2012"
+    }
+  },
+  {
+    "keyID": "1ff711eb-5c0c-4fb5-bc85-3fdb1194ef65",
+    "recommended": false,
+    "data": {
+      "make": "Mercedes-Benz",
+      "model": "E-Class",
+      "price": "14900",
       "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.1L Four-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Grey",
+      "taxband": "I",
+      "description": "This luxurious 2010 Mercedes-Benz E-Class comes with a diesel engine, giving it exceptional fuel economy. With an automatic gearbox and leather seats, this car is the perfect blend of luxury and comfort. It features a sunroof, electric windows, and full service history. With just over 84000 miles on the clock, this car is the perfect choice for anyone looking for something special.",
+      "imageURLs": [
+        "http://example.com/car14-front.jpg",
+        "http://example.com/car14-back.jpg"
+      ],
+      "history": "No accidents to report, maintained at recommended frequency.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car14-main.jpg",
+      "mileage": "84000",
+      "year": "2010"
+    }
+  },
+  {
+    "keyID": "8bea584d-9823-4898-a6ac-4e7ec95c90e0",
+    "recommended": false,
+    "data": {
+      "make": "BMW",
+      "model": "3 Series",
+      "price": "8100",
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.0L Four-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Black",
+      "taxband": "G",
+      "description": "This 2012 BMW 3 Series has a modern and stylish design, with luxurious amenities that include leather seats, a sunroof and an advanced infotainment system. The car is packed with features that include automatic wipers and headlights, fog lamps, electric windows, and the auto stop-start system. It is a fuel-efficient car that can provide up to 61 miles per gallon on the highways.",
+      "imageURLs": [
+        "http://example.com/car15-front.jpg",
+        "http://example.com/car15-back.jpg"
+      ],
+      "history": "No accidents reported, regularly serviced according to manufacturer guidelines.",
+      "owners": "3",
+      "mainImageURL": "http://example.com/car15-main.jpg",
+      "mileage": "135000",
+      "year": "2012"
+    }
+  },
+  {
+    "keyID": "6d8e7ff0-bfde-401b-960d-7083deadf052",
+    "recommended": false,
+    "data": {
+      "make": "Toyota",
+      "model": "Aygo",
+      "price": "3200",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.0L Three-cylinder",
+      "numberOfDoors": "3",
+      "colour": "White",
+      "taxband": "B",
+      "description": "Reliable little car with impressive fuel efficiency, this 2015 Toyota Aygo is perfect for city driving. The car features air conditioning, electric windows, and a touchscreen audio system with telephone and MP3 compatibility. The car has been well-maintained and is in great condition, with only 1 owner and a low mileage of just 39000 miles.",
+      "imageURLs": [
+        "http://example.com/car16-front.jpg",
+        "http://example.com/car16-back.jpg"
+      ],
+      "history": "Minor accident involving the front and rear bumpers, repaired.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car16-main.jpg",
+      "mileage": "39000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "e4a925ac-f2aa-43c0-9a62-6c9b95477411",
+    "recommended": false,
+    "data": {
+      "make": "Honda",
+      "model": "Jazz",
+      "price": "5500",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Red",
+      "taxband": "B",
+      "description": "The 2014 Honda Jazz is an excellent example of a small car. It has a 5-star safety rating and features that include power-assisted steering, air conditioning, and a CD player with MP3 compatibility. This car has a low mileage of only 27000 miles and has been well-maintained, making it an ideal choice for a first-time buyer.",
+      "imageURLs": [
+        "http://example.com/car17-front.jpg",
+        "http://example.com/car17-back.jpg"
+      ],
+      "history": "No accidents to report.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car17-main.jpg",
+      "mileage": "27000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "5376545e-0139-4374-bc7e-28892d08c522",
+    "recommended": false,
+    "data": {
+      "make": "Renault",
+      "model": "Grand Scenic",
+      "price": "6700",
+      "body": "MPV",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.5L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Blue",
+      "taxband": "D",
+      "description": "This 2012 Renault Grand Scenic is perfect for family outings. It features a spacious, comfortable interior equipped with electric windows, automatic headlights, parking sensors, and much more. The car has a low mileage of just 62000 miles and has an MOT valid until next year. It is also an efficient car, typically providing 60 miles per gallon on highways.",
+      "imageURLs": [
+        "http://example.com/car18-front.jpg",
+        "http://example.com/car18-back.jpg"
+      ],
+      "history": "No accidents to report, maintained at recommended service intervals.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car18-main.jpg",
+      "mileage": "62000",
+      "year": "2012"
+    }
+  },
+  {
+    "keyID": "34e3e76d-f1cb-4694-9c7c-929a1af556cb",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "C-Max",
+      "price": "4750",
+      "body": "MPV",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.6L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Silver",
+      "taxband": "D",
+      "description": "What we have here is a top-of-the-range Ford C-Max in great condition. This car comes fully-loaded with features that include electric windows and mirrors, air conditioning, and parking sensors. It is a fuel-efficient car that returns up to 55 miles per gallon during highway driving. The car has just over 70000 miles, and it has been serviced regularly.",
+      "imageURLs": [
+        "http://example.com/car19-front.jpg",
+        "http://example.com/car19-back.jpg"
+      ],
+      "history": "No accidents to report, well-maintained.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car19-main.jpg",
+      "mileage": "70500",
+      "year": "2013"
+    }
+  },
+  {
+    "keyID": "0652d6db-64f3-4387-a962-4decb47a8418",
+    "recommended": false,
+    "data": {
+      "make": "Toyota",
+      "model": "Auris",
+      "price": "3700",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Red",
+      "taxband": "C",
+      "description": "For sale is this 2011 Toyota Auris, the car is in excellent condition with a mileage of 63000 miles. Full service history and just one previous owner. The car features air conditioning, electric windows, CD player with MP3 compatibility and many more features. Reliable and efficient, this car is an excellent choice for anyone looking for a budget-friendly vehicle.",
+      "imageURLs": [
+        "http://example.com/car20-front.jpg",
+        "http://example.com/car20-back.jpg"
+      ],
+      "history": "No accidents reported, regularly serviced.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car20-main.jpg",
+      "mileage": "63000",
+      "year": "2011"
+    }
+  },
+  {
+    "keyID": "0819ee28-2013-4ef9-bb5c-114a56040d60",
+    "recommended": false,
+    "data": {
+      "make": "Mercedes-Benz",
+      "model": "Sprinter",
+      "price": "10500",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.1L Four-cylinder",
+      "numberOfDoors": "2",
+      "colour": "White",
+      "taxband": "J",
+      "description": "We are pleased to present to you this 2014 Mercedes-Benz Sprinter, with a cargo volume of 9m³. This van boasts a spacious, high-end cargo area and useful features that include air conditioning, cruise control, Bluetooth connectivity, and much more. The van has been well-maintained, with just over 132000 miles on the clock.",
+      "imageURLs": [
+        "http://example.com/car21-front.jpg",
+        "http://example.com/car21-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car21-main.jpg",
+      "mileage": "132000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "ad19de72-5a3f-43d8-a2e6-f05c36cee841",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "Transit",
+      "price": "8995",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.2L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "J",
+      "description": "We are delighted to bring to you this wonderful 2015 Ford Transit Van that comes with a 2.2-liter engine and six-speed manual gearbox. This van boasts a versatile cargo area that can carry up to 1.4 tonnes of weight. The van is also loaded with features, including air conditioning, cruise control, and power-assisted steering.",
+      "imageURLs": [
+        "http://example.com/car22-front.jpg",
+        "http://example.com/car22-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car22-main.jpg",
+      "mileage": "84000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "1e393481-1de7-434e-a5b3-0828aa3cbce2",
+    "recommended": false,
+    "data": {
+      "make": "Peugeot",
+      "model": "Partner",
+      "price": "4500",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.6L Four-cylinder",
+      "numberOfDoors": "2",
+      "colour": "White",
+      "taxband": "J",
+      "description": "The 2015 Peugeot Partner is a small yet mighty van that is perfect for businesses in need of a reliable vehicle. The van is in excellent condition, with low mileage of only 46000 miles. It features air conditioning, electric windows, and satellite navigation. Based on its compact size, it is easy to park and maneuver within tight areas.",
+      "imageURLs": [
+        "http://example.com/car23-front.jpg",
+        "http://example.com/car23-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car23-main.jpg",
+      "mileage": "46000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "7da07888-2a10-4880-a621-e6ae2b1edde8",
+    "recommended": false,
+    "data": {
+      "make": "Renault",
+      "model": "Kangoo",
+      "price": "6750",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.5L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "J",
+      "description": "Here we have a 2015 Renault Kangoo in excellent condition. The van boasts a 1.5-liter engine and a load volume of 3.1 cubic meters. It features a number of convenient options, including air conditioning, satellite navigation, and parking sensors. It has been well-maintained and has a low mileage of just 47000 miles.",
+      "imageURLs": [
+        "http://example.com/car24-front.jpg",
+        "http://example.com/car24-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car24-main.jpg",
+      "mileage": "47000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "f5e64778-7b5f-4997-b812-816a34c8dfe1",
+    "recommended": false,
+    "data": {
+      "make": "Volkswagen",
+      "model": "Caddy",
+      "price": "5500",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.6L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "J",
+      "description": "The 2015 Volkswagen Caddy Panel Van is in excellent condition, with low mileage of just over 59000 miles. The van features air conditioning, electric front windows and mirrors, Bluetooth connectivity, and park assist system. It is fuel-efficient, typically returning up to 53 miles per gallon on highways. A great and reliable van for any business.",
+      "imageURLs": [
+        "http://example.com/car25-front.jpg",
+        "http://example.com/car25-back.jpg"
+      ],
+      "history": "No reported accidents, regularly serviced.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car25-main.jpg",
+      "mileage": "59000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "1bf1bca7-a8d9-47ea-ae4c-c7ab93383c0c",
+    "recommended": false,
+    "data": {
+      "make": "Mercedes-Benz",
+      "model": "Vito",
+      "price": "9900",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.1L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Silver",
+      "taxband": "J",
+      "description": "Here we have a 2013 Mercedes-Benz Vito compact van in lovely silver color, with a low mileage of just 76000 miles. The van is in great condition, and features that include air conditioning, electric windows, mirrors and folding front seat, as well as an impressive load capacity of 4.5m³. This van has been keeping up well with the regular services and it is perfect for small business owners or for anyone in need of a reliable work vehicle.",
+      "imageURLs": [
+        "http://example.com/car26-front.jpg",
+        "http://example.com/car26-back.jpg"
+      ],
+      "history": "Minor front wing accident reported and windshield replaced.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car26-main.jpg",
+      "mileage": "76000",
+      "year": "2013"
+    }
+  },
+  {
+    "keyID": "ba25c515-18eb-47e7-b98e-7b9c38ce0f52",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "Transit Custom",
+      "price": "11395",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.2L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Grey",
+      "taxband": "J",
+      "description": "This 2015 Ford Transit Custom is a reliable and spacious van that is ideal for businesses of various sizes. The van has a low mileage of just over 67000 miles, and has been regularly serviced throughout its life. It comes equipped with air conditioning, electric windows and mirrors, Bluetooth connectivity, and parking sensors.",
+      "imageURLs": [
+        "http://example.com/car27-front.jpg",
+        "http://example.com/car27-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car27-main.jpg",
+      "mileage": "67000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "f9e0f5a7-edf3-4209-874c-9efb9fb769d2",
+    "recommended": false,
+    "data": {
+      "make": "Vauxhall",
+      "model": "Movano",
+      "price": "9995",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.3L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "J",
+      "description": "The 2014 Vauxhall Movano is a highly versatile van that is capable of handling a variety of tasks. The van has a low mileage of just under 54000 miles. It features air conditioning, electric mirrors, parking sensors, and Bluetooth connectivity. This van has been well-maintained and is a versatile option for any business.",
+      "imageURLs": [
+        "http://example.com/car28-front.jpg",
+        "http://example.com/car28-back.jpg"
+      ],
+      "history": "No reported accidents, serviced regularly.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car28-main.jpg",
+      "mileage": "54000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "2396f758-2daf-4165-89bb-4e2927caa8c3",
+    "recommended": false,
+    "data": {
+      "make": "Renault",
+      "model": "Trafic",
+      "price": "8750",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.0L Four-cylinder",
+      "numberOfDoors": "2",
+      "colour": "White",
+      "taxband": "J",
+      "description": "Presenting the 2015 Renault Trafic in superb condition. This van features a powerful 2.0-liter engine and a load space of about 6m³, making it ideal for all types of cargo. The van has a low mileage of just under 49000 miles. With Bluetooth connectivity, air conditioning and electric windows, this Renault traffic can get the job done efficiently.",
+      "imageURLs": [
+        "http://example.com/car29-front.jpg",
+        "http://example.com/car29-back.jpg"
+      ],
+      "history": "No accidents reported, regularly serviced.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car29-main.jpg",
+      "mileage": "49000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "3af2a96a-60bc-4731-8684-5f8e3327a44c",
+    "recommended": false,
+    "data": {
+      "make": "Peugeot",
+      "model": "Bipper",
+      "price": "4399",
+      "body": "Van",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "1.3L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "J",
+      "description": "The 2014 Peugeot Bipper tradesman van is an affordable option for small business owners. The van has a load volume of 2.5m³ and has a low mileage of just under 49000 miles. The van has been well-maintained and comes equipped with electric windows and mirrors, air conditioning, and Bluetooth connectivity.",
+      "imageURLs": [
+        "http://example.com/car30-front.jpg",
+        "http://example.com/car30-back.jpg"
+      ],
+      "history": "No reported accidents, regularly serviced.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car30-main.jpg",
+      "mileage": "49000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "e5300aa3-17b2-47a8-af8f-639c4f0856b1",
+    "recommended": false,
+    "data": {
+      "make": "BMW",
+      "model": "M4",
+      "price": "37999",
+      "body": "Coupe",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "3.0L Six-cylinder",
+      "numberOfDoors": "2",
+      "colour": "Black",
+      "taxband": "K",
+      "description": "The 2015 BMW M4 is a stunning sports car with impressive specs. This coupe has a 6-cylinder engine that produces 425 horsepower which makes it highly powerful. It features leather seats, automatic air conditioning, front and rear parking sensors, and a Harmon Kardon audio system. The car has a low mileage of only 28,000 miles and is in great condition.",
+      "imageURLs": [
+        "http://example.com/car31-front.jpg",
+        "http://example.com/car31-back.jpg"
+      ],
+      "history": "No accidents to report, well taken care of.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car31-main.jpg",
+      "mileage": "28000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "ffbd320e-8353-4533-82c5-27aafaf1fb94",
+    "recommended": false,
+    "data": {
+      "make": "Vauxhall",
+      "model": "Corsa",
+      "price": "5999",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Red",
+      "taxband": "F",
+      "description": "This 2013 Vauxhall Corsa SXI is a small and affordable car, perfect for city driving. It has a low mileage of just over 46000 miles and features that include air conditioning, electric windows, and a CD player for MP3 compatibility. This car has been thoroughly inspected and is in excellent condition.",
+      "imageURLs": [
+        "http://example.com/car32-front.jpg",
+        "http://example.com/car32-back.jpg"
+      ],
+      "history": "No accidents reported, well-maintained.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car32-main.jpg",
+      "mileage": "46000",
+      "year": "2013"
+    }
+  },
+  {
+    "keyID": "dde6c821-3bf8-4884-9951-19fcfeceed7e",
+    "recommended": false,
+    "data": {
+      "make": "Jaguar",
+      "model": "XF",
+      "price": "14899",
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.2L Four-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Silver",
+      "taxband": "K",
+      "description": "Ladies and Gents, we bring to you this 2015 Jaguar XF in an attractive silver color with a luxurious interior. The car is in superb condition with only one previous owner and a low mileage of 56000 miles. It features front and rear parking sensors, satellite navigation, automatic air conditioning, and a full leather interior. With a fuel economy of up to 57 miles per gallon on highways, this car is an excellent choice for anyone who values both style and efficiency.",
+      "imageURLs": [
+        "http://example.com/car33-front.jpg",
+        "http://example.com/car33-back.jpg"
+      ],
+      "history": "No accidents to report, regular servicing history.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car33-main.jpg",
+      "mileage": "56000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "b03cf2c6-69b6-4611-b584-8b1c9e4bb595",
+    "recommended": false,
+    "data": {
+      "make": "Ford",
+      "model": "Fiesta",
+      "price": "5495",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.25L Four-cylinder",
+      "numberOfDoors": "3",
+      "colour": "Black",
+      "taxband": "C",
+      "description": "This 2012 Ford Fiesta in immaculate condition makes for a great small car and has been very well taken care of. It features electric windows, Multi-functional steering wheel, Power-assisted steering and much more. The car has a low mileage of just over 57000 miles.",
+      "imageURLs": [
+        "http://example.com/car34-front.jpg",
+        "http://example.com/car34-back.jpg"
+      ],
+      "history": "No accidents to report, regularly serviced.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car34-main.jpg",
+      "mileage": "57000",
+      "year": "2012"
+    }
+  },
+  {
+    "keyID": "89a73eb8-d9a5-4dc8-bce7-e8bc0c6b551c",
+    "recommended": false,
+    "data": {
+      "make": "Vauxhall",
+      "model": "Insignia",
+      "price": "7995",
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Manual",
+      "engine": "2.0L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "G",
+      "description": "Presenting to you this 2014 Vauxhall Insignia with a sleek exterior and a comfortable interior. The car has a low mileage of 74000 and has been serviced regularly. It features air conditioning, electric windows, power-assisted steering, and cruise control amongst many other features.",
+      "imageURLs": [
+        "http://example.com/car35-front.jpg",
+        "http://example.com/car35-back.jpg"
+      ],
+      "history": "No accidents to report, well taken care of.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car35-main.jpg",
+      "mileage": "74000",
+      "year": "2014"
+    }
+  },
+  {
+    "keyID": "98d12f84-632c-4506-bc32-dc8599afc5e5",
+    "recommended": false,
+    "data": {
+      "make": "BMW",
+      "model": "X5",
+      "price": "23999",
+      "body": "SUV",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "3.0L Six-cylinder",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "K",
+      "description": "Here we have a 2015 BMW X5 in a lovely white finish. The car is a luxurious SUV featuring a panoramic sunroof, electric front seats, satellite navigation system, and automatic transmission. It has a mileage of just over 61000 miles and has been serviced regularly.",
+      "imageURLs": [
+        "http://example.com/car36-front.jpg",
+        "http://example.com/car36-back.jpg"
+      ],
+      "history": "No accidents reported, regularly serviced.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car36-main.jpg",
+      "mileage": "61000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "6ee55915-5a1a-47e7-821a-633a55767c99",
+    "recommended": false,
+    "data": {
+      "make": "Vauxhall",
+      "model": "Astra",
+      "price": "5250",
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Silver",
+      "taxband": "E",
+      "description": "This 2013 Vauxhall Astra is in immaculate condition. It comes with a range of useful features that include air conditioning, electric windows front and rear, and a leather steering wheel. It has a low mileage of just under 43000 miles and has been well-maintained throughout its life.",
+      "imageURLs": [
+        "http://example.com/car37-front.jpg",
+        "http://example.com/car37-back.jpg"
+      ],
+      "history": "No accidents reported, regularly serviced.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car37-main.jpg",
+      "mileage": "43000",
+      "year": "2013"
+    }
+  },
+  {
+    "keyID": "4d69a1ea-68b2-4c5c-8302-dd5d49657588",
+    "recommended": false,
+    "data": {
+      "make": "Jaguar",
+      "model": "F-Pace",
+      "price": "27999",
+      "body": "SUV",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.0L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "K",
+      "description": "Introducing the 2016 Jaguar F-Pace SUV that has been well-maintained and serviced regularly. It has a powerful 2.0-Liter 4-cylinder engine producing 180 horsepower along with automatic transmission. The car has a low mileage of just over 51000 miles and boasts a range of features that include rear parking sensors, electric front seats, and cruise control.",
+      "imageURLs": [
+        "http://example.com/car38-front.jpg",
+        "http://example.com/car38-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car38-main.jpg",
+      "mileage": "51000",
+      "year": "2016"
+    }
+  },
+  {
+    "keyID": "3e662f6a-709f-479d-b2de-ec263ed6f275",
+    "recommended": false,
+    "data": {
+      "make": "BMW",
+      "model": "i3",
+      "price": "17999",
+      "body": "Hatchback",
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "engine": "Electric Motor",
+      "numberOfDoors": "5",
+      "colour": "White",
+      "taxband": "A",
+      "description": "This 2015 BMW i3 is a great deal for anyone looking for a reliable and efficient electric car. This car has a low mileage of just 28000 miles and has been well-maintained throughout its life. It comes with a range of features that include air conditioning, electric front windows, automatic headlights, and leather steering wheel. It also has a range of about 100 miles per single charge.",
+      "imageURLs": [
+        "http://example.com/car39-front.jpg",
+        "http://example.com/car39-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
+      "owners": "2",
+      "mainImageURL": "http://example.com/car39-main.jpg",
+      "mileage": "28000",
+      "year": "2015"
+    }
+  },
+  {
+    "keyID": "e11e117e-ac06-4eec-8a73-2ab9ebf75c7b",
+    "recommended": true,
+    "data": {
+      "make": "Jaguar",
+      "model": "XE",
+      "price": "12850",
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.0L Four-cylinder",
+      "numberOfDoors": "4",
+      "colour": "Grey",
+      "taxband": "J",
+      "description": "The 2016 Jaguar XE is a sleek and luxurious sedan with a powerful diesel engine that offers an average of 75 miles per gallon on highways. It boasts a wide range of features that includes automatic headlights, satellite navigation, and cruise control. The car has a low mileage of just under 70000 miles and has been well-maintained throughout its life.",
+      "imageURLs": [
+        "http://example.com/car40-front.jpg",
+        "http://example.com/car40-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car40-main.jpg",
+      "mileage": "70000",
+      "year": "2016"
+    }
+  },
+  {
+    "keyID": "84db3491-9b54-4270-8aac-d8a4a7737d3d",
+    "recommended": true,
+    "data": {
+      "make": "Ford",
+      "model": "Focus",
+      "price": "9800",
+      "body": "Hatchback",
       "fuel": "Petrol",
       "transmission": "Automatic",
-      "engine": "2.0L 4-cylinder",
-      "numberOfDoors": "4",
-      "colour": "White",
-      "taxband": "F",
-      "decription": "Luxury sedan with advanced safety features and elegant Scandinavian design.",
-      "imageURLs": [],
-      "history": "History place holder",
+      "engine": "1.5L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Silver",
+      "taxband": "D",
+      "description": "This 2017 Ford Focus is the perfect blend of comfort, style, and performance. With a fuel-efficient 1.5L four-cylinder engine and automatic transmission, this car provides an exhilarating driving experience. The car has a low mileage of just over 34000 miles and boasts features that include air conditioning, Bluetooth connectivity, and rear parking sensors.",
+      "imageURLs": [
+        "http://example.com/car41-front.jpg",
+        "http://example.com/car41-back.jpg"
+      ],
+      "history": "No accidents reported, well-maintained.",
       "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
+      "mainImageURL": "http://example.com/car41-main.jpg",
+      "mileage": "34000",
       "year": "2017"
     }
   },
   {
-    "keyID": "51d6262e-58cc-41a2-be6a-a27df90fd760",
-    "recommended": false,
+    "keyID": "8f71982f-5f56-43a1-85cf-6356b8d0ad80",
+    "recommended": true,
     "data": {
-      "make": "Kia",
-      "model": "Optima",
-      "price": "25000",
+      "make": "BMW",
+      "model": "3 Series",
+      "price": "12499",
       "body": "Sedan",
-      "fuel": "Petrol",
+      "fuel": "Diesel",
       "transmission": "Automatic",
-      "engine": "2.4L 4-cylinder",
+      "engine": "2.0L Four-cylinder",
       "numberOfDoors": "4",
       "colour": "Silver",
-      "taxband": "C",
-      "decription": "Stylish and practical sedan with a spacious and comfortable interior.",
-      "imageURLs": [],
-      "history": "History place holder",
+      "taxband": "I",
+      "description": "This 2016 BMW 3 Series is a luxurious sedan with a powerful diesel engine, offering an average of 70 miles per gallon on highways. The sedan boasts a wide range of features that include automatic headlights, satellite navigation, and rearview camera. The car has a low mileage of just over 39000 miles and has been well-maintained throughout its life.",
+      "imageURLs": [
+        "http://example.com/car42-front.jpg",
+        "http://example.com/car42-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car42-main.jpg",
+      "mileage": "39000",
+      "year": "2016"
+    }
+  },
+  {
+    "keyID": "1bc84d4a-7dc4-4f5c-a7c9-bf60c30d4611",
+    "recommended": true,
+    "data": {
+      "make": "Vauxhall",
+      "model": "Mokka",
+      "price": "11899",
+      "body": "SUV",
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "engine": "1.4L Four-cylinder",
+      "numberOfDoors": "5",
+      "colour": "Black",
+      "taxband": "F",
+      "description": "The 2016 Vauxhall Mokka is an efficient and stylish SUV that is perfect for families. It features a 1.4L 4-cylinder petrol engine and a range of amenities, including air conditioning, electric windows, and alloy wheels. The car has a low mileage of just under 49000 miles and has been well-maintained throughout its life.",
+      "imageURLs": [
+        "http://example.com/car43-front.jpg",
+        "http://example.com/car43-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
+      "owners": "1",
+      "mainImageURL": "http://example.com/car43-main.jpg",
+      "mileage": "49000",
+      "year": "2016"
+    }
+  },
+  {
+    "keyID": "e777964f-e336-40dc-9d6a-6e5d42269808",
+    "recommended": true,
+    "data": {
+      "make": "Jaguar",
+      "model": "F-Type",
+      "price": "27999",
+      "body": "Roadster",
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "engine": "3.0L Six-cylinder",
+      "numberOfDoors": "2",
+      "colour": "Green",
+      "taxband": "M",
+      "description": "The 2015 Jaguar F-Type is a premium sports car that has a low mileage of just over 30000 miles. It boasts a powerful 6-cylinder engine, automatic transmission, and leather sport seats. Other features include alloy wheels, a rock-solid sound system, and Bluetooth connectivity.",
+      "imageURLs": [
+        "http://example.com/car44-front.jpg",
+        "http://example.com/car44-back.jpg"
+      ],
+      "history": "No accidents to report, serviced regularly.",
       "owners": "2",
-      "mainImageURL": "./assets/images/ExampleCards/FortTransit.jpg",
-      "mileage": "10000",
-      "year": "2017"
+      "mainImageURL": "http://example.com/car44-main.jpg",
+      "mileage": "30000",
+      "year": "2015"
     }
   }
 ]
