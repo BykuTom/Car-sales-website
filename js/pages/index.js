@@ -1,36 +1,11 @@
-import CarSlide from "./carSlides.js";
-import carousel from "./carousel.js";
-import CarSearch from "./carSearch.js";
-import * as utilities from "./utilities.js";
-import dataLoad from "./dataLoader.js";
+import CarSlide from "../components/carSlides.js";
+import carousel from "../components/carousel.js";
+import CarSearch from "../components/carSearch.js";
+import * as utilities from "../utilities.js";
+import dataLoad from "../components/dataLoader.js";
 window.onload = function () {
-  /*   const firstSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageOne.png"
-  );
-  const secondSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageTwo.png"
-  );
-  const thirdSlide = new CarSlide(
-    "Toyota",
-    20000,
-    ".carousel",
-    "#",
-    "./img/ExampleCards/ImageThree.png"
-  );
-  firstSlide.createListItem("data-active");
-  secondSlide.createListItem();
-  thirdSlide.createListItem();
- */
   (async () => {
-    const allDataArray = await dataLoad("./src/cars.json");
+    const allDataArray = await dataLoad("./assets/json/cars.json");
     const recommended = allDataArray[1];
     const firstObject = true;
     recommended.forEach((object) => {
@@ -39,7 +14,7 @@ window.onload = function () {
         object.data.price,
         ".carousel",
         `./car.html?id=${object.keyID}`,
-        `./img/ExampleCards/ImageTwo.png`
+        `./assets/images/ExampleCards/ImageTwo.png`
       );
       if (!firstObject) {
         newSlide.createListItem();
@@ -52,10 +27,10 @@ window.onload = function () {
   async function initialiseForm() {
     try {
       const additionalOptionsObject = await utilities.fetchJSON(
-        "./src/extendedCarSearchOptions.json"
+        "./assets/json/extendedCarSearchOptions.json"
       );
       const optionsArray = await utilities.fetchJSON(
-        "./src/carSearchOption.json"
+        "./assets/json/carSearchOption.json"
       );
       const carSearchForm = new CarSearch(
         ".carSearchForm",

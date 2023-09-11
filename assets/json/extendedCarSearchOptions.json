@@ -27,12 +27,6 @@
     "Grey",
     "Black"
   ],
-  "engineSizes": [
-    "up to 1 litre",
-    "1 litre to 1.3 litre",
-    "1.3 litre to 1.6 litre",
-    "1.6 litre to 1.9 litre",
-    "2 litre +"
-  ],
+  "engineSizes": ["0;1", "1;1.3", "1.3;1.6", "1.6;1.9", "2;10"],
   "taxBands": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
 }

@@ -1,4 +1,4 @@
-import { returnRandomKey } from "./utilities.js";
+import { returnRandomKey } from "../utilities.js";
 
 export default class CarSlide {
   constructor(carMake, carPrice, parentElementClass, link, imageLink) {

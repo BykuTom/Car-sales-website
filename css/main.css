@@ -84,6 +84,11 @@ header nav.navBar div.navBarLogo {
   max-height: 6rem;
   max-width: 12rem;
   width: 25%;
+  position: relative;
+}
+header nav.navBar div.navBarLogo a {
+  position: absolute;
+  inset: 0;
 }
 header nav.navBar div.navBarLogo img {
   width: 100%;
@@ -264,6 +269,10 @@ main section.heroSection button.heroCTAButton {
   align-items: center;
   transition: all 0.3s linear;
   cursor: pointer;
+}
+main section.heroSection button.heroCTAButton a {
+  position: absolute;
+  inset: 0;
 }
 @media screen and (min-width: 64rem) {
   main section.heroSection button.heroCTAButton {

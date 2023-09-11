@@ -1,29 +1,3 @@
-/* function jsonToObject(JSON) {
-  let object = {};
-  fetch(JSON)
-    .then((response) => response.json())
-    .then((data) => {
-      object = data;
-    })
-    .catch((error) => {
-      console.error("Error fetching JSONJ:", error);
-    });
-
-  return object;
-}
-function jsonToArray(JSON) {
-  let array = [];
-  fetch(JSON)
-    .then((response) => response.json())
-    .then((data) => {
-      array = data;
-    })
-    .catch((error) => {
-      console.error("Error fetching JSONJ:", error);
-    });
-
-  return array;
-} */
 export function parsePrice(textContent) {
   const cleanedTextContent = textContent.trim().substring(1);
   return parseInt(cleanedTextContent, 10);
@@ -101,8 +75,17 @@ export function getLocalStorageData(key) {
   }
   return undefined;
 }
-
-export function jsonToLocalStorage(jsonData) {}
+export function createOptionElement(value, textContent) {
+  const option = document.createElement("option");
+  option.setAttribute("value", value);
+  option.textContent = textContent;
+  return option;
+}
+export function createLinkElement(tagName, href) {
+  const element = document.createElement(tagName);
+  element.setAttribute("href", href);
+  return element;
+}
 export function createElement(tagName, className, id) {
   const element = document.createElement(tagName);
   if (className) element.classList.add(className);

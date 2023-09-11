@@ -1,9 +1,9 @@
-import dataLoad from "./dataLoader.js";
-import * as utilities from "./utilities.js";
+import dataLoad from "../components/dataLoader.js";
+import * as utilities from "../utilities.js";
 
 window.addEventListener("load", () => {
   (async () => {
-    const allDataArray = await dataLoad("./src/cars.json");
+    const allDataArray = await dataLoad("./assets/json/cars.json");
     const data = allDataArray[0];
 
     const queryString = window.location.search;

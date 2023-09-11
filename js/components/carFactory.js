@@ -1,4 +1,4 @@
-import * as utilities from "./utilities.js";
+import * as utilities from "../utilities.js";
 
 export default class CarFactory {
   constructor(data, itemsToBeLoaded, cardContainer) {
@@ -61,11 +61,25 @@ export default class CarFactory {
 
       const cardBottom = utilities.createElement("div", "card-bottom");
       // TODO: Causes error message of 404 not found because its empty, go fill it up!
-      cardBottom.appendChild(utilities.createImageElement(/* gear icon */));
-      cardBottom.appendChild(utilities.createImageElement(/* mileage icon */));
-      cardBottom.appendChild(utilities.createImageElement(/* body icon */));
-      cardBottom.appendChild(utilities.createImageElement(/* fuel icon */));
-      cardBottom.appendChild(utilities.createImageElement(/* engine icon */));
+      cardBottom.appendChild(
+        utilities.createImageElement(
+          "./assets/images/icons/manual-transmissionColour.png"
+        )
+      );
+      cardBottom.appendChild(
+        utilities.createImageElement(
+          "./assets/images/icons/speedometerColour.png"
+        )
+      );
+      cardBottom.appendChild(
+        utilities.createImageElement("./assets/images/icons/chassisColor.png")
+      );
+      cardBottom.appendChild(
+        utilities.createImageElement("./assets/images/icons/fuelColor.png")
+      );
+      cardBottom.appendChild(
+        utilities.createImageElement("./assets/images/icons/engineColour.png")
+      );
 
       cardBottom.appendChild(
         utilities.createTextElement("h4", car.data.transmission)
@@ -80,6 +94,19 @@ export default class CarFactory {
       );
 
       card.appendChild(cardBottom);
+
+      const cardHidden = utilities.createElement("div", "hidden-info");
+      cardHidden.appendChild(
+        utilities.createTextElement("h4", car.data.colour)
+      );
+      cardHidden.appendChild(
+        utilities.createTextElement("h4", car.data.numberOfDoors)
+      );
+      cardHidden.appendChild(
+        utilities.createTextElement("h4", car.data.taxband)
+      );
+      //  TODO: add these to filter and hide them in css
+      card.appendChild(cardHidden);
       this.cards.push(card);
     });
     //this.copiedCards = this.cards.slice();
@@ -130,12 +157,110 @@ export default class CarFactory {
         return filter.maxPrice >= cardPrice;
       });
     }
+    if (filter.body) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card
+            .querySelector(".card-bottom h4:nth-child(8)")
+            .textContent.toLowerCase() === filter.body.toLowerCase()
+        );
+      });
+    }
+    if (filter.fuel) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card.querySelector(".card-bottom h4:nth-child(9)").textContent ===
+          filter.fuel
+        );
+      });
+    }
+    if (filter.transmission) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card
+            .querySelector(".card-bottom h4:nth-child(6)")
+            .textContent.toLowerCase() === filter.transmission.toLowerCase()
+        );
+      });
+    }
+    if (filter.doors) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card
+            .querySelector(".hidden-info h4:nth-child(2)")
+            .textContent.toLowerCase() === filter.doors.toLowerCase()
+        );
+      });
+    }
+    if (filter.colour) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card
+            .querySelector(".hidden-info h4:nth-child(1)")
+            .textContent.toLowerCase() === filter.colour.toLowerCase()
+        );
+      });
+    }
+    if (filter.engine) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        const filterValues = filter.engine.split(";");
+        const engineValues = card
+          .querySelector(".card-bottom h4:nth-child(10)")
+          .textContent.substring(
+            0,
+            card
+              .querySelector(".card-bottom h4:nth-child(10)")
+              .textContent.indexOf("L")
+          );
+
+        if (parseFloat(engineValues) != NaN) {
+          return (
+            parseFloat(filterValues[0]) <= parseFloat(engineValues) &&
+            parseFloat(engineValues) <= parseFloat(filterValues[1])
+          );
+        }
+      });
+    }
+    if (filter.taxBand) {
+      cardsToFilter = cardsToFilter.filter((card) => {
+        return (
+          card
+            .querySelector(".hidden-info h4:nth-child(3)")
+            .textContent.toLowerCase() === filter.taxBand.toLowerCase()
+        );
+      });
+    }
 
     this.filteredCards = cardsToFilter;
   }
   sortCards(sort) {
     let copiedCards = this.filteredCards.slice();
-    if (sort === "highest") {
+    if (sort === "year") {
+      this.sortedCards = copiedCards.sort((a, b) => {
+        const yearA = parseInt(
+          a.querySelector(".card-top-car-names h3").textContent,
+          10
+        );
+        const yearB = parseInt(
+          b.querySelector(".card-top-car-names h3").textContent,
+          10
+        );
+        return yearB - yearA;
+      });
+    } else if (sort === "mileage") {
+      this.sortedCards = copiedCards.sort((a, b) => {
+        const mileageA = parseInt(
+          a.querySelector(".card-bottom h4:nth-child(7)").textContent,
+          10
+        );
+        const mileageB = parseInt(
+          b.querySelector(".card-bottom h4:nth-child(7)").textContent,
+          10
+        );
+
+        return mileageA - mileageB;
+      });
+    } else if (sort === "highest") {
       this.sortedCards = copiedCards.sort((a, b) => {
         const priceA = utilities.parsePrice(
           a.querySelector(".card-top-price h2").textContent,
@@ -181,55 +306,3 @@ export default class CarFactory {
     });
   }
 }
-
-/* const card = document.createElement("div");
-const cardLink = document.createElement("a");
-cardLink.setAttribute("href", carData.link);
-card.appendChild(cardLink);
-const cardTop = document.createElement("div");
-const cardTopCarNames = document.createElement("div");
-const cardTitle = document.createElement("h1");
-cardTitle.innerText = carData.make;
-cardTopCarNames.appendChild(cardTitle);
-const cardSubtitle = document.createElement("h2");
-cardSubtitle.innerText = carData.model;
-cardTopCarNames.appendChild(cardSubtitle);
-cardTop.appendChild(cardTopCarNames);
-const cardTopPrice = document.createElement("div");
-const cardPrice = document.createElement("h2");
-cardPrice.innerText = carData.price;
-cardTopPrice.appendChild(cardPrice);
-const cardFinancePrice = document.createElement("h3");
-cardFinancePrice.innerText = carData.financePrice;
-cardTopPrice.appendChild(cardFinancePrice);
-cardTop.appendChild(cardTopPrice);
-card.appendChild(cardTop);
-const cardContent = document.createElement("div");
-const cardImage = document.createElement("img");
-cardImage.setAttribute("src", carData.imageURL);
-cardImage.setAttribute("alt", `${carData.make} image`);
-cardContent.appendChild(cardImage);
-card.appendChild(cardContent);
-const cardBottom = document.createElement("div");
-const cardBottomGearIcon = document.createElement("img");
-cardBottom.appendChild(cardBottomGearIcon);
-const cardBottomBodyIcon = document.createElement("img");
-cardBottom.appendChild(cardBottomBodyIcon);
-const cardBottomFuelIcon = document.createElement("img");
-cardBottom.appendChild(cardBottomFuelIcon);
-const cardBottomEngineIcon = document.createElement("img");
-cardBottom.appendChild(cardBottomEngineIcon);
-const cardBottomGearInfo = document.createElement("h4");
-cardBottomGearInfo.innerText = carData.gear;
-cardBottom.appendChild(cardBottomGearInfo);
-const cardBottomBodyInfo = document.createElement("h4");
-cardBottomBodyInfo.innerText = carData.body;
-cardBottom.appendChild(cardBottomBodyInfo);
-const cardBottomFuelInfo = document.createElement("h4");
-cardBottomFuelInfo.innerText = carData.fuel;
-cardBottom.appendChild(cardBottomFuelInfo);
-const cardBottomEngineInfo = document.createElement("h4");
-cardBottomEngineInfo.innerText = carData.engine;
-cardBottom.appendChild(cardBottomEngineInfo);
-card.appendChild(cardBottom);
-this.cards.push(card); */

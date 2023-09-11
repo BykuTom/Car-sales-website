@@ -1,4 +1,4 @@
-import * as utilities from "./utilities.js";
+import * as utilities from "../utilities.js";
 
 export default class CarSearch {
   constructor(
@@ -21,30 +21,29 @@ export default class CarSearch {
 
   createCarSearchForm() {
     const selectMake = document.createElement("select");
-    const defaultOptionCarMake = document.createElement("option");
-    defaultOptionCarMake.setAttribute("value", "");
-    defaultOptionCarMake.textContent = "Select Make";
+    const defaultOptionCarMake = utilities.createOptionElement(
+      "",
+      "Select Make"
+    );
     selectMake.appendChild(defaultOptionCarMake);
-    const defaultOptionCarModel = document.createElement("option");
-    defaultOptionCarModel.setAttribute("value", "");
-    defaultOptionCarModel.textContent = "Select Model";
-
-    console.log(this.additionalOptionsObject);
-    console.log(this.carMakeModelsObjectArray);
+    const defaultOptionCarModel = utilities.createOptionElement(
+      "",
+      "Select Model"
+    );
 
     function allKeysEmpty(object) {
       for (const key in object) {
         if (object[key] !== "") {
-          return false; // If any value is not empty, return false
+          return false;
         }
       }
-      return true; // All values are empty
+      return true;
     }
+    // TODO: use createOptionElement
     this.carMakeModelsObjectArray.forEach((object) => {
-      const optionCarMake = document.createElement("option");
-      optionCarMake.setAttribute("value", object.make);
-      optionCarMake.textContent = object.make;
-      selectMake.appendChild(optionCarMake);
+      selectMake.appendChild(
+        utilities.createOptionElement(object.make, object.make)
+      );
     });
 
     selectMake.addEventListener("change", () => {
@@ -58,10 +57,7 @@ export default class CarSearch {
 
       if (selectedMakeObject) {
         selectedMakeObject.models.forEach((model) => {
-          const optionModel = document.createElement("option");
-          optionModel.setAttribute("value", model);
-          optionModel.textContent = model; // Set text content
-          selectModel.appendChild(optionModel);
+          selectModel.appendChild(utilities.createOptionElement(model, model));
         });
       } else {
         selectModel.appendChild(defaultOptionCarModel);
@@ -70,23 +66,18 @@ export default class CarSearch {
 
     const selectModel = document.createElement("select");
     selectModel.appendChild(defaultOptionCarModel);
-    // min max price selectors
+
     const selectMinPrice = document.createElement("select");
-    const defaultMinPrice = document.createElement("option");
-    defaultMinPrice.setAttribute("value", "");
-    defaultMinPrice.textContent = "Min Price";
-    selectMinPrice.appendChild(defaultMinPrice);
+    selectMinPrice.appendChild(utilities.createOptionElement("", "Min Price"));
     this.priceValues.forEach((price) => {
-      const optionMinPrice = document.createElement("option");
-      optionMinPrice.setAttribute("value", price);
-      optionMinPrice.textContent = `£${price}`;
-      selectMinPrice.appendChild(optionMinPrice);
+      selectMinPrice.appendChild(
+        utilities.createOptionElement(price, `£${price}`)
+      );
     });
 
     selectMinPrice.addEventListener("change", () => {
       const selectedOption =
         selectMinPrice.options[selectMinPrice.selectedIndex];
-
       selectMaxPrice.innerHTML = "";
 
       if (selectedOption.getAttribute("value") !== "") {
@@ -96,31 +87,25 @@ export default class CarSearch {
           arrayIndex + 1,
           this.priceValues.length
         );
-        console.log(aboveSelected);
         selectMaxPrice.appendChild(defaultMaxPrice);
         aboveSelected.forEach((price) => {
-          const optionMaxPrice = document.createElement("option");
-          optionMaxPrice.setAttribute("value", price);
-          optionMaxPrice.textContent = `£${price}`;
-          selectMaxPrice.appendChild(optionMaxPrice);
-          console.log("hey");
+          selectMaxPrice.appendChild(
+            utilities.createOptionElement(price, `£${price}`)
+          );
         });
       } else {
         selectMaxPrice.appendChild(defaultMaxPrice);
         this.priceValues.forEach((price) => {
-          const optionMaxPrice = document.createElement("option");
-          optionMaxPrice.setAttribute("value", price);
-          optionMaxPrice.textContent = `£${price}`;
-          selectMaxPrice.appendChild(optionMaxPrice);
+          selectMaxPrice.appendChild(
+            utilities.createOptionElement(price, `£${price}`)
+          );
         });
       }
     });
 
     const selectMaxPrice = document.createElement("select");
-    const defaultMaxPrice = document.createElement("option");
+    const defaultMaxPrice = utilities.createOptionElement("", "Max Price");
 
-    defaultMaxPrice.setAttribute("value", "");
-    defaultMaxPrice.textContent = "Max Price";
     selectMaxPrice.appendChild(defaultMaxPrice);
     this.priceValues.forEach((price) => {
       const optionMaxPrice = document.createElement("option");
@@ -163,7 +148,7 @@ export default class CarSearch {
         formData.transmission = selectTransmission.value;
         formData.numberOfDoors = selectNumberofDoors.value;
         formData.colour = selectColour.value;
-        formData.engineSize = selectEngineSize.value;
+        formData.engine = selectEngineSize.value;
         formData.taxBand = selectTaxBand.value;
       }
       try {
@@ -278,10 +263,24 @@ export default class CarSearch {
     defaultEngineSize.textContent = "Select Engine Size";
     selectEngineSize.appendChild(defaultEngineSize);
 
-    this.additionalOptionsObject["engineSizes"].forEach((engineSize) => {
+    this.additionalOptionsObject["engineSizes"].forEach((engineSize, index) => {
       const optionEngineSize = document.createElement("option");
       optionEngineSize.setAttribute("value", engineSize);
-      optionEngineSize.textContent = `${engineSize}`;
+      if (index === 0) {
+        optionEngineSize.textContent = `Up to ${engineSize.split(";")[1]}litre`;
+      } else if (
+        index ===
+        this.additionalOptionsObject["engineSizes"].length - 1
+      ) {
+        optionEngineSize.textContent = `More than ${
+          engineSize.split(";")[0]
+        }litre`;
+      } else {
+        optionEngineSize.textContent = `${engineSize.split(";")[0]}litre to ${
+          engineSize.split(";")[1]
+        }litre`;
+      }
+
       selectEngineSize.appendChild(optionEngineSize);
     });
 
@@ -354,18 +353,3 @@ export default class CarSearch {
     });
   }
 }
-/* this.FormElement.removeChild(selectBodyStyle);
-        this.FormElement.removeChild(selectFuel);
-        this.FormElement.removeChild(selectTransmission);
-        this.FormElement.removeChild(selectColour);
-        this.FormElement.removeChild(selectNumberofDoors);
-        this.FormElement.removeChild(selectEngineSize);
-        this.FormElement.removeChild(selectTaxBand); */
-/* 
-    
-    
-    
-    
-    
-    const selectTaxBand = document.createElement("select");
-    const searchButton = document.createElement("button"); */

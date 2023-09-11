@@ -1,7 +1,7 @@
-import NavigationButton from "./navBar.js";
+import NavigationButton from "./components/navBar.js";
 import { headerTemplate, footerTemplate } from "./templates.js";
 import * as utilities from "./utilities.js";
-import dataLoad from "./dataLoader.js";
+import dataLoad from "./components/dataLoader.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.querySelector("body");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }; */
 
   (async () => {
-    const allDataArray = await dataLoad("./src/cars.json");
+    const allDataArray = await dataLoad("./assets/json/cars.json");
     console.log(allDataArray);
   })();
 });

@@ -1,4 +1,4 @@
-import * as utilities from "./utilities.js";
+import * as utilities from "../utilities.js";
 
 export default async function dataLoad(jsonURL) {
   const data = await utilities.fetchJSON(jsonURL);

@@ -2,7 +2,8 @@ export const headerTemplate = `
 <template id="template"><header>
 <nav class="navBar">
   <div class="navBarLogo">
-    <img src="./img/SOUCLogo.png" alt="SOUC.Logo" />
+  <a href="./index.html"></a>
+    <img src="./assets/images/SOUCLogo.png" alt="SOUC.Logo" />
   </div>
   <ul class="navLinks" aria-expanded="false">
     <li>
@@ -14,7 +15,7 @@ export const headerTemplate = `
     </li>
     <li>
       <i class="icon fa-regular fa-comment-dots"></i
-      ><a href="./showroom.html">Contact Us</a>
+      ><a href="#">Contact Us</a>
     </li>
     <li>
       <span>Showroom</span>
