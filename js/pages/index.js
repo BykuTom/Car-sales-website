@@ -8,7 +8,7 @@ window.onload = function () {
   (async () => {
     const allDataArray = await dataLoad("./assets/json/cars.json");
     const recommended = allDataArray[1];
-    const firstObject = true;
+    let firstObject = true;
 
     let basicOptionsArray = [];
 

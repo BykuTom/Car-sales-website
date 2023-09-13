@@ -1,4 +1,4 @@
-import NavigationButton from "./components/navBar.js";
+import Navigation from "./components/navBar.js";
 import { headerTemplate, footerTemplate } from "./templates.js";
 import * as utilities from "./utilities.js";
 import dataLoad from "./components/dataLoader.js";
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   template.remove();
   footertemplate.remove();
   console.log(elementArray);
-  const navigation = new NavigationButton(
+  const navigation = new Navigation(
     ".navLinks",
     ".navBarExpandButton",
     "main",

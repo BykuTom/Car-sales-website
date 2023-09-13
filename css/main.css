@@ -6,12 +6,16 @@
   --colour-feta-white: #f1faee;
   --colour-pearlbush-grey: #e0e1dd;
   --colour-indigo-dye-blue: #01497c;
+  --colour-atomic-tangerine-orange: #f7a072;
+  --colour-saffron-yellow: #eeb902;
+  --colour-tropical-indigo-purple: #9893da;
+
   /* Dark set */
   --colour-riverbed-blue: #405661;
   --colour-marble-blue: #597081;
   /* Current Colours*/
   --colour-main: var(--colour-feta-white);
-  --colour-primary: var(--colour-pearlbush-grey);
+  --colour-primary: var(--colour-atomic-tangerine-orange);
   --colour-secondary: var(--colour-indigo-dye-blue);
   --color-text-main: black;
   --color-text-primary: black;
@@ -64,11 +68,28 @@ body p {
   font-size: var(--font-sm);
 }
 /* header styles */
+
 header {
   position: relative;
   z-index: 20;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+  height: 5rem;
 }
+header::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    var(--colour-indigo-dye-blue),
+    var(--colour-tropical-indigo-purple) 20%,
+    var(--colour-saffron-yellow) 60%
+  );
+  z-index: 1;
+}
+
 header nav.navBar {
   background-color: var(--colour-main);
   position: relative;
@@ -77,7 +98,7 @@ header nav.navBar {
   justify-content: space-between;
   padding: 0.5rem 1rem;
   width: 100%;
-  max-height: 6rem;
+  height: 100%;
 }
 header nav.navBar div.navBarLogo {
   aspect-ratio: 291/141;
@@ -94,10 +115,52 @@ header nav.navBar div.navBarLogo img {
   width: 100%;
   height: 100%;
 }
-header nav.navBar button.navBarExpandButton {
+button.navBarExpandButton {
   aspect-ratio: 1/1;
   max-width: 3rem;
   width: 100%;
+  position: relative;
+  z-index: 0;
+  background: none;
+  outline: none;
+  border: none;
+}
+button.navBarExpandButton::before,
+button.navBarExpandButton::after {
+  content: "";
+  left: 0;
+  transition: transform 0.25s;
+}
+button.navBarExpandButton::before,
+button.navBarExpandButton::after,
+button.navBarExpandButton div.bar {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  background: var(--colour-primary);
+  border-radius: 0.25rem;
+}
+
+button.navBarExpandButton::before {
+  top: 10%;
+}
+button.navBarExpandButton::after {
+  bottom: 10%;
+}
+button.navBarExpandButton.active::before {
+  transform: translateY(150%) rotate(405deg);
+}
+button.navBarExpandButton.active::after {
+  transform: translateY(-150%) rotate(-405deg);
+}
+button.navBarExpandButton div.bar {
+  z-index: 1;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+button.navBarExpandButton div.bar.active {
+  opacity: 0;
 }
 ul.navLinks {
   position: absolute;
@@ -106,14 +169,21 @@ ul.navLinks {
   text-decoration: none;
   list-style: none;
   display: grid;
-  grid-template-rows: 1fr 12fr;
-  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(3, 21vw);
+  grid-auto-rows: 21vw;
   gap: 1rem;
   padding: 2rem 1rem;
-  height: 100vh;
+  height: calc(100vh - 5rem);
   width: 80%;
   left: -80%;
-  background-color: var(--colour-primary);
+  background: linear-gradient(
+    to bottom,
+    var(--colour-main) 87.5%,
+    var(--colour-indigo-dye-blue) 87.5% 90%,
+    var(--colour-tropical-indigo-purple) 90% 92.5%,
+    var(--colour-saffron-yellow) 92.5% 95%,
+    var(--colour-main) 95%
+  );
   transition: left 0.25s linear;
 }
 ul.navLinks.open {
@@ -127,31 +197,38 @@ ul.navLinks li {
   position: relative;
   display: flex;
 }
-/* ul.navLinks li:first-child a,
-ul.navLinks li:nth-child(3) a {
-  align-items: ;
-} */
-ul.navLinks li:last-child {
-  width: 100%;
-  height: max(4rem, calc(4vw + 1rem));
-  padding: 0.5rem;
-  grid-column: span 3;
-}
+
 ul.navLinks li::before {
   content: "";
   position: absolute;
   inset: 5px;
   transform: translate(6px, 8px);
-  z-index: -1;
+  z-index: -2;
   background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
   filter: blur(10px);
+}
+ul.navLinks li::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 0.5rem;
+  background: conic-gradient(
+    var(--colour-atomic-tangerine-orange),
+    var(--colour-tropical-indigo-purple),
+    var(--colour-saffron-yellow),
+    var(--colour-atomic-tangerine-orange)
+  );
+  z-index: -1;
 }
 ul.navLinks li i.icon {
   position: absolute;
   inset: calc(60% - 7vw) 0 0 0;
   text-align: center;
   font-size: 7vw;
-  color: var(--colour-secondary);
+  color: var(--colour-atomic-tangerine-orange);
 }
 
 ul.navLinks li ul.navBarShowroomLinks {
@@ -203,397 +280,7 @@ main div.mainBlurMask.on {
   opacity: 1;
   display: block;
 }
-main div.headerLocationInfo {
-  background-color: var(--colour-primary);
-  width: 100%;
-  height: fit-content;
-  padding: 0.2rem;
-  position: relative;
-  z-index: 9;
-}
-main section.heroSection {
-  height: fit-content;
-  padding: 2rem 0.5rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 5;
-  overflow: hidden;
-}
-main section.heroSection div.heroDecorations {
-  position: relative;
-  z-index: -10;
-}
-main section.heroSection div.heroDecorations svg.circleOne {
-  position: absolute;
-  z-index: -5;
-  width: 40vw;
-  left: 5vw;
-  top: -7vw;
-}
 
-main section.heroSection h2,
-p {
-  font-weight: lighter;
-}
-main section.heroSection h1 {
-  font-weight: 5f00;
-  text-align: center;
-}
-main section.heroSection h1 strong {
-  font-weight: 700;
-  color: var(--colour-indigo-dye-blue);
-}
-main section.heroSection h2 {
-  text-align: center;
-  padding: 0 0.5rem;
-}
-main section.heroSection button.heroCTAButton {
-  position: relative;
-  max-width: 25rem;
-  height: max(4rem, calc(4vw + 1rem));
-  max-height: 5.25rem;
-  padding: 4vw 0.5rem;
-  margin-top: 1rem;
-  font-size: max(var(--font-lrg), calc(4vw + 1rem));
-  font-family: var(--font-family-default);
-  font-weight: 300;
-  border: none;
-  background: var(--colour-secondary);
-  color: var(--color-text-secondary);
-  border-radius: 4px;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  transition: all 0.3s linear;
-  cursor: pointer;
-}
-main section.heroSection button.heroCTAButton a {
-  position: absolute;
-  inset: 0;
-}
-@media screen and (min-width: 64rem) {
-  main section.heroSection button.heroCTAButton {
-    font-size: 3.5rem;
-    padding: 2.5rem 0.5rem;
-  }
-}
-main section.heroSection button.heroCTAButton::before {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  transform: translate(6px, 8px);
-  z-index: -1;
-  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
-  filter: blur(10px);
-}
-main section.heroSection button.heroCTAButton:hover {
-  background-color: #405661;
-  scale: 1.1;
-}
-main section.heroSection div.heroReviews {
-  margin-top: 1rem;
-  font-size: var(--font-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-}
-main section.heroSection div.heroReviews span.numberOfStars {
-  color: orange;
-}
-main
-  section.heroSection
-  div.heroReviews
-  div.heroReviewsSiteNumber
-  a.websiteLink,
-main section.heroSection div.heroReviews span strong {
-  color: var(--colour-secondary);
-}
-main
-  section.heroSection
-  div.heroReviews
-  div.heroReviewsSiteNumber
-  a.websiteLink {
-  text-decoration: none;
-}
-main section.heroSection div.heroImage {
-  margin-top: 2rem;
-  position: relative;
-  aspect-ratio: 1.5/1;
-  width: 100%;
-  max-height: 42rem;
-  overflow: hidden-x;
-  z-index: -2;
-}
-main section.heroSection div.heroImage img:first-child {
-  position: absolute;
-  width: 130%;
-  max-width: 79rem;
-  right: max(-35%, -20.5rem);
-  height: 130%;
-  max-height: 53rem;
-  bottom: -15%;
-  z-index: 1;
-  visibility: visible;
-}
-
-main section.heroSection div.heroImage svg.circleOne {
-  width: 100vw;
-  max-width: 64rem;
-  position: absolute;
-  left: min(0%, 19.2rem);
-  bottom: -10%;
-  z-index: -1;
-}
-main section.heroSection div.heroImage svg.rectangleOne {
-  width: 115vw;
-  max-width: 98rem;
-  position: absolute;
-  bottom: max(-85vw, -86rem);
-  z-index: -1;
-  right: max(-10%, -11rem);
-  transform: rotate(75deg);
-}
-main section.aboutUsSection {
-  position: relative;
-  z-index: 5;
-  background-color: lightblue;
-  padding: 4rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-top: 0.5rem solid var(--colour-secondary);
-}
-main section.aboutUsSection div.aboutDecorations {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  max-width: 64rem;
-  margin: auto;
-}
-main section.aboutUsSection div.aboutDecorations img {
-  aspect-ratio: 1/1;
-  width: min(70vw, 70vh);
-  max-width: 32rem;
-  z-index: -1;
-  opacity: 0.1;
-}
-main section.aboutUsSection h1,
-main section.aboutUsSection h2,
-main section.aboutUsSection p {
-  color: var(--colour-riverbed-blue);
-  text-align: center;
-  font-weight: 300;
-  width: 100%;
-  max-width: 82rem;
-  padding: 0 0.5rem;
-  margin: auto;
-}
-main section.aboutUsSection h1 strong,
-main section.aboutUsSection h2 strong {
-  color: var(--colour-secondary);
-}
-main section.aboutUsSection h1 strong {
-  font-size: calc(var(--font-xl) + 0.25rem);
-}
-main section.aboutUsSection h2 {
-  font-size: calc(var(--font-lrg) + 0.25rem);
-}
-
-main section.aboutUsSection p {
-  font-size: calc(var(--font-med) + 0.25rem);
-}
-
-main section.carSearchSection {
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  height: 305px;
-  transition: height 0.25s linear;
-}
-main section.carSearchSection h2 {
-  color: #3c3c3c;
-}
-main section.carSearchSection form.carSearchForm {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 0.5rem;
-  column-gap: 0.25rem;
-  max-width: 70rem;
-  position: relative;
-  z-index: 5;
-  overflow: hidden;
-  height: 154px;
-  transition: height 0.25s ease-in-out;
-}
-
-main section.carSearchSection button.carSearchMoreOptionsButton {
-  outline: none;
-  border: none;
-  background: none;
-  font-size: calc(var(--font-med) - 0.2rem);
-  border-bottom: 2px solid black;
-  color: #3c3c3c;
-}
-main section.carSearchSection button.carSearchMoreOptionsButton:hover {
-  border-bottom: 2px solid var(--colour-secondary);
-  color: var(--colour-secondary);
-}
-select {
-  display: inline-block;
-  font: inherit;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-main section.carSearchSection form.carSearchForm select {
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: 1px solid var(--colour-primary);
-  background: var(--colour-main);
-  color: var(--colour-secondary);
-  font-weight: 300;
-  font-family: var(--font-family-default);
-  cursor: pointer;
-  position: relative;
-}
-main section.carSearchSection form.carSearchForm select {
-  background-image: linear-gradient(
-      45deg,
-      transparent 50%,
-      var(--colour-secondary) 50%
-    ),
-    linear-gradient(135deg, var(--colour-secondary) 50%, transparent 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
-}
-main section.carSearchSection form.carSearchForm select:focus {
-  color: var(--colour-secondary);
-}
-
-main section.carSearchSection form.carSearchForm select:focus {
-  background-image: linear-gradient(
-      45deg,
-      var(--colour-secondary) 50%,
-      transparent 50%
-    ),
-    linear-gradient(135deg, transparent 50%, var(--colour-secondary) 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
-    calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
-  border-color: var(--colour-secondary);
-  outline: 0;
-}
-main section.carSearchSection form.carSearchForm select[lastElement] {
-  grid-column: span 2;
-  max-width: 35rem;
-  width: 100%;
-  margin: auto;
-}
-main section.carSearchSection form.carSearchForm select option {
-  font-weight: normal;
-  display: block;
-  white-space-collapse: collapse;
-  text-wrap: nowrap;
-  padding: 0.25rem;
-}
-main section.carSearchSection form.carSearchForm button {
-  font-family: var(--font-family-default);
-  font-weight: 300;
-  border: none;
-  background: var(--colour-secondary);
-  color: var(--color-text-secondary);
-  border-radius: 4px;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  grid-column: span 2;
-  transition: all 0.3s linear;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: var(--font-lrg);
-  max-width: 35rem;
-  margin: auto;
-  position: relative;
-}
-main section.carSearchSection form.carSearchForm button::before {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  transform: translate(6px, 8px);
-  z-index: -1;
-  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
-  filter: blur(10px);
-}
-main section.contactSection {
-  background: var(--colour-secondary);
-  display: grid;
-  grid: auto;
-  color: var(--color-text-secondary);
-  padding: 2rem 0;
-  position: relative;
-  z-index: 5;
-}
-main section.contactSection div {
-  width: 100%;
-  max-width: 64rem;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  align-items: center;
-  text-align: center;
-  border-bottom: 2px solid var(--color-text-secondary);
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    var(--color-text-secondary),
-    transparent
-  );
-  margin-bottom: 1rem;
-}
-
-main section.contactSection div h2,
-main section.contactSection div h3 {
-  margin-bottom: 0.5rem;
-}
-main section.contactSection div p:last-child {
-  margin-bottom: 1rem;
-}
-main section.contactSection div h2 {
-  font-size: var(--font-lrg);
-  font-weight: 700;
-}
-main section.contactSection div h3 {
-  font-size: var(--font-med);
-  font-weight: 400;
-}
-main section.contactSection div p {
-  font-size: calc(var(--font-sm) + 0.25rem);
-  font-weight: 300;
-}
 section.slide-carousel,
 main section.carCarouselSection {
   display: grid;
@@ -750,7 +437,7 @@ footer section.footerGrid {
   padding: 2rem 0.5rem;
   z-index: 5;
   text-align: center;
-  background-color: var(--colour-primary);
+  background-color: lightblue;
 }
 footer section.footerGrid,
 footer section.footerGrid * {
@@ -758,3 +445,40 @@ footer section.footerGrid * {
   text-decoration: none;
 }
 /* footerGrid */
+@media screen and (min-width: 64rem) {
+  ul.navLinks {
+    padding: 1rem 1rem;
+    top: 0;
+    left: 15%;
+    bottom: 0;
+    right: 0;
+    height: 5rem;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    background: none;
+    text-wrap: nowrap;
+  }
+  ul.navLinks li {
+    aspect-ratio: unset;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    justify-content: space-around;
+  }
+  ul.navLinks li i.icon {
+    position: static;
+    text-align: center;
+    font-size: 3rem;
+    inset: unset;
+    color: var(--colour-secondary);
+  }
+  ul.navLinks li a {
+    position: static;
+    text-align: center;
+    font-size: var(--font-lrg);
+    inset: unset;
+  }
+}

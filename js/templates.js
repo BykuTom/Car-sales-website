@@ -26,7 +26,7 @@ export const headerTemplate = `
       </ul>
     </li>
   </ul>
-  <button class="navBarExpandButton"></button>
+  <button class="navBarExpandButton"><div class="bar"></div></button>
 </nav>
 </header></template>
 `;
