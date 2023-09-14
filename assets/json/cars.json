@@ -58,7 +58,7 @@
   },
   {
     "keyID": "01612a07-7b73-424f-bd57-444fa8953ebe",
-    "recommended": false,
+    "recommended": true,
     "data": {
       "make": "Ford",
       "model": "Fiesta",
@@ -101,19 +101,22 @@
       "taxband": "C",
       "description": "2012 Renault Clio, good overall condition with a few minor dings. Great first car.",
       "imageURLs": [
-        "http://example.com/car4-front.jpg",
-        "http://example.com/car4-back.jpg"
+        "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/1.jpg",
+        "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/2.jpg",
+        "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/3.jpg",
+        "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/4.jpg",
+        "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/5.jpg"
       ],
       "history": "No accidents, one small dent on the driver's side.",
       "owners": "2",
-      "mainImageURL": "http://example.com/car4-main.jpg",
+      "mainImageURL": "./assets/images/cars/75411679-7476-4d9d-adcb-46aaf5dc25a8/1.jpg",
       "mileage": "64000",
       "year": "2012"
     }
   },
   {
     "keyID": "70bdfeb0-837c-4f41-adfd-f51a4c829775",
-    "recommended": false,
+    "recommended": true,
     "data": {
       "make": "BMW",
       "model": "X5",
@@ -127,12 +130,15 @@
       "taxband": "J",
       "description": "2011 BMW X5, fantastic condition with beautiful tan leather interior. Loaded with features.",
       "imageURLs": [
-        "http://example.com/car5-front.jpg",
-        "http://example.com/car5-back.jpg"
+        "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/1.jpg",
+        "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/2.jpg",
+        "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/3.jpg",
+        "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/4.jpg",
+        "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/5.jpg"
       ],
       "history": "No accidents, meticulously maintained.",
       "owners": "1",
-      "mainImageURL": "http://example.com/car5-main.jpg",
+      "mainImageURL": "./assets/images/cars/70bdfeb0-837c-4f41-adfd-f51a4c829775/1.jpg",
       "mileage": "61000",
       "year": "2011"
     }
@@ -153,12 +159,15 @@
       "taxband": "D",
       "description": "2010 Mini Cooper S, great condition and a blast to drive. Rare chili red color.",
       "imageURLs": [
-        "http://example.com/car6-front.jpg",
-        "http://example.com/car6-back.jpg"
+        "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/1.jpg",
+        "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/2.jpg",
+        "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/3.jpg",
+        "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/4.jpg",
+        "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/5.jpg"
       ],
       "history": "No accidents, some minor wear on driver's seat.",
       "owners": "3",
-      "mainImageURL": "http://example.com/car6-main.jpg",
+      "mainImageURL": "./assets/images/cars/a4139de7-b572-40c4-8d60-2bc50f2b36c3/1.jpg",
       "mileage": "58000",
       "year": "2010"
     }
@@ -841,7 +850,7 @@
   },
   {
     "keyID": "dde6c821-3bf8-4884-9951-19fcfeceed7e",
-    "recommended": false,
+    "recommended": true,
     "data": {
       "make": "Jaguar",
       "model": "XF",
@@ -855,12 +864,15 @@
       "taxband": "K",
       "description": "Ladies and Gents, we bring to you this 2015 Jaguar XF in an attractive silver color with a luxurious interior. The car is in superb condition with only one previous owner and a low mileage of 56000 miles. It features front and rear parking sensors, satellite navigation, automatic air conditioning, and a full leather interior. With a fuel economy of up to 57 miles per gallon on highways, this car is an excellent choice for anyone who values both style and efficiency.",
       "imageURLs": [
-        "http://example.com/car33-front.jpg",
-        "http://example.com/car33-back.jpg"
+        "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/1.jpg",
+        "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/2.jpg",
+        "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/3.jpg",
+        "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/4.jpg",
+        "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/5.jpg"
       ],
       "history": "No accidents to report, regular servicing history.",
       "owners": "1",
-      "mainImageURL": "http://example.com/car33-main.jpg",
+      "mainImageURL": "./assets/images/cars/dde6c821-3bf8-4884-9951-19fcfeceed7e/1.jpg",
       "mileage": "56000",
       "year": "2015"
     }
@@ -971,7 +983,7 @@
   },
   {
     "keyID": "4d69a1ea-68b2-4c5c-8302-dd5d49657588",
-    "recommended": false,
+    "recommended": true,
     "data": {
       "make": "Jaguar",
       "model": "F-Pace",
@@ -985,12 +997,15 @@
       "taxband": "K",
       "description": "Introducing the 2016 Jaguar F-Pace SUV that has been well-maintained and serviced regularly. It has a powerful 2.0-Liter 4-cylinder engine producing 180 horsepower along with automatic transmission. The car has a low mileage of just over 51000 miles and boasts a range of features that include rear parking sensors, electric front seats, and cruise control.",
       "imageURLs": [
-        "http://example.com/car38-front.jpg",
-        "http://example.com/car38-back.jpg"
+        "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/1.jpg",
+        "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/2.jpg",
+        "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/3.jpg",
+        "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/4.jpg",
+        "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/5.jpg"
       ],
       "history": "No accidents to report, serviced regularly.",
       "owners": "1",
-      "mainImageURL": "http://example.com/car38-main.jpg",
+      "mainImageURL": "./assets/images/cars/4d69a1ea-68b2-4c5c-8302-dd5d49657588/1.jpg",
       "mileage": "51000",
       "year": "2016"
     }
@@ -1023,7 +1038,7 @@
   },
   {
     "keyID": "e11e117e-ac06-4eec-8a73-2ab9ebf75c7b",
-    "recommended": true,
+    "recommended": false,
     "data": {
       "make": "Jaguar",
       "model": "XE",
@@ -1049,7 +1064,7 @@
   },
   {
     "keyID": "84db3491-9b54-4270-8aac-d8a4a7737d3d",
-    "recommended": true,
+    "recommended": false,
     "data": {
       "make": "Ford",
       "model": "Focus",
@@ -1075,7 +1090,7 @@
   },
   {
     "keyID": "8f71982f-5f56-43a1-85cf-6356b8d0ad80",
-    "recommended": true,
+    "recommended": false,
     "data": {
       "make": "BMW",
       "model": "3 Series",
@@ -1101,7 +1116,7 @@
   },
   {
     "keyID": "1bc84d4a-7dc4-4f5c-a7c9-bf60c30d4611",
-    "recommended": true,
+    "recommended": false,
     "data": {
       "make": "Vauxhall",
       "model": "Mokka",
@@ -1127,7 +1142,7 @@
   },
   {
     "keyID": "e777964f-e336-40dc-9d6a-6e5d42269808",
-    "recommended": true,
+    "recommended": false,
     "data": {
       "make": "Jaguar",
       "model": "F-Type",

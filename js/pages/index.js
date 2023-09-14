@@ -32,7 +32,7 @@ window.onload = function () {
         object.data.price,
         ".carousel",
         `./car.html?id=${object.keyID}`,
-        `./assets/images/ExampleCards/ImageTwo.png`
+        `${object.data.mainImageURL}`
       );
       if (!firstObject) {
         newSlide.createListItem();

@@ -1,3 +1,6 @@
+button {
+  padding: 0.6rem;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -97,7 +100,10 @@ div.card-bottom img {
 .pageSettings {
   display: flex;
   justify-content: space-between;
+  margin-top: 0.3rem;
   padding: 0.25rem 0.5rem;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--colour-primary);
   border-bottom: 2px solid var(--colour-primary);
 }
 
@@ -163,23 +169,6 @@ select option {
   display: inherit;
   gap: inherit;
   justify-content: inherit;
-}
-button {
-  position: relative;
-  font-size: var(--font-med);
-  width: min-content;
-  padding: 0.6rem;
-  outline: none;
-  border: 2px solid var(--colour-primary);
-  border-radius: 0.2rem;
-  background-color: var(--colour-primary);
-  color: black;
-}
-button:hover {
-  background-color: dimgray;
-}
-button.active {
-  background-color: gray;
 }
 
 .pageButtons button a {
