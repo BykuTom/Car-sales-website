@@ -10,19 +10,19 @@ main section.heroSection {
   gap: 2rem;
   z-index: 5;
   overflow: hidden;
-  color: var(--colour-main);
+  color: var(--colour-text-primary);
 }
 main section.heroSection div.heroDecorations {
   position: relative;
   z-index: -10;
 }
-main section.heroSection div.heroDecorations svg.circleOne {
+/* main section.heroSection div.heroDecorations svg.circleOne {
   position: absolute;
   z-index: -5;
   width: 40vw;
   left: 5vw;
   top: -7vw;
-}
+} */
 
 main section.heroSection h2,
 p {
@@ -76,7 +76,7 @@ main section.heroSection button.heroCTAButton::after {
   );
 }
 main section.heroSection button.heroCTAButton:hover {
-  background-color: #405661;
+  background-color: var(--colour-text-main);
   scale: 1.1;
   color: var(--colour-main);
 }
@@ -96,7 +96,7 @@ main section.heroSection button.heroCTAButton::before {
   inset: 5px;
   transform: translate(6px, 8px);
   z-index: -2;
-  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
+  background: var(--shadow-gradient);
   filter: blur(10px);
 }
 
@@ -138,19 +138,19 @@ main section.heroSection div.heroImage {
     var(--colour-secondary)
   );
 }
-main section.heroSection div.heroImage img:first-child {
+main section.heroSection div.heroImage img {
   aspect-ratio: 64/34;
   position: absolute;
-  min-width: 64rem;
+  width: max(128rem, 100%);
+  max-width: 215rem;
   opacity: 60%;
-  height: 100%;
-  min-height: 34rem;
+  min-height: 100%;
   bottom: 0;
   z-index: 1;
   visibility: visible;
 }
 
-main section.heroSection div.heroImage svg.circleOne {
+/* main section.heroSection div.heroImage svg.circleOne {
   width: 100vw;
   max-width: 64rem;
   position: absolute;
@@ -166,7 +166,7 @@ main section.heroSection div.heroImage svg.rectangleOne {
   z-index: -1;
   right: max(-10%, -11rem);
   transform: rotate(75deg);
-}
+} */
 main section.aboutUsSection {
   position: relative;
   z-index: 5;
@@ -179,14 +179,6 @@ main section.aboutUsSection {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-top: 0.5rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    var(--colour-indigo-dye-blue),
-    var(--colour-tropical-indigo-purple) 20%,
-    var(--colour-saffron-yellow) 60%
-  );
 }
 main section.aboutUsSection div.aboutDecorations {
   position: absolute;
@@ -201,14 +193,14 @@ main section.aboutUsSection div.aboutDecorations {
 main section.aboutUsSection div.aboutDecorations img {
   aspect-ratio: 1/1;
   width: min(70vw, 70vh);
-  max-width: 32rem;
+  max-width: 22rem;
   z-index: -1;
   opacity: 0.1;
 }
 main section.aboutUsSection h1,
 main section.aboutUsSection h2,
 main section.aboutUsSection p {
-  color: var(--colour-main);
+  color: var(--colour-text-secondary);
   text-align: center;
   font-weight: 300;
   width: 100%;
@@ -247,11 +239,11 @@ main section.carSearchSection {
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  height: 305px;
+  height: 380px;
   transition: height 0.25s linear;
 }
 main section.carSearchSection h2 {
-  color: #3c3c3c;
+  color: var(--colour-text-main);
 }
 main section.carSearchSection form.carSearchForm {
   display: grid;
@@ -263,7 +255,8 @@ main section.carSearchSection form.carSearchForm {
   position: relative;
   z-index: 5;
   overflow: hidden;
-  height: 154px;
+  height: 200px;
+  padding: var(--padding-thick) 0;
   transition: height 0.25s ease-in-out;
 }
 
@@ -273,8 +266,8 @@ main section.carSearchSection button.carSearchMoreOptionsButton {
   background: none;
   width: unset;
   font-size: calc(var(--font-med) - 0.2rem);
-  border-bottom: 2px solid black;
-  color: #3c3c3c;
+  border-bottom: var(--border-size-standard) solid var(--colour-text-main);
+  color: var(--colour-text-main);
 }
 main section.carSearchSection button.carSearchMoreOptionsButton:hover {
   border-bottom: 2px solid var(--colour-secondary);
@@ -342,7 +335,7 @@ main section.carSearchSection form.carSearchForm button {
   font-weight: 300;
   border: none;
   background: var(--colour-secondary);
-  color: var(--color-text-secondary);
+  color: var(--colour-text-secondary);
   border-radius: 0.2rem;
   display: flex;
   gap: 1.2rem;
@@ -364,7 +357,7 @@ main section.carSearchSection form.carSearchForm button::before {
   inset: 2px;
   transform: translate(6px, 8px);
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, dimgray 70%, transparent);
+  background: var(--shadow-gradient);
   filter: blur(10px);
 }
 main section.contactSection {
@@ -375,7 +368,7 @@ main section.contactSection {
   );
   display: grid;
   grid: auto;
-  color: var(--color-text-secondary);
+  color: var(--colour-text-secondary);
   padding: 1rem 0 2rem 0;
   position: relative;
   z-index: 5;
@@ -418,14 +411,4 @@ main section.contactSection div h3 {
 main section.contactSection div p {
   font-size: calc(var(--font-sm) + 0.25rem);
   font-weight: 300;
-}
-section.carCarouselSection {
-  border-top: 0.5rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    var(--colour-indigo-dye-blue),
-    var(--colour-tropical-indigo-purple) 20%,
-    var(--colour-saffron-yellow) 60%
-  );
 }

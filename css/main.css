@@ -9,17 +9,21 @@
   --colour-atomic-tangerine-orange: #f7a072;
   --colour-saffron-yellow: #eeb902;
   --colour-tropical-indigo-purple: #9893da;
-
-  /* Dark set */
   --colour-riverbed-blue: #405661;
   --colour-marble-blue: #597081;
+  --colour-night-black: #080f0f;
+
   /* Current Colours*/
   --colour-main: var(--colour-feta-white);
   --colour-primary: var(--colour-atomic-tangerine-orange);
   --colour-secondary: var(--colour-indigo-dye-blue);
-  --color-text-main: black;
-  --color-text-primary: black;
-  --color-text-secondary: white;
+  --colour-accent-primary: var(--colour-saffron-yellow);
+  --colour-accent-secondary: var(--colour-tropical-indigo-purple);
+
+  --colour-text-main: var(--colour-night-black);
+  --colour-text-primary: var(--colour-feta-white);
+  --colour-text-secondary: var(--colour-feta-white);
+
   /* Fonts */
   --font-sm: 1rem;
   --font-med: 1.5rem;
@@ -28,6 +32,24 @@
   --font-xxl: 4rem;
 
   --font-family-default: "Roboto", sans-serif;
+
+  --menu-width: 80vw;
+
+  --border-size-standard: 0.2rem;
+  --border-size-thick: 0.4rem;
+  --border-radius-standard: 0.2rem;
+  --border-radius-outer: 0.4rem;
+
+  --padding-thin: 0.4rem;
+  --padding-standard: 0.8rem;
+  --padding-thick: 1.2rem;
+  --padding-thicker: 1.8rem;
+
+  --shadow-gradient: radial-gradient(
+    ellipse at bottom,
+    var(--colour-riverbed-blue) 60%,
+    transparent 80%
+  );
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -37,6 +59,7 @@
     --colour-secondary: var(--colour-indigo-dye-blue);
   }
 } */
+
 *,
 *::before,
 *::after {
@@ -66,12 +89,15 @@ button {
   position: relative;
   font-size: var(--font-med);
   width: min-content;
-
   outline: none;
-  border: 2px solid var(--colour-primary);
-  border-radius: 0.2rem;
-  background-color: var(--colour-primary);
-  color: black;
+  border: var(--border-size-standard) solid var(--colour-primary);
+  border-radius: var(--border-radius-standard);
+  background: linear-gradient(
+    to bottom right,
+    var(--colour-accent-primary),
+    var(--colour-accent-secondary)
+  );
+  color: var(--colour-text-primary);
 }
 button:hover {
   background-color: dimgray;
@@ -98,6 +124,20 @@ body h2 {
 body p {
   font-size: var(--font-sm);
 }
+
+/*Reusable Styles*/
+.border-top-gradient {
+  border-top: var(--border-size-thick) solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right,
+    var(--colour-indigo-dye-blue),
+    var(--colour-tropical-indigo-purple) 20%,
+    var(--colour-saffron-yellow) 60%
+  );
+}
+/*End of Reusable Styles*/
+
 /* header styles */
 
 header {
@@ -176,7 +216,7 @@ button.navBarExpandButton div.bar {
   height: 20%;
   width: 100%;
   background: var(--colour-primary);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-standard);
 }
 
 button.navBarExpandButton::before {
@@ -212,8 +252,8 @@ ul.navLinks {
   gap: 1rem;
   padding: 2rem 1rem;
   height: calc(100vh - 5rem);
-  width: 80%;
-  left: -80%;
+  width: var(--menu-width);
+  left: calc(0vw - var(--menu-width));
   background: linear-gradient(
     to bottom,
     var(--colour-main) 87.5%,
@@ -231,7 +271,7 @@ ul.navLinks li {
   background: var(--colour-main);
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius-standard);
   position: relative;
   display: flex;
 }
@@ -252,7 +292,7 @@ ul.navLinks li::after {
   left: -5px;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-outer);
   background: conic-gradient(
     var(--colour-atomic-tangerine-orange),
     var(--colour-tropical-indigo-purple),
@@ -285,7 +325,6 @@ ul.navLinks li a {
   text-decoration: none;
   cursor: pointer;
 }
-
 /* end of header styles */
 
 /* main styles */
@@ -298,7 +337,7 @@ main {
   background: var(--colour-main);
 }
 main.navLinksisOpen {
-  left: 80%;
+  left: var(--menu-width);
 }
 main div.mainBlurMask {
   display: none;
@@ -330,7 +369,7 @@ section.slide-carousel .carCarousel,
 main section.carCarouselSection div.carCarousel {
   position: relative;
   width: 100%;
-  max-width: 50rem;
+  max-width: 64rem;
   aspect-ratio: 4/3;
   z-index: 5;
 }
@@ -343,7 +382,8 @@ main section.carCarouselSection div.carCarousel button.carousel-button {
   width: 100%;
   max-width: 4rem;
   background-color: transparent;
-  border: 2px solid transparent;
+  border: var(--border-size-standard) solid transparent;
+  background: none;
   backdrop-filter: blur(0px);
   height: 100%;
   color: transparent;
@@ -351,7 +391,7 @@ main section.carCarouselSection div.carCarousel button.carousel-button {
 }
 section.slide-carousel .carCarousel .carousel-button:hover,
 main section.carCarouselSection div.carCarousel button.carousel-button:hover {
-  border: 2px solid var(--colour-marble-blue);
+  border: var(--border-size-standard) solid var(--colour-marble-blue);
   backdrop-filter: blur(3px);
   color: azure;
 }
@@ -396,12 +436,11 @@ main section.carCarouselSection div.carCarousel li.carCard::before {
   font-size: var(--font-lrg);
   flex-direction: column;
   align-items: center;
-  padding-top: 0.35rem;
+  padding-top: var(--padding-thin);
   justify-content: start;
   transition: inset 0.5s linear;
 }
-section.slide-carousel .carCarousel .carCard:hover::before,
-main section.carCarouselSection div.carCarousel li.carCard:hover::before {
+.carCarousel .carCard:hover::before {
   position: absolute;
   inset: 0;
   content: attr(cartitle);
@@ -412,7 +451,7 @@ main section.carCarouselSection div.carCarousel li.carCard:hover::before {
   font-size: var(--font-lrg);
   flex-direction: column;
   align-items: center;
-  padding-top: 0.35rem;
+  padding-top: var(--padding-thin);
   justify-content: start;
 }
 section.slide-carousel .carCarousel .carCard[data-active],
@@ -467,7 +506,7 @@ footer section.footerGrid {
   gap: 1rem;
   grid-template-columns: 1fr;
   position: relative;
-  padding: 2rem 0.5rem;
+  padding: var(--padding-thicker) var(--padding-standard);
   z-index: 5;
   text-align: center;
   background-color: var(--colour-main);
@@ -480,13 +519,14 @@ footer section.footerGrid * {
 /* footerGrid */
 @media screen and (min-width: 64rem) {
   ul.navLinks {
-    padding: 1rem 1rem;
+    padding: var(--border-size-standard);
     top: 0;
-    left: 15%;
+    left: calc(30% - 1rem);
     bottom: 0;
     right: 0;
     height: 5rem;
-    width: 85%;
+    width: 100%;
+    max-width: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -495,13 +535,19 @@ footer section.footerGrid * {
     text-wrap: nowrap;
   }
   ul.navLinks li {
+    width: fit-content;
     aspect-ratio: unset;
     display: flex;
     align-items: center;
     padding: 0 0.5rem;
     justify-content: space-around;
   }
+  ul.navLinks li:last-child {
+    background: none;
+    color: var(--colour-text-primary);
+  }
   ul.navLinks li i.icon {
+    display: none;
     position: static;
     text-align: center;
     font-size: 3rem;

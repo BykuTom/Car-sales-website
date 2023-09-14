@@ -331,8 +331,8 @@ export default class CarSearch {
         selectEngineSize.style.display = "block";
         selectTaxBand.style.display = "block";
         searchButton.dataset.expanded = "true";
-        document.querySelector(".carSearchSection").style.height = "505px";
-        this.FormElement.style.height = "354px";
+        document.querySelector(".carSearchSection").style.height = "580px";
+        this.FormElement.style.height = "400px";
       } else {
         this.showMoreButton.setAttribute(
           "optionsShown",
@@ -347,8 +347,8 @@ export default class CarSearch {
         selectTaxBand.style.display = "none";
 
         searchButton.dataset.expanded = "false";
-        document.querySelector(".carSearchSection").style.height = "305px";
-        this.FormElement.style.height = "154px";
+        document.querySelector(".carSearchSection").style.height = "380px";
+        this.FormElement.style.height = "200px";
       }
     });
   }
