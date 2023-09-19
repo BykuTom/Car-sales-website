@@ -44,6 +44,21 @@ window.onload = function () {
     carousel("[data-carousel-button]");
   })();
 
+  (() => {
+    const buttons = document
+      .querySelector(".featured-vehicles-categories")
+      .querySelectorAll("button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((butt) => {
+          butt.classList.remove("selected");
+        });
+        button.classList.add("selected");
+      });
+    });
+  })();
+
   async function initialiseForm(optionsArray) {
     try {
       const additionalOptionsObject = await utilities.fetchJSON(
@@ -51,9 +66,9 @@ window.onload = function () {
       );
 
       const carSearchForm = new CarSearch(
-        ".carSearchForm",
+        ".search-form",
         optionsArray,
-        ".carSearchMoreOptionsButton",
+        ".search-button-more",
         additionalOptionsObject
       );
       carSearchForm.createCarSearchForm();

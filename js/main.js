@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
   body.insertBefore(clonedHeader, document.querySelector("main"));
   body.appendChild(clonedFooter);
 
-  const blurMask = utilities.createElement("div", "mainBlurMask");
+  const blurMask = utilities.createElement("div", "blur");
   document
     .querySelector("main")
     .insertBefore(blurMask, document.querySelector("main").firstChild);
+
   const elementArray = utilities.queryElements(
     false,
     false,
@@ -34,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
   footertemplate.remove();
   console.log(elementArray);
   const navigation = new Navigation(
-    ".navLinks",
-    ".navBarExpandButton",
+    ".nav-links",
+    ".nav-bar-button",
     "main",
-    ".mainBlurMask"
+    ".blur"
   );
 
   /*   const allDataArray = async function () {

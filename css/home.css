@@ -1,132 +1,76 @@
-main section.heroSection {
-  min-height: calc(100vh - 5rem);
+/*Hero Styles*/
+section.hero {
+  min-height: 100vh;
   height: fit-content;
-  padding: 2rem 0.5rem;
+  padding: var(--padding-thick) var(--padding-thin);
+  padding-top: 5rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   z-index: 5;
   overflow: hidden;
   color: var(--colour-text-primary);
+  background: var(--colour-primary);
 }
-main section.heroSection div.heroDecorations {
-  position: relative;
-  z-index: -10;
-}
-/* main section.heroSection div.heroDecorations svg.circleOne {
-  position: absolute;
-  z-index: -5;
-  width: 40vw;
-  left: 5vw;
-  top: -7vw;
-} */
 
-main section.heroSection h2,
-p {
+section.hero h2,
+section.hero p {
   font-weight: lighter;
 }
-main section.heroSection h1 {
+section.hero h2,
+section.hero h1 {
+  text-align: center;
+}
+section.hero h1 {
   font-weight: 500;
-  text-align: center;
 }
-main section.heroSection h1 strong {
+section.hero h1 strong {
   font-weight: 700;
-  color: var(--colour-primary);
+  color: var(--colour-text-special);
 }
-main section.heroSection h2 {
-  text-align: center;
-  padding: 0 0.5rem;
+section.hero h2 {
+  padding: 0 var(--padding-thin);
 }
-main section.heroSection button.heroCTAButton {
-  position: relative;
-  width: unset;
+button.hero-action-button {
   max-width: 25rem;
-  height: max(4rem, calc(4vw + 1rem));
-  max-height: 5.25rem;
-  padding: 4vw 0.5rem;
-  margin-top: 1rem;
-  font-size: max(var(--font-lrg), calc(4vw + 1rem));
+  height: max(4rem, calc(4vw + (var(--padding-thin) * 2)));
+  max-height: 5rem;
+  padding: var(--padding-thin);
+  font-size: max(var(--font-xxl, calc(4vw + 1rem)));
   font-family: var(--font-family-default);
   font-weight: 300;
-  border: none;
-  color: var(--colour-primary);
-  border-radius: 0.25rem;
+  color: var(--colour-text-primary);
+  border-radius: var(--border-radius-standard);
   display: flex;
   gap: 1rem;
   align-items: center;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   cursor: pointer;
-  background: var(--colour-main);
+  background: var(--colour-secondary);
 }
-
-main section.heroSection button.heroCTAButton::after {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: 0.25rem;
-  z-index: -1;
-  background: conic-gradient(
-    var(--colour-atomic-tangerine-orange),
-    var(--colour-tropical-indigo-purple),
-    var(--colour-saffron-yellow),
-    var(--colour-atomic-tangerine-orange)
-  );
-}
-main section.heroSection button.heroCTAButton:hover {
-  background-color: var(--colour-text-main);
+button.hero-action-button:hover {
   scale: 1.1;
-  color: var(--colour-main);
 }
-main section.heroSection button.heroCTAButton a {
-  position: absolute;
-  inset: 0;
-}
-@media screen and (min-width: 64rem) {
-  main section.heroSection button.heroCTAButton {
-    font-size: 3.5rem;
-    padding: 2.5rem 0.5rem;
-  }
-}
-main section.heroSection button.heroCTAButton::before {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  transform: translate(6px, 8px);
-  z-index: -2;
-  background: var(--shadow-gradient);
-  filter: blur(10px);
-}
-
-main section.heroSection div.heroReviews {
-  margin-top: 1rem;
+.hero-review {
   font-size: var(--font-sm);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
-main section.heroSection div.heroReviews span.numberOfStars {
+.hero-review * {
+  color: var(--colour-text-primary);
+}
+.hero-review i {
   color: orange;
 }
-main
-  section.heroSection
-  div.heroReviews
-  div.heroReviewsSiteNumber
-  a.websiteLink,
-main section.heroSection div.heroReviews span strong {
-  color: var(--colour-primary);
-}
-main
-  section.heroSection
-  div.heroReviews
-  div.heroReviewsSiteNumber
-  a.websiteLink {
+.hero-review-info a {
   text-decoration: none;
 }
-main section.heroSection div.heroImage {
+.hero-slides {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -134,118 +78,55 @@ main section.heroSection div.heroImage {
   z-index: -2;
   background-image: linear-gradient(
     to bottom right,
-    var(--colour-primary),
-    var(--colour-secondary)
+    transparent,
+    var(--colour-primary) 40%
   );
+  overflow: hidden;
 }
-main section.heroSection div.heroImage img {
-  aspect-ratio: 64/34;
+.hero-slides img {
   position: absolute;
-  width: max(128rem, 100%);
+  width: max(120rem, 100%);
   max-width: 215rem;
-  opacity: 60%;
+  opacity: 70%;
   min-height: 100%;
-  bottom: 0;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  aspect-ratio: 240/135;
   z-index: 1;
-  visibility: visible;
 }
-
-/* main section.heroSection div.heroImage svg.circleOne {
-  width: 100vw;
-  max-width: 64rem;
-  position: absolute;
-  left: min(0%, 19.2rem);
-  bottom: -10%;
-  z-index: -1;
-}
-main section.heroSection div.heroImage svg.rectangleOne {
-  width: 115vw;
-  max-width: 98rem;
-  position: absolute;
-  bottom: max(-85vw, -86rem);
-  z-index: -1;
-  right: max(-10%, -11rem);
-  transform: rotate(75deg);
-} */
-main section.aboutUsSection {
+/* Seach section*/
+section.search {
   position: relative;
-  z-index: 5;
-  background: linear-gradient(
-    to bottom right,
-    var(--colour-tropical-indigo-purple),
-    var(--colour-secondary)
-  );
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.64rem;
+  align-items: center;
+  height: 340px;
+  transition: height 0.25s linear;
+  width: 100%;
+  max-width: var(--page-content-width);
+  margin: auto;
+  border-radius: var(--border-radius-outer);
+  overflow: hidden;
 }
-main section.aboutUsSection div.aboutDecorations {
+section.search::before {
+  content: "";
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  max-width: 64rem;
-  margin: auto;
-}
-main section.aboutUsSection div.aboutDecorations img {
-  aspect-ratio: 1/1;
-  width: min(70vw, 70vh);
-  max-width: 22rem;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 30%;
+  background: var(--colour-night-black);
 }
-main section.aboutUsSection h1,
-main section.aboutUsSection h2,
-main section.aboutUsSection p {
-  color: var(--colour-text-secondary);
-  text-align: center;
-  font-weight: 300;
-  width: 100%;
-  max-width: 82rem;
-  padding: 0 0.5rem;
-  margin: auto;
+section.search button::before {
+  transform: translate(4px, 6px);
+  inset: 6px;
 }
-main section.aboutUsSection p:last-child {
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--colour-main);
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    var(--colour-main),
-    transparent
-  );
+section.search h2 {
+  color: var(--colour-text-primary);
 }
-main section.aboutUsSection h1 strong,
-main section.aboutUsSection h2 strong {
-  color: var(--colour-secondary);
-}
-main section.aboutUsSection h1 strong {
-  font-size: calc(var(--font-lrg) + 0.25rem);
-}
-main section.aboutUsSection h2 {
-  font-size: calc(var(--font-med) + 0.25rem);
-}
-
-main section.aboutUsSection p {
-  font-size: calc(var(--font-sm) + 0.25rem);
-}
-main section.carSearchSection {
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  height: 380px;
-  transition: height 0.25s linear;
-}
-main section.carSearchSection h2 {
-  color: var(--colour-text-main);
-}
-main section.carSearchSection form.carSearchForm {
+form.search-form {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
@@ -259,78 +140,13 @@ main section.carSearchSection form.carSearchForm {
   padding: var(--padding-thick) 0;
   transition: height 0.25s ease-in-out;
 }
-
-main section.carSearchSection button.carSearchMoreOptionsButton {
-  outline: none;
-  border: none;
-  background: none;
-  width: unset;
-  font-size: calc(var(--font-med) - 0.2rem);
-  border-bottom: var(--border-size-standard) solid var(--colour-text-main);
-  color: var(--colour-text-main);
-}
-main section.carSearchSection button.carSearchMoreOptionsButton:hover {
-  border-bottom: 2px solid var(--colour-secondary);
-  color: var(--colour-secondary);
-}
-
-main section.carSearchSection form.carSearchForm select {
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: 1px solid var(--colour-primary);
-  background: var(--colour-main);
-  color: var(--colour-secondary);
-  font-weight: 300;
-  font-family: var(--font-family-default);
-  cursor: pointer;
-  position: relative;
-}
-main section.carSearchSection form.carSearchForm select {
-  background-image: linear-gradient(
-      45deg,
-      transparent 50%,
-      var(--colour-secondary) 50%
-    ),
-    linear-gradient(135deg, var(--colour-secondary) 50%, transparent 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
-}
-main section.carSearchSection form.carSearchForm select:focus {
-  color: var(--colour-secondary);
-}
-
-main section.carSearchSection form.carSearchForm select:focus {
-  background-image: linear-gradient(
-      45deg,
-      var(--colour-secondary) 50%,
-      transparent 50%
-    ),
-    linear-gradient(135deg, transparent 50%, var(--colour-secondary) 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
-    calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
-  border-color: var(--colour-secondary);
-  outline: 0;
-}
-main section.carSearchSection form.carSearchForm select[lastElement] {
+form.search-form select[lastElement] {
   grid-column: span 2;
   max-width: 35rem;
   width: 100%;
   margin: auto;
 }
-main section.carSearchSection form.carSearchForm select option {
-  font-weight: normal;
-  display: block;
-  white-space-collapse: collapse;
-  text-wrap: nowrap;
-  padding: 0.25rem;
-}
-main section.carSearchSection form.carSearchForm button {
+form.search-form button {
   font-family: var(--font-family-default);
   font-weight: 300;
   border: none;
@@ -343,72 +159,364 @@ main section.carSearchSection form.carSearchForm button {
   justify-content: center;
   width: 100%;
   grid-column: span 2;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   cursor: pointer;
   padding: 0.5rem;
   font-size: var(--font-lrg);
   max-width: 35rem;
   margin: auto;
+}
+form.search-form button:hover {
+  background: var(--colour-primary);
+}
+button.search-button-more {
+  font-size: var(--font-med);
+  border-bottom: var(--border-size-standard) solid var(--colour-text-main);
+  color: var(--colour-text-main);
+}
+button.search-button-more::before {
+  content: none;
+}
+button.search-button-more {
+  border-bottom: 2px solid var(--colour-text-primary);
+  color: var(--colour-text-primary);
+}
+/* End of search section*/
+/*End of Hero Styles*/
+/*Start of Featured Vehicles*/
+section.featured-vehicles {
+  padding: var(--padding-thicker) 0;
   position: relative;
-}
-main section.carSearchSection form.carSearchForm button::before {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  transform: translate(6px, 8px);
-  z-index: -1;
-  background: var(--shadow-gradient);
-  filter: blur(10px);
-}
-main section.contactSection {
-  background: linear-gradient(
-    to top right,
-    var(--colour-tropical-indigo-purple),
-    var(--colour-secondary)
-  );
-  display: grid;
-  grid: auto;
-  color: var(--colour-text-secondary);
-  padding: 1rem 0 2rem 0;
-  position: relative;
-  z-index: 5;
-}
-main section.contactSection div {
-  width: 100%;
-  max-width: 64rem;
-  margin: auto;
+  text-align: center;
+  color: var(--colour-text-main);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  align-items: center;
-  text-align: center;
-  border-bottom: 2px solid var(--color-text-secondary);
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    var(--color-text-secondary),
-    transparent
-  );
+  gap: 1rem;
+}
+section.featured-vehicles div {
+  padding: 0 var(--padding-thicker);
+}
+.featured-vehicles-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 1rem;
+}
+.featured-vehicles-info h2 {
+  font-size: var(--font-xl);
+}
+.featured-vehicles-info h3 {
+  font-size: var(--font-med);
+  color: var(--colour-storm-grey);
+}
+.featured-vehicles-categories {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 0.64rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.featured-vehicles-categories button {
+  font-size: var(--font-sm);
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s linear;
+}
+.featured-vehicles-categories button::before {
+  content: none;
+}
+.featured-vehicles-categories button:hover {
+  color: var(--colour-secondary);
+  border-bottom: 2px solid var(--colour-secondary);
+}
+/* .featured-vehicles-categories button.selected {
+    color: var(--colour-secondary);
+  } */
+.featured-vehicles-categories button.selected,
+.featured-vehicles-categories button:focus {
+  color: var(--colour-secondary);
+  scale: 1.512;
+  margin: 0 1.24rem 0 1.24rem;
 }
 
-main section.contactSection div h2,
-main section.contactSection div h3 {
-  margin-bottom: 0.5rem;
+/*Start of carousel*/
+.featured-vehicles div.featured-vehicles-carousel {
+  padding: unset;
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  aspect-ratio: 4/3;
+  z-index: 5;
+  margin: auto;
 }
-main section.contactSection div p:last-child {
-  margin-bottom: 1rem;
+.featured-vehicles-carousel button.carousel-button {
+  right: 100%;
+  transform: translateX(100%);
+  position: absolute;
+  z-index: 5;
+  font-size: 4rem;
+  line-height: 25px;
+  width: 100%;
+  max-width: 4rem;
+  background-color: transparent;
+  border: var(--border-size-standard) solid transparent;
+  background: none;
+  backdrop-filter: blur(0px);
+  height: 100%;
+  color: transparent;
+  transition: backdrop-filter 0.64s, border 0.64s, color 0.96s;
 }
-main section.contactSection div h2 {
+.featured-vehicles-carousel button.carousel-button::before {
+  content: none;
+}
+.featured-vehicles-carousel button.carousel-button:hover {
+  border: var(--border-size-standard) solid var(--colour-marble-blue);
+  backdrop-filter: blur(3px);
+  color: azure;
+}
+.featured-vehicles-carousel button.carousel-button-right {
+  left: unset;
+  transform: unset;
+  right: 0%;
+}
+.featured-vehicles-carousel ul.carousel {
+  width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.featured-vehicles-carousel li.carCard {
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  opacity: 0;
+  z-index: -3;
+  transition: opacity 1ms, left 650ms;
+}
+.featured-vehicles-carousel li.carCard::before {
+  position: absolute;
+  color: aliceblue;
+  inset: 0 0 100% 0;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
   font-size: var(--font-lrg);
-  font-weight: 700;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--padding-thin);
+  justify-content: start;
+  transition: inset 0.5s linear;
 }
-main section.contactSection div h3 {
-  font-size: var(--font-med);
+.featured-vehicles-carousel li.carCard:hover::before {
+  position: absolute;
+  inset: 0;
+  content: attr(cartitle);
+  color: aliceblue;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
+  font-size: var(--font-lrg);
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--padding-thin);
+  justify-content: start;
+}
+.featured-vehicles-carousel li.carCard[data-active] {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+.featured-vehicles-carousel li.carCard[data-direction="right"] {
+  left: -100%;
+  opacity: 1;
+  z-index: -1;
+}
+.featured-vehicles-carousel li.carCard[data-direction="left"] {
+  left: 100%;
+  opacity: 1;
+  z-index: -1;
+}
+.featured-vehicles-carousel li.carCard[data-transition] {
+  z-index: 2;
+}
+.featured-vehicles-carousel li.carCard a {
+  position: absolute;
+  display: block;
+  inset: 0;
+  z-index: 0;
+}
+.featured-vehicles-carousel li.carCard img {
+  width: 100%;
+}
+/*End of carousel*/
+/*End of Featured Vehicles*/
+/*About Us Section*/
+section.about-us {
+  position: relative;
+  padding: var(--padding-thicker);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.24rem;
+  justify-content: center;
+  align-items: center;
+}
+section.about-us div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.64rem;
+  max-width: 64rem;
+}
+section.about-us h2,
+section.about-us h3 {
   font-weight: 400;
 }
-main section.contactSection div p {
-  font-size: calc(var(--font-sm) + 0.25rem);
-  font-weight: 300;
+section.about-us strong {
+  color: var(--colour-text-special);
+  font-weight: bolder;
+}
+section.about-us h1,
+section.about-us h2 {
+  font-size: var(--font-xl);
+}
+section.about-us h3 {
+  font-size: var(--font-lrg);
+}
+section.about-us p {
+  font-size: var(--font-med);
+}
+section.about-us div:last-child {
+  padding: var(--padding-thicker);
+}
+section.about-us button {
+  color: var(--colour-text-primary);
+  font-size: var(--font-med);
+  border-radius: var(--border-radius-standard);
+  background: var(--colour-secondary);
+  padding: var(--padding-standard);
+  transition: all 0.2s linear;
+}
+section.about-us button:hover {
+  background: var(--colour-primary);
+}
+section.about-us div img {
+  width: 100%;
+}
+/*End of About Us Section*/
+/*Why Us Section*/
+section.why-us {
+  display: flex;
+  flex-direction: column;
+  gap: 1.24rem;
+}
+section.why-us div {
+  margin-bottom: 1.24rem;
+}
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min(22rem, 100%));
+  gap: 2rem;
+  width: 100%;
+  max-width: calc(88rem + (2rem * 4));
+  margin: auto;
+  text-align: center;
+
+  justify-content: center;
+}
+.why-us-grid .why-card {
+  width: 100%;
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.64rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.64rem;
+  /* border-top: var(--border-size-standard) solid var(--colour-text-special); */
+}
+.why-us-grid .why-card * {
+  height: 40%;
+}
+.why-us-grid .why-card .title {
+  height: fit-content;
+  width: fit-content;
+}
+.why-us-grid .why-card i {
+  display: flex;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--colour-text-special);
+}
+/*End of Why Us Section*/
+
+@media screen and (min-width: 64rem) {
+}
+@media screen and (min-width: 90rem) {
+  section.hero {
+    overflow: visible;
+    padding-bottom: 12.4rem;
+  }
+  section.hero h1 {
+    font-size: var(--font-xxl);
+  }
+  section.hero h2 {
+    font-size: var(--font-xl);
+  }
+  main section.hero button.hero-action-button {
+    font-size: 3.5rem;
+    padding: 2.5rem 0.5rem;
+    margin-top: 3rem;
+  }
+  main section.hero {
+    min-height: calc(100vh - 10rem);
+    margin-bottom: 7rem;
+  }
+  section.search {
+    position: absolute;
+    top: calc(100% - 15rem);
+    height: 21.25rem !important;
+    max-width: var(--page-content-width);
+    margin: auto;
+  }
+  section.search::before {
+    opacity: 95%;
+    background: var(--colour-primary);
+  }
+  section.search form.search-form {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: fit-content !important;
+    max-width: var(--page-content-width);
+  }
+  section.search form.search-form select {
+    height: fit-content;
+    grid-column: span 1;
+  }
+
+  section.search form.search-form select[lastElement],
+  section.search form.search-form button {
+    grid-column: span 1;
+    margin: unset;
+  }
+  section.search form.search-form select {
+    display: block !important;
+  }
+  section.search button.search-button-more {
+    display: none;
+  }
+}
+@media screen and (min-width: 124rem) {
+  section.hero h1 {
+    font-size: calc(var(--font-xxl) + 1rem);
+  }
+  section.hero h2 {
+    font-size: calc(var(--font-xl) + 1rem);
+  }
+  section.search h2 {
+    font-size: var(--font-xl);
+  }
 }

@@ -18,139 +18,202 @@
   </head>
   <body>
     <main>
-      <section class="heroSection">
-        <!-- <div class="heroDecorations">
-          <svg
-            class="circleOne"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="50" cy="50" r="50" fill="#f7a072" />
-          </svg>
-        </div> -->
-        <div class="heroHeadline">
+      <section class="hero" aria-label="Hero Section">
+        <div class="hero-headline">
           <h1>
-            Discover <strong>Quality</strong> Used <strong>Cars</strong> at
-            <strong>Unbeatable Prices</strong>
+            Discover <strong>Quality</strong> Used Cars at
+            <strong>Unbeatable</strong> Prices.
           </h1>
         </div>
-        <div class="heroSubline">
+        <div class="hero-subtitle">
           <h2>Exceptional Used Cars, Exceptional Savings.</h2>
         </div>
-        <button class="heroCTAButton">
-          <a href="./showroom.html"></a> <span>Get Started</span
-          ><i class="fa-solid fa-arrow-right-long"></i>
+        <button class="hero-action-button" aria-label="Search Button">
+          <a href="./showroom.html"></a> <span>Search Now</span>
         </button>
-        <div class="heroReviews">
-          <div class="heroReviewsStars">
-            <span class="numberOfStars"
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star-half-stroke"></i
-            ></span>
+        <div class="hero-review" aria-label="Hero Review Section">
+          <div class="hero-review-stars" aria-hidden="true">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
           </div>
-          <div class="heroReviewsRating">
-            <span class="ratings">4.5 / 5</span>
+          <div class="hero-review-rating" aria-label="Star Ratings">
+            <span>4.5 / 5</span>
           </div>
-          <div class="heroReviewsSiteNumber">
-            <span class="reviewNumber"><strong>106</strong> reviews on </span
-            ><a
-              class="websiteLink"
+          <div class="hero-review-info">
+            <span class="hero-review-number"
+              ><strong>106</strong> reviews on
+            </span>
+            <a
               href="https://www.autotrader.co.uk/dealers/lincolnshire/scunthorpe/saveonusedcars-co-uk-140062#reviews-container"
+              aria-label="Read Reviews on Autotrader"
               >autotrader.co.uk</a
             >
           </div>
         </div>
-        <div class="heroImage">
-          <img src="./assets/images/SaveOnUsedCars.jpg" alt="saveonusedcars " />
-          <!-- <svg
-            class="circleOne"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <radialGradient
-                id="myGradient"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop offset="0%" style="stop-color: #044a7b" />
-                <stop offset="0%" style="stop-color: #3f83b3" />
-                <stop offset="100%" style="stop-color: #add8e6" />
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="40" fill="url(#myGradient)" />
-          </svg> -->
+        <div class="hero-slides" aria-label="Hero Slides">
+          <img
+            src="./assets/images/heroSlides/bmw-m4-csl.webp"
+            alt="saveonusedcars"
+          />
         </div>
+        <section class="search" aria-label="Search Section">
+          <h2>Discover your new car</h2>
+          <form action="" class="search-form"></form>
+          <button
+            class="search-button-more"
+            aria-label="More Options Button"
+            options-visible="false"
+          >
+            More Options
+          </button>
+        </section>
       </section>
-      <section class="carCarouselSection border-top-gradient">
-        <div class="carCarousel" data-carousel>
+      <section class="featured-vehicles" aria-label="Featured Vehicles">
+        <div class="featured-vehicles-info">
+          <h2 class="title">Featured Vehicles</h2>
+          <h3>
+            Picked out by our staff, these vehicles are the best vehicles
+            available at our disposal.
+          </h3>
+        </div>
+        <div class="featured-vehicles-categories" aria-label="Categories">
+          <button class="selected" aria-label="All Vehicles">All</button>
+          <button aria-label="Cars">Cars</button>
+          <button aria-label="Commercial Vehicles">Commercials</button>
+          <button aria-label="Motorbikes">Motorbikes</button>
+        </div>
+        <div
+          class="featured-vehicles-carousel"
+          data-carousel
+          aria-label="Vehicle Carousel"
+        >
           <button
             class="carousel-button carousel-button-left"
             data-carousel-button="prev"
+            aria-label="Previous Slide"
           >
-            <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
           <button
             class="carousel-button carousel-button-right"
             data-carousel-button="next"
+            aria-label="Next Slide"
           >
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           </button>
-          <ul data-slides class="carousel"></ul>
+          <ul
+            data-slides
+            class="carousel"
+            aria-live="polite"
+            aria-label="Vehicle Slides"
+          ></ul>
         </div>
       </section>
-      <section class="carSearchSection">
-        <h2 class="carSearchHeader">Discover your new car</h2>
-        <form action="" id="carSearchForm" class="carSearchForm"></form>
-        <button class="carSearchMoreOptionsButton" optionsShown="false">
-          More Options
-        </button>
-      </section>
-      <section class="aboutUsSection border-top-gradient">
-        <div class="aboutDecorations">
-          <img src="./assets/images/SLogoWhite.png" alt="SOUCLogo" />
+      <section class="about-us" aria-label="About Us">
+        <div><h1 class="title">About Us?</h1></div>
+        <div>
+          <h2>Save On Used Car</h2>
+          <h3>
+            <strong>Proudly</strong> offering our services in
+            <strong>Scunthorpe</strong>, <strong>Grimsby</strong>,
+            <strong>Hull</strong>, <strong>Doncaster</strong> and beyond
+          </h3>
+          <p>
+            We are a family run business focusing on offering a top quality
+            buying experience, you're welcome to browse at your leisure and take
+            any vehicle on a test drive. Our Friendly staff will offer
+            assistance and answer any questions you might have.
+          </p>
+          <p>
+            We have been proudly serving the local areas in Scunthorpe, Grimsby,
+            Hull Doncaster and beyond, for over 10 years. With over 60 years of
+            motor trade experience we make sure to offer only the highest
+            quality cars and unbeatable prices.
+          </p>
         </div>
-        <h1>
-          <span>Welcome to</span><br />
-          <strong>Save On Used Cars</strong>
-        </h1>
-        <h2>
-          <strong>Proudly</strong> offering our services in
-          <strong>Scunthorpe</strong>, <strong>Grimsby</strong>,
-          <strong>Hull</strong>, <strong>Doncaster</strong> and beyond
-        </h2>
-        <p>
-          We are a family run business focusing on offering a top quality buying
-          experience, you're welcome to browse at your leisure and take any
-          vehicle on a test drive. Our Friendly staff will offer assistance and
-          answer any qustions you might have.
-        </p>
-        <p>
-          We have been proudly serving the local areas in Scunthorpe, Grimsby,
-          Hull Doncaster and beyond, for over 10 years. With over 60 years of
-          motor trade experience we make sure to offer only the highest quality
-          cars and unbeatable prices.
-        </p>
-      </section>
-      <section class="contactSection" id="contact">
-        <div class="contactDetails">
-          <h2>Contact Details</h2>
-          <h3>Save on used Cars</h3>
-          <p>44 Normanby Road, Scunthorpe, Lincolnshire, DN15 6AL</p>
-          <p>Tel: 01724 854482</p>
+        <div>
+          <img src="./assets/images/SaveOnUsedCars.jpg" alt="Shop Picture" />
         </div>
-        <div class="openingTimes">
-          <h2>Opening Times</h2>
-          <p>Monday to Friday: 09.30-5.30pm</p>
-          <p>Saturday: 10.00am-5.00pm</p>
-          <p>Sunday: 11:00am-4:00pm</p>
+        <div class=""><button>Find out more</button></div>
+      </section>
+      <section class="why-us" aria-label="Why Us">
+        <div>
+          <h1 class="title">Why Us?</h1>
+        </div>
+        <div class="why-us-grid">
+          <div class="why-card" aria-label="Unparalleled Service">
+            <i class="fa-regular fa-face-smile-wink" aria-hidden="true"></i>
+            <h2 class="title">Unparalleled Service</h2>
+            <p>
+              Experience our exceptional service dedicated to serving you with
+              our extensive knowledge.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Superb Support">
+            <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            <h2 class="title">Superb Support</h2>
+            <p>
+              Our dedicated staff is here to provide support and answer your
+              inquiries.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Trade Expertise">
+            <i class="fa-solid fa-car" aria-hidden="true"></i>
+            <h2 class="title">Trade Expertise</h2>
+            <p>
+              With over 60 years of trade experience, we ensure the highest
+              quality cars for you.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Finance Available">
+            <i class="fa-solid fa-coins" aria-hidden="true"></i>
+            <h2 class="title">Finance Available</h2>
+            <p>
+              We offer competitive and transparent finance options to meet your
+              needs.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Part Exchange">
+            <i class="fa-regular fa-handshake" aria-hidden="true"></i>
+            <h2 class="title">Part Exchange</h2>
+            <p>Get a quick valuation and excellent part exchange prices.</p>
+          </div>
+
+          <div class="why-card" aria-label="Vehicle Variety">
+            <i class="fa-solid fa-car-tunnel" aria-hidden="true"></i>
+            <h2 class="title">Vehicle Variety</h2>
+            <p>
+              Explore our extensive collection featuring hundreds of cars to
+              suit your preferences.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Business Services">
+            <i class="fa-solid fa-truck" aria-hidden="true"></i>
+            <h2 class="title">Business Services</h2>
+            <p>
+              Our collection includes a wide range of commercial vehicles to
+              meet your business needs.
+            </p>
+          </div>
+
+          <div class="why-card" aria-label="Special Offers">
+            <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+            <h2 class="title">Special Offers</h2>
+            <p>
+              Discover our exclusive special offers and discounts to help you
+              make the right choice.
+            </p>
+          </div>
         </div>
       </section>
-      <section class="googleMapsLocation"></section>
     </main>
   </body>
 </html>

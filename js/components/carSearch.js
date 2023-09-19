@@ -2,12 +2,12 @@ import * as utilities from "../utilities.js";
 
 export default class CarSearch {
   constructor(
-    FormElementClass,
+    formElementClass,
     carMakesObjectArray,
     showMoreButton,
     additionalOptionsObject
   ) {
-    this.FormElement = document.querySelector(FormElementClass);
+    this.formElement = document.querySelector(formElementClass);
     this.carMakeModelsObjectArray = carMakesObjectArray;
     this.showMoreButton = document.querySelector(showMoreButton);
     this.additionalOptionsObject = additionalOptionsObject;
@@ -19,33 +19,28 @@ export default class CarSearch {
   ];
   expandedSelectors = [];
 
+  initialise() {
+    const formElements = this.createCarSearchForm();
+    this.setupEventListeners(...formElements);
+  }
+
+  setupEventListeners(...formElements) {}
+
   createCarSearchForm() {
+    const formParentElement = this.formElement.parentElement;
+    console.log(formParentElement);
     const selectMake = document.createElement("select");
-    const defaultOptionCarMake = utilities.createOptionElement(
-      "",
-      "Select Make"
-    );
-    selectMake.appendChild(defaultOptionCarMake);
+    selectMake.appendChild(utilities.createOptionElement("", "Select Make"));
+
     const defaultOptionCarModel = utilities.createOptionElement(
       "",
       "Select Model"
     );
-
-    function allKeysEmpty(object) {
-      for (const key in object) {
-        if (object[key] !== "") {
-          return false;
-        }
-      }
-      return true;
-    }
-    // TODO: use createOptionElement
     this.carMakeModelsObjectArray.forEach((object) => {
       selectMake.appendChild(
         utilities.createOptionElement(object.make, object.make)
       );
     });
-
     selectMake.addEventListener("change", () => {
       const selectedMake = selectMake.value;
       const selectedMakeObject = this.carMakeModelsObjectArray.find(
@@ -66,7 +61,7 @@ export default class CarSearch {
 
     const selectModel = document.createElement("select");
     selectModel.appendChild(defaultOptionCarModel);
-
+    // -----------------------------------------------------
     const selectMinPrice = document.createElement("select");
     selectMinPrice.appendChild(utilities.createOptionElement("", "Min Price"));
     this.priceValues.forEach((price) => {
@@ -104,35 +99,23 @@ export default class CarSearch {
     });
 
     const selectMaxPrice = document.createElement("select");
-    const defaultMaxPrice = utilities.createOptionElement("", "Max Price");
-
-    selectMaxPrice.appendChild(defaultMaxPrice);
+    selectMaxPrice.appendChild(utilities.createOptionElement("", "Max Price"));
     this.priceValues.forEach((price) => {
-      const optionMaxPrice = document.createElement("option");
-      optionMaxPrice.setAttribute("value", price);
-      optionMaxPrice.textContent = `£${price}`;
-      selectMaxPrice.appendChild(optionMaxPrice);
+      selectMaxPrice.appendChild(
+        utilities.createOptionElement(price, `£${price}`)
+      );
     });
-
-    // Search button
     const searchButton = document.createElement("button");
-    const searchIcon = document.createElement("i");
+    const searchIcon = utilities.createIconElement(
+      "fa-solid",
+      "fa-magnifying-glass"
+    );
     searchButton.setAttribute("type", "submit");
     searchButton.dataset.expanded = "false";
-    searchIcon.classList.add("fa-solid");
-    searchIcon.classList.add("fa-magnifying-glass");
-    const searchSpan = document.createElement("span");
-    searchSpan.textContent = "Search";
     searchButton.appendChild(searchIcon);
-    searchButton.appendChild(searchSpan);
+    searchButton.appendChild(utilities.createTextElement("span", "Search"));
 
-    /* searchButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      let dataForm = {};
-      // TODO: Data needs to be packed into an object
-    }); */
-
-    this.FormElement.addEventListener("submit", (event) => {
+    this.formElement.addEventListener("submit", (event) => {
       event.preventDefault();
       let formData = {};
 
@@ -140,23 +123,19 @@ export default class CarSearch {
       formData.model = selectModel.value;
       formData.minPrice = selectMinPrice.value;
       formData.maxPrice = selectMaxPrice.value;
+      formData.bodyStyle = selectBodyStyle.value;
+      formData.fuelType = selectFuel.value;
+      formData.transmission = selectTransmission.value;
+      formData.numberOfDoors = selectNumberofDoors.value;
+      formData.colour = selectColour.value;
+      formData.engine = selectEngineSize.value;
+      formData.taxBand = selectTaxBand.value;
 
-      console.log(eval(searchButton.dataset.expanded));
-      if (eval(searchButton.dataset.expanded)) {
-        formData.bodyStyle = selectBodyStyle.value;
-        formData.fuelType = selectFuel.value;
-        formData.transmission = selectTransmission.value;
-        formData.numberOfDoors = selectNumberofDoors.value;
-        formData.colour = selectColour.value;
-        formData.engine = selectEngineSize.value;
-        formData.taxBand = selectTaxBand.value;
-      }
       try {
-        if (allKeysEmpty(formData)) {
+        if (utilities.allKeysEmpty(formData)) {
           throw "At least one of the selectors needs to hold a value";
         } else {
           console.log(formData);
-          //TODO: This is where the magic happens for query paramenters
           let parameters = { page: 1, items: 16 };
 
           for (const key in formData) {
@@ -175,115 +154,94 @@ export default class CarSearch {
       }
     });
     // end of Search button
+    utilities.appendMultipleChildren(
+      this.formElement,
+      selectMake,
+      selectModel,
+      selectMinPrice,
+      selectMaxPrice,
+      searchButton
+    );
 
-    this.FormElement.appendChild(selectMake);
-    this.FormElement.appendChild(selectModel);
-    this.FormElement.appendChild(selectMinPrice);
-    this.FormElement.appendChild(selectMaxPrice);
-    this.FormElement.appendChild(searchButton);
-
-    // selectBodyStyle >
     const selectBodyStyle = document.createElement("select");
-    const defaultBodyStyle = document.createElement("option");
-    //selectBodyStyle.innerHTML = "";
-    defaultBodyStyle.setAttribute("value", "");
-    defaultBodyStyle.textContent = "Select Body Style";
-    selectBodyStyle.appendChild(defaultBodyStyle);
+    selectBodyStyle.appendChild(
+      utilities.createOptionElement("", "Select Body Style")
+    );
 
     this.additionalOptionsObject["bodyStyle"].forEach((body) => {
-      const optionBodyStyle = document.createElement("option");
-      optionBodyStyle.setAttribute("value", body);
-      optionBodyStyle.textContent = `${body}`;
-      selectBodyStyle.appendChild(optionBodyStyle);
+      selectBodyStyle.appendChild(
+        utilities.createOptionElement(body, `${body}`)
+      );
     });
 
-    // selectFuel >
     const selectFuel = document.createElement("select");
-    const defaultFuel = document.createElement("option");
-    //defaultFuel.innerHTML = "";
-    defaultFuel.setAttribute("value", "");
-    defaultFuel.textContent = "Select Fuel Type";
-    selectFuel.appendChild(defaultFuel);
+    selectFuel.appendChild(
+      utilities.createOptionElement("", "Select Fuel Type")
+    );
 
     this.additionalOptionsObject["fuelType"].forEach((fuel) => {
-      const optionFuel = document.createElement("option");
-      optionFuel.setAttribute("value", fuel);
-      optionFuel.textContent = `${fuel}`;
-      selectFuel.appendChild(optionFuel);
+      selectFuel.appendChild(utilities.createOptionElement(fuel, `${fuel}`));
     });
 
-    // selectTransmission >
     const selectTransmission = document.createElement("select");
-    const defaultTransmission = document.createElement("option");
-    // defaultTransmission.innerHTML = "";
-    defaultTransmission.setAttribute("value", "");
-    defaultTransmission.textContent = "Select Transmission";
-    selectTransmission.appendChild(defaultTransmission);
+    selectTransmission.appendChild(
+      utilities.createOptionElement("", "Select Transmission")
+    );
 
     this.additionalOptionsObject["transmissionTypes"].forEach(
       (Transmission) => {
-        const optionTransmission = document.createElement("option");
-        optionTransmission.setAttribute("value", Transmission);
-        optionTransmission.textContent = `${Transmission}`;
-        selectTransmission.appendChild(optionTransmission);
+        selectTransmission.appendChild(
+          utilities.createOptionElement(Transmission, `${Transmission}`)
+        );
       }
     );
 
-    // selectNumberOfDoors
     const selectNumberofDoors = document.createElement("select");
-    const defaultNumberofDoors = document.createElement("option");
-    //defaultNumberofDoors.innerHTML = "";
-    defaultNumberofDoors.setAttribute("value", "");
-    defaultNumberofDoors.textContent = "Number of Doors";
-    selectNumberofDoors.appendChild(defaultNumberofDoors);
+    selectNumberofDoors.appendChild(
+      utilities.createOptionElement("", "Number of Doors")
+    );
 
     this.additionalOptionsObject["doorNumber"].forEach((numberOfDoors) => {
-      const optionNumberOfDoors = document.createElement("option");
-      optionNumberOfDoors.setAttribute("value", numberOfDoors);
-      optionNumberOfDoors.textContent = `${numberOfDoors}`;
-      selectNumberofDoors.appendChild(optionNumberOfDoors);
+      selectNumberofDoors.appendChild(
+        utilities.createOptionElement(numberOfDoors, `${numberOfDoors}`)
+      );
     });
 
     const selectColour = document.createElement("select");
-    const defaultColour = document.createElement("option");
-    defaultColour.setAttribute("value", "");
-    defaultColour.textContent = "Select Colour";
-    selectColour.appendChild(defaultColour);
+    selectColour.appendChild(
+      utilities.createOptionElement("", "Select Colour")
+    );
 
     this.additionalOptionsObject["colours"].forEach((colour) => {
-      const optionColour = document.createElement("option");
-      optionColour.setAttribute("value", colour);
-      optionColour.textContent = `${colour}`;
-      selectColour.appendChild(optionColour);
+      selectColour.appendChild(
+        utilities.createOptionElement(colour, `${colour}`)
+      );
     });
 
     const selectEngineSize = document.createElement("select");
-    const defaultEngineSize = document.createElement("option");
-    defaultEngineSize.setAttribute("value", "");
-    defaultEngineSize.textContent = "Select Engine Size";
-    selectEngineSize.appendChild(defaultEngineSize);
+    selectEngineSize.appendChild(
+      utilities.createOptionElement("", "Select Engine Size")
+    );
 
     this.additionalOptionsObject["engineSizes"].forEach((engineSize, index) => {
-      const optionEngineSize = document.createElement("option");
-      optionEngineSize.setAttribute("value", engineSize);
+      let text = null;
       if (index === 0) {
-        optionEngineSize.textContent = `Up to ${engineSize.split(";")[1]}litre`;
+        text = `Up to ${engineSize.split(";")[1]}litre`;
       } else if (
         index ===
         this.additionalOptionsObject["engineSizes"].length - 1
       ) {
-        optionEngineSize.textContent = `More than ${
-          engineSize.split(";")[0]
-        }litre`;
+        text = `More than ${engineSize.split(";")[0]}litre`;
       } else {
-        optionEngineSize.textContent = `${engineSize.split(";")[0]}litre to ${
+        text = `${engineSize.split(";")[0]}litre to ${
           engineSize.split(";")[1]
         }litre`;
       }
 
-      selectEngineSize.appendChild(optionEngineSize);
+      selectEngineSize.appendChild(
+        utilities.createOptionElement(engineSize, text)
+      );
     });
-
     const selectTaxBand = document.createElement("select");
     selectTaxBand.setAttribute("lastElement", "");
     const defaultTaxBand = document.createElement("option");
@@ -297,58 +255,51 @@ export default class CarSearch {
       optionTaxBand.textContent = `Band ${taxband}`;
       selectTaxBand.appendChild(optionTaxBand);
     });
-
-    this.FormElement.insertBefore(selectBodyStyle, searchButton);
-    this.FormElement.insertBefore(selectFuel, searchButton);
-    this.FormElement.insertBefore(selectTransmission, searchButton);
-    this.FormElement.insertBefore(selectNumberofDoors, searchButton);
-    this.FormElement.insertBefore(selectColour, searchButton);
-    this.FormElement.insertBefore(selectEngineSize, searchButton);
-    this.FormElement.insertBefore(selectTaxBand, searchButton);
-
-    selectBodyStyle.style.display = "none";
-    selectFuel.style.display = "none";
-    selectTransmission.style.display = "none";
-    selectNumberofDoors.style.display = "none";
-    selectColour.style.display = "none";
-    selectEngineSize.style.display = "none";
-    selectTaxBand.style.display = "none";
+    //selectBodyStyle,selectFuel,selectTransmission,selectNumberofDoors,selectColour,selectEngineSize,selectTaxBand
+    const arrayOfSelectors = [
+      selectBodyStyle,
+      selectFuel,
+      selectTransmission,
+      selectNumberofDoors,
+      selectColour,
+      selectEngineSize,
+      selectTaxBand,
+    ];
+    utilities.insertMultipleBefore(
+      this.formElement,
+      searchButton,
+      ...arrayOfSelectors
+    );
+    utilities.changeStyleOfElements("display", "none", ...arrayOfSelectors);
 
     this.showMoreButton.addEventListener("click", () => {
       const optionsShownState =
-        this.showMoreButton.getAttribute("optionsShown");
+        this.showMoreButton.getAttribute("options-visible");
 
       if (optionsShownState === "false") {
         this.showMoreButton.setAttribute(
-          "optionsShown",
+          "options-visible",
           !eval(optionsShownState)
         );
-        selectBodyStyle.style.display = "block";
-        selectFuel.style.display = "block";
-        selectTransmission.style.display = "block";
-        selectNumberofDoors.style.display = "block";
-        selectColour.style.display = "block";
-        selectEngineSize.style.display = "block";
-        selectTaxBand.style.display = "block";
         searchButton.dataset.expanded = "true";
-        document.querySelector(".carSearchSection").style.height = "580px";
-        this.FormElement.style.height = "400px";
+
+        utilities.changeStyleOfElements(
+          "display",
+          "block",
+          ...arrayOfSelectors
+        );
+        formParentElement.style.height = "540px";
+        this.formElement.style.height = "400px";
       } else {
         this.showMoreButton.setAttribute(
-          "optionsShown",
+          "options-visible",
           !eval(optionsShownState)
         );
-        selectBodyStyle.style.display = "none";
-        selectFuel.style.display = "none";
-        selectTransmission.style.display = "none";
-        selectNumberofDoors.style.display = "none";
-        selectColour.style.display = "none";
-        selectEngineSize.style.display = "none";
-        selectTaxBand.style.display = "none";
-
+        utilities.changeStyleOfElements("display", "none", ...arrayOfSelectors);
         searchButton.dataset.expanded = "false";
-        document.querySelector(".carSearchSection").style.height = "380px";
-        this.FormElement.style.height = "200px";
+
+        formParentElement.style.height = "340px";
+        this.formElement.style.height = "200px";
       }
     });
   }

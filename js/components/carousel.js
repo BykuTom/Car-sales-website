@@ -42,10 +42,14 @@ export default function carousel(buttonsDataAttribute) {
   }
 
   setInterval(() => {
-    if (lastPressed > 10000) {
+    const currentTime = new Date();
+    const timeElapsed = currentTime - lastPressed;
+
+    if (timeElapsed > 10000) {
       changeSlide(1);
+      lastPressed = new Date();
     }
-  }, 5000);
+  }, 2000);
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {

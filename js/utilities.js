@@ -2,7 +2,33 @@ export function parsePrice(textContent) {
   const cleanedTextContent = textContent.trim().substring(1);
   return parseInt(cleanedTextContent, 10);
 }
-
+export function appendMultipleChildren(parentElement, ...children) {
+  const parent = parentElement;
+  children.forEach((child) => {
+    parent.appendChild(child);
+  });
+  return parent;
+}
+export function insertMultipleBefore(parentElement, childElement, ...children) {
+  const parent = parentElement;
+  children.forEach((child) => {
+    parent.insertBefore(child, childElement);
+  });
+  return parent;
+}
+export function allKeysEmpty(object) {
+  for (const key in object) {
+    if (object[key] !== "") {
+      return false;
+    }
+  }
+  return true;
+}
+export function changeStyleOfElements(property, value, ...elements) {
+  elements.forEach((element) => {
+    element.style[property] = value;
+  });
+}
 export function updateQueryParameters(
   currentURL,
   loadPage,
@@ -104,7 +130,13 @@ export function createImageElement(src, alt) {
   element.setAttribute("alt", alt);
   return element;
 }
-
+export function createIconElement(...classes) {
+  const icon = document.createElement("i");
+  classes.forEach((className) => {
+    icon.classList.add(className);
+  });
+  return icon;
+}
 export function divideArray(inputArray, indexNumber) {
   let oldArray = [...inputArray];
   let newArrayofArrays = [];
