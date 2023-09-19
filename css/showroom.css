@@ -1,18 +1,25 @@
 button {
   padding: 0.6rem;
 }
+header {
+  background-color: var(--colour-primary);
+}
 main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(100vh - 4rem);
+  align-items: center;
+  padding-top: 5rem;
 }
+
 div.container {
   position: relative;
   z-index: 0;
   display: grid;
+  grid-template-columns: repeat(auto-fill, 25rem);
   padding: 0.5rem;
-  gap: 0.5rem;
+  gap: 1.24rem;
+  max-width: calc(105rem);
 }
 div.missing-items-message {
   grid-row: 1;
@@ -31,7 +38,9 @@ div.card {
   position: relative;
   background-color: var(--colour-main);
   border-radius: 1% 1% 2% 2% / 1% 1% 2% 2%;
-  /* border-bottom: 2px solid var(--colour-secondary); */
+  max-width: 25rem;
+  height: 100%;
+  aspect-ratio: 3/4;
 }
 div.card::before {
   content: "";
@@ -97,14 +106,16 @@ div.card-bottom img {
 .hidden-info {
   display: none;
 }
+.options-menu {
+  width: 100%;
+  max-width: var(--page-content-width);
+}
 .pageSettings {
   display: flex;
   justify-content: space-between;
   margin-top: 0.3rem;
   padding: 0.25rem 0.5rem;
   border: 2px solid transparent;
-  border-top: 2px solid var(--colour-primary);
-  border-bottom: 2px solid var(--colour-primary);
 }
 
 select {
