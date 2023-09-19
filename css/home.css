@@ -453,7 +453,44 @@ section.why-us div {
   color: var(--colour-text-special);
 }
 /*End of Why Us Section*/
+/*Contact Us Section*/
+section.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.24rem;
+}
+section.contact h3 {
+  font-weight: 400;
+  font-size: var(--font-med);
+  color: var(--colour-text-special);
+}
+section.contact .google-map-location,
+section.contact .contact-info {
+  width: 100%;
+  max-width: 45rem;
 
+  padding: var(--padding-thicker);
+}
+section.contact .contact-info {
+  margin-left: auto;
+}
+
+section.contact .contact-opening-times,
+section.contact .contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.64rem;
+  margin-bottom: 1.24rem;
+}
+section.contact .google-map-location {
+  height: 100%;
+  aspect-ratio: 4/3;
+  margin-right: auto;
+}
+/*End of Contact Us section*/
 @media screen and (min-width: 64rem) {
 }
 @media screen and (min-width: 90rem) {
@@ -507,6 +544,15 @@ section.why-us div {
   }
   section.search button.search-button-more {
     display: none;
+  }
+  /*Contact Section Queries*/
+  section.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  section.contact .title {
+    grid-column: span 2;
+    margin-bottom: var(--padding-thicker);
   }
 }
 @media screen and (min-width: 124rem) {

@@ -77,8 +77,9 @@ export const footerTemplate = `<template id="footerTemplate">
       >&nbsp;
     </p>
     <div class="footer-links" aria-label="Footer Links">
-      <a href="/privacy-policy">Privacy Policy</a> |
-      <a href="/cookie-policy">Cookie Policy</a>
+      <a href="./privacy-policy.html">Privacy Policy</a> |
+      <a href="./cookie-policy.html">Cookie Policy</a> |
+      <a href="./accessibility.html">Accessibility</a>
     </div>
     <div class="footer-copyright" aria-label="Footer Copyright Information">
       <p class="small">
