@@ -6,8 +6,8 @@
     <title>Showroom</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -38,15 +38,19 @@
         </div>
       </section>
       <div class="container"></div>
-      <nav class="pageButtons">
-        <button value="-1" class="prior">
-          <i class="fa-solid fa-arrow-left-long"></i>
-        </button>
-        <div class="buttonContainer"></div>
-        <button value="+1" class="next">
-          <i class="fa-solid fa-arrow-right-long"></i>
-        </button>
-      </nav>
+
+      <div class="page-bottom">
+        <p>Page <span class="page-bottom-number-of-pages">1 out of 3</span></p>
+        <nav class="pageButtons">
+          <button value="-1" class="prior">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </button>
+          <div class="buttonContainer"></div>
+          <button value="+1" class="next">
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </nav>
+      </div>
     </main>
   </body>
 </html>

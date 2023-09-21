@@ -37,6 +37,32 @@ export const headerTemplate = `
 export const footerTemplate = `<template id="footerTemplate">
 <footer>
   <section class="footer-grid" aria-label="Footer Information">
+    <div class="footer-socials" aria-label="Footer Social Links">
+      <a href="#" rel="nofollow" aria-label="Link to our email form"
+        ><i class="fa-solid fa-envelope"></i
+      ></a>
+      <a
+        rel="noopener"
+        target="_blank"
+        aria-label="Link to our twitter page."
+        href="https://twitter.com/SAVEONUSEDCARS"
+        ><i class="fa-brands fa-x-twitter"></i
+      ></a>
+      <a
+        rel="noopener"
+        target="_blank"
+        aria-label="Link to our facebook page."
+        href="https://www.facebook.com/saveonusedcars.co.uk?fref=ts"
+        ><i class="fa-brands fa-facebook-f"></i
+      ></a>
+      <a
+        rel="noopener"
+        target="_blank"
+        aria-label="Link to our google plus page."
+        href="https://tinyurl.com/2durmcuz"
+        ><i class="fa-brands fa-google"></i
+      ></a>
+    </div>
     <p>
       Hoptons of Epworth Limited T/A Save On Used Cars is authorised and
       regulated by the Financial Conduct Authority, FRN: 655099. All finance
@@ -87,57 +113,10 @@ export const footerTemplate = `<template id="footerTemplate">
         <strong>Company Number</strong> - 999 9999 |
         <strong>FCA Number</strong> - 999 999
       </p>
-      <p> Copyright © 2023 Tomasz Wolak. All Rights Reserved. </p>
+      <p aria-label="Copyright Text">
+        Copyright © 2023 Tomasz Wolak. All Rights Reserved.
+      </p>
     </div>
   </section>
 </footer>
 </template>`;
-export const carouselTemplate = `<template id="carouselTemplate">
-<div class="carCarousel" data-carousel>
-  <button
-    class="carousel-button carousel-button-left"
-    data-carousel-button="prev"
-  >
-    <i class="fa-solid fa-chevron-left"></i>
-  </button>
-  <button
-    class="carousel-button carousel-button-right"
-    data-carousel-button="next"
-  >
-    <i class="fa-solid fa-chevron-right"></i>
-  </button>
-  <ul data-slides class="carousel"></ul>
-</div>
-</template>`;
-export const carCardTemplate = `<template id="carouselTemplate"><section class="carCard" keyID="">
-<a href=""></a>
-<div class="infobox">
-  <div class="makeModel">
-    <h1 class="make"></h1>
-    <h2 class="model"></h2>
-  </div>
-  <div class="PriceFinance">
-    <h2 class="price"></h2>
-    <h3 class="finance"></h3>
-  </div>
-</div>
-<div class="carImageBox"><img src="" alt="An Image" /></div>
-<div class="moreInfoBox">
-  <div class="gearbox">
-    <h3>Gear Box</h3>
-    <h4 class="gear">Placeholder</h4>
-  </div>
-  <div class="body">
-    <h3>Body</h3>
-    <h4 class="gear">Placeholder</h4>
-  </div>
-  <div class="fuel">
-    <h3>Fuel Type</h3>
-    <h4 class="gear">Placeholder</h4>
-  </div>
-  <div class="engine">
-    <h3>Engine Size</h3>
-    <h4 class="gear">Placeholder</h4>
-  </div>
-</div>
-</section></template>`;

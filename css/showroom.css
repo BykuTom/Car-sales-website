@@ -1,9 +1,3 @@
-button {
-  padding: 0.6rem;
-}
-header {
-  background-color: var(--colour-primary);
-}
 main {
   display: flex;
   flex-direction: column;
@@ -16,10 +10,12 @@ div.container {
   position: relative;
   z-index: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 25rem);
+  grid-template-columns: repeat(auto-fill, min(24.3rem, 100%));
+  justify-content: center;
   padding: 0.5rem;
   gap: 1.24rem;
-  max-width: calc(105rem);
+  width: 100%;
+  max-width: var(--page-content-width);
 }
 div.missing-items-message {
   grid-row: 1;
@@ -39,9 +35,11 @@ div.card {
   background-color: var(--colour-main);
   border-radius: 1% 1% 2% 2% / 1% 1% 2% 2%;
   max-width: 25rem;
-  height: 100%;
+  width: 100%;
   aspect-ratio: 3/4;
+  margin: auto;
 }
+
 div.card::before {
   content: "";
   position: absolute;
@@ -170,11 +168,36 @@ select option {
   text-wrap: nowrap;
   padding: 0.25rem;
 }
+.page-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--page-content-width);
+  padding: var(--padding-thick);
+}
+.page-bottom p {
+  display: none;
+}
 .pageButtons {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   padding: 1rem 0;
+}
+.pageButtons button {
+  font-size: var(--font-lrg);
+  border: 0.2rem solid var(--colour-primary);
+  border-radius: var(--border-radius-outer);
+  height: calc(var(--font-lrg) + (var(--padding-standard) * 2));
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pageButtons button.available {
+  background: var(--colour-secondary);
+  color: var(--colour-text-primary);
 }
 .buttonContainer {
   display: inherit;
@@ -185,4 +208,16 @@ select option {
 .pageButtons button a {
   position: absolute;
   inset: 0;
+}
+
+@media screen and (min-width: 64rem) {
+  .pageSettings select {
+    font-size: var(--font-med);
+  }
+  .page-bottom {
+    justify-content: space-between;
+  }
+  .page-bottom p {
+    display: block;
+  }
 }

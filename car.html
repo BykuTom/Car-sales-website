@@ -5,43 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car</title>
     <script type="module" src="./js/main.js" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/pages/car.js" defer></script>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/car.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <main>
       <!-- code -->
-      <div class="infobox">
-        <div class="makeModelBox">
-          <h1 class="make"></h1>
-          <h1 class="model"></h1>
-          <a href="" class="sharebutton"></a>
-        </div>
-        <div class="yearMilageFuelBodyBox grid-4">
-          <h2>Year</h2>
-          <h2>Mileage</h2>
-          <h2>Fuel</h2>
-          <h2>Body</h2>
-          <h2 class="year"></h2>
-          <h2 class="mileage"></h2>
-          <h2 class="fuel"></h2>
-          <h2 class="body"></h2>
-        </div>
+      <div class="car-info-top">
+        <a href="" class="sharebutton"
+          ><i class="fa-solid fa-share-nodes"></i
+        ></a>
+        <h2>
+          <span class="title-year"></span> <span class="title-make"></span>
+          <span class="title-model"></span>
+        </h2>
         <div class="priceFinanceBox">
-          <h1 class="price"></h1>
-          <h2 class="finance"></h2>
+          <h2 class="price"></h2>
+          <h3 class="finance"></h3>
         </div>
       </div>
-      <section class="slide-carousel"></section>
+      <section class="slide-carousel-section">
+        <div class="slide-carousel" data-carousel aria-label="Slide Carousel">
+          <button
+            class="carousel-button carousel-button-left"
+            data-carousel-button="prev"
+            aria-label="Previous Slide"
+          >
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button
+            class="carousel-button carousel-button-right"
+            data-carousel-button="next"
+            aria-label="Next Slide"
+          >
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <ul
+            data-slides
+            class="carousel"
+            aria-live="polite"
+            aria-label="Vehicle Slides"
+          ></ul>
+        </div>
+      </section>
+      <div class="yearMilageFuelBodyBox grid-4">
+        <h2>Year</h2>
+        <h2>Mileage</h2>
+        <h2>Fuel</h2>
+        <h2>Body</h2>
+        <h2 class="year"></h2>
+        <h2 class="mileage"></h2>
+        <h2 class="fuel"></h2>
+        <h2 class="body"></h2>
+      </div>
     </main>
   </body>
 </html>

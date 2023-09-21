@@ -1,3 +1,6 @@
+header {
+  background-color: unset;
+}
 /*Hero Styles*/
 section.hero {
   min-height: 100vh;
@@ -372,7 +375,8 @@ section.about-us div {
   max-width: 64rem;
 }
 section.about-us h2,
-section.about-us h3 {
+section.about-us h3,
+section.about-us p {
   font-weight: 400;
 }
 section.about-us strong {
@@ -383,11 +387,15 @@ section.about-us h1,
 section.about-us h2 {
   font-size: var(--font-xl);
 }
+section.about-us h2 {
+  color: var(--colour-text-special);
+}
 section.about-us h3 {
   font-size: var(--font-lrg);
 }
 section.about-us p {
   font-size: var(--font-med);
+  color: var(--colour-storm-grey);
 }
 section.about-us div:last-child {
   padding: var(--padding-thicker);
@@ -400,6 +408,7 @@ section.about-us button {
   padding: var(--padding-standard);
   transition: all 0.2s linear;
 }
+
 section.about-us button:hover {
   background: var(--colour-primary);
 }
@@ -476,6 +485,18 @@ section.contact .contact-info {
 }
 section.contact .contact-info {
   margin-left: auto;
+}
+section.contact button {
+  color: var(--colour-text-primary);
+  font-size: var(--font-med);
+  border-radius: var(--border-radius-standard);
+  background: var(--colour-secondary);
+  padding: var(--padding-standard);
+  transition: all 0.2s linear;
+}
+
+section.contact button:hover {
+  background: var(--colour-primary);
 }
 
 section.contact .contact-opening-times,

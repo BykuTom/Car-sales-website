@@ -1,22 +1,22 @@
 import dataLoad from "../components/dataLoader.js";
 import * as utilities from "../utilities.js";
-import { carouselTemplate } from "../templates.js";
+/* import { carouselTemplate } from "../templates.js"; */
 import CarSlide from "../components/carSlides.js";
 import carousel from "../components/carousel.js";
 
 window.addEventListener("load", () => {
-  document.body.innerHTML += carouselTemplate;
+  /* document.body.innerHTML += carouselTemplate;
   const carouselT = document.querySelector(`#carouselTemplate`);
   const clonedCarousel = carouselT.content.cloneNode(true);
-  document.querySelector(".slide-carousel").appendChild(clonedCarousel);
+  document.querySelector(".slide-carousel").appendChild(clonedCarousel); */
+
+  // The above code causes issue.
 
   (async () => {
     const allDataArray = await dataLoad("./assets/json/cars.json");
     const data = allDataArray[0];
     const queryString = window.location.search;
     const queryParams = utilities.listenForQueries(queryString);
-
-    //?id=2a8c8a7e-7449-41b5-a6de-9b41a746d1a8
 
     if (queryParams) {
       const keyID = queryParams.get("id");
@@ -25,14 +25,15 @@ window.addEventListener("load", () => {
         const carElements = utilities.queryElements(
           true,
           false,
-          "make",
-          "model",
+          "title-year",
+          "title-make",
+          "title-model",
+          "price",
+          "finance",
           "year",
           "mileage",
           "fuel",
-          "body",
-          "price",
-          "finance"
+          "body"
         );
         let firstObject = true;
 
@@ -55,9 +56,12 @@ window.addEventListener("load", () => {
           }
         });
         carousel("[data-carousel-button]");
-
-        carElements.make.innerText = key[0].data.make;
-        carElements.model.innerText = key[0].data.model;
+        console.log(carElements);
+        /* carElements.make.innerText = key[0].data.make;
+        carElements.model.innerText = key[0].data.model; */
+        carElements["title-year"].innerText = key[0].data.year;
+        carElements["title-make"].innerText = key[0].data.make;
+        carElements["title-model"].innerText = key[0].data.model;
         carElements.year.innerText = key[0].data.year;
         carElements.mileage.innerText = key[0].data.mileage;
         carElements.fuel.innerText = key[0].data.fuel;

@@ -1,14 +1,40 @@
-main div.infobox {
+main {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 5rem;
+  min-height: 100vh;
 }
-
-main div.infobox div.makeModelBox {
+section {
+  margin-bottom: unset;
+}
+main div.car-info-top {
+  padding: var(--padding-thicker) var(--padding-thin) var(--padding-thin)
+    var(--padding-thin);
   display: flex;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  gap: 3rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.64rem;
+  color: var(--colour-text-main);
+  width: 100%;
 }
-
+main div.car-info-top i {
+  color: var(--colour-text-special);
+  font-size: var(--font-lrg);
+}
+main div.car-info-top * {
+  width: fit-content;
+}
+.priceFinanceBox {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  align-items: flex-end;
+  padding-right: 0.64rem;
+}
+/* to be remade*/
 main div.yearMilageFuelBodyBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -17,6 +43,127 @@ main div.yearMilageFuelBodyBox {
   padding: 0 1rem;
   text-align: center;
 }
-main div.priceFinanceBox {
-  padding: 1rem;
+
+/*Start of carousel*/
+.slide-carousel-section {
+  padding: var(--padding-thicker) 0;
+  position: relative;
+  text-align: center;
+  color: var(--colour-text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
 }
+div.slide-carousel {
+  padding: unset;
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  aspect-ratio: 4/3;
+  z-index: 5;
+  margin: auto;
+}
+.slide-carousel button.carousel-button {
+  right: 100%;
+  transform: translateX(100%);
+  position: absolute;
+  z-index: 5;
+  font-size: 4rem;
+  line-height: 25px;
+  width: 100%;
+  max-width: 4rem;
+  background-color: transparent;
+  border: var(--border-size-standard) solid transparent;
+  background: none;
+  backdrop-filter: blur(0px);
+  height: 100%;
+  color: transparent;
+  transition: backdrop-filter 0.64s, border 0.64s, color 0.96s;
+}
+.slide-carousel button.carousel-button::before {
+  content: none;
+}
+.slide-carousel button.carousel-button:hover {
+  border: var(--border-size-standard) solid var(--colour-marble-blue);
+  backdrop-filter: blur(3px);
+  color: azure;
+}
+.slide-carousel button.carousel-button-right {
+  left: unset;
+  transform: unset;
+  right: 0%;
+}
+.slide-carousel ul.carousel {
+  width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.slide-carousel li.carCard {
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  opacity: 0;
+  z-index: -3;
+  transition: opacity 1ms, left 650ms;
+}
+.slide-carousel li.carCard::before {
+  position: absolute;
+  color: aliceblue;
+  inset: 0 0 100% 0;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
+  font-size: var(--font-lrg);
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--padding-thin);
+  justify-content: start;
+  transition: inset 0.5s linear;
+}
+.slide-carousel li.carCard:hover::before {
+  position: absolute;
+  inset: 0;
+  content: attr(cartitle);
+  color: aliceblue;
+  opacity: 1;
+  background-color: #40566195;
+  display: flex;
+  font-size: var(--font-lrg);
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--padding-thin);
+  justify-content: start;
+}
+.slide-carousel li.carCard[data-active] {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+.slide-carousel li.carCard[data-direction="right"] {
+  left: -100%;
+  opacity: 1;
+  z-index: -1;
+}
+.slide-carousel li.carCard[data-direction="left"] {
+  left: 100%;
+  opacity: 1;
+  z-index: -1;
+}
+.slide-carousel li.carCard[data-transition] {
+  z-index: 2;
+}
+.slide-carousel li.carCard a {
+  position: absolute;
+  display: block;
+  inset: 0;
+  z-index: 0;
+}
+.slide-carousel li.carCard img {
+  width: 100%;
+}
+/*End of carousel*/
