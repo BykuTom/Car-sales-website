@@ -162,6 +162,14 @@ export function returnRandomKey() {
   crypto.getRandomValues(randomValues);
   return Array.from(randomValues, (byte) => byte.toString(16)).join("");
 }
+export function getKeyByValue(object, valueToFind) {
+  for (const key in object) {
+    if (object[key] === valueToFind) {
+      return key;
+    }
+  }
+  return null;
+}
 
 /* export function toJSON(Item) {
   const jsonData = JSON.stringify((Item, null, 2));

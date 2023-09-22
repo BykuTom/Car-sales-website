@@ -6,8 +6,8 @@
     <title>Car</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/pages/car.js" defer></script>
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/car.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/car.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -56,16 +56,21 @@
           ></ul>
         </div>
       </section>
-      <div class="yearMilageFuelBodyBox grid-4">
-        <h2>Year</h2>
-        <h2>Mileage</h2>
-        <h2>Fuel</h2>
-        <h2>Body</h2>
-        <h2 class="year"></h2>
-        <h2 class="mileage"></h2>
-        <h2 class="fuel"></h2>
-        <h2 class="body"></h2>
-      </div>
+      <section class="key-info"></section>
+      <section class="accordion-section">
+        <div class="accordion accordion-description">
+          <button class="accordion-button">Description</button>
+          <p></p>
+        </div>
+        <div class="accordion accordion-history">
+          <button class="accordion-button">History</button>
+          <p></p>
+        </div>
+        <div class="accordion accordion-specifications">
+          <button class="accordion-button">Specifications</button>
+          <p></p>
+        </div>
+      </section>
     </main>
   </body>
 </html>
