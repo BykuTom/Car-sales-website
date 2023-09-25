@@ -69,7 +69,7 @@ export default class CarSearch {
         utilities.createOptionElement(price, `£${price}`)
       );
     });
-
+    const defaultMaxPrice = utilities.createOptionElement("", "Max Price");
     selectMinPrice.addEventListener("change", () => {
       const selectedOption =
         selectMinPrice.options[selectMinPrice.selectedIndex];
@@ -82,12 +82,14 @@ export default class CarSearch {
           arrayIndex + 1,
           this.priceValues.length
         );
+
         selectMaxPrice.appendChild(defaultMaxPrice);
         aboveSelected.forEach((price) => {
           selectMaxPrice.appendChild(
             utilities.createOptionElement(price, `£${price}`)
           );
         });
+        console.log(aboveSelected);
       } else {
         selectMaxPrice.appendChild(defaultMaxPrice);
         this.priceValues.forEach((price) => {
@@ -99,7 +101,7 @@ export default class CarSearch {
     });
 
     const selectMaxPrice = document.createElement("select");
-    selectMaxPrice.appendChild(utilities.createOptionElement("", "Max Price"));
+    selectMaxPrice.appendChild(defaultMaxPrice);
     this.priceValues.forEach((price) => {
       selectMaxPrice.appendChild(
         utilities.createOptionElement(price, `£${price}`)
