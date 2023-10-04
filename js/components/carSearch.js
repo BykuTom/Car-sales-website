@@ -146,7 +146,7 @@ export default class CarSearch {
             }
           }
           utilities.updateQueryParameters(
-            `${window.location.origin}/showroom.html`,
+            `${window.location.href}/showroom.html`,
             true,
             { ...parameters }
           );
