@@ -146,7 +146,7 @@ export default class CarSearch {
               parameters[key] = formData[key];
             }
           }
-          utilities.updateQueryParameters(`${location}showroom.html`, true, {
+          utilities.updateQueryParameters(`${location}/showroom.html`, true, {
             ...parameters,
           });
         }
