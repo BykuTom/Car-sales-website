@@ -137,19 +137,20 @@ export default class CarSearch {
         if (utilities.allKeysEmpty(formData)) {
           throw "At least one of the selectors needs to hold a value";
         } else {
-          console.log(formData);
           let parameters = { page: 1, items: 16 };
-
+          let location = window.location.href;
+          if (location.includes("index.html")) {
+            location.replace("index.html", "");
+          }
           for (const key in formData) {
             if (formData.hasOwnProperty(key) && formData[key] !== "") {
               parameters[key] = formData[key];
             }
           }
-          utilities.updateQueryParameters(
-            `${window.location.href}/showroom.html`,
-            true,
-            { ...parameters }
-          );
+
+          utilities.updateQueryParameters(`${location}/showroom.html`, true, {
+            ...parameters,
+          });
         }
       } catch (error) {
         console.error(error);
