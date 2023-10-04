@@ -138,17 +138,15 @@ export default class CarSearch {
           throw "At least one of the selectors needs to hold a value";
         } else {
           let parameters = { page: 1, items: 16 };
-          let location = window.location.href;
-          if (location.includes("index.html")) {
-            location.replace("index.html", "");
-          }
+          let location = window.location.href.includes("/index.html")
+            ? window.location.href.replace("/index.html", "")
+            : window.location.href;
           for (const key in formData) {
             if (formData.hasOwnProperty(key) && formData[key] !== "") {
               parameters[key] = formData[key];
             }
           }
-
-          utilities.updateQueryParameters(`${location}/showroom.html`, true, {
+          utilities.updateQueryParameters(`${location}showroom.html`, true, {
             ...parameters,
           });
         }
